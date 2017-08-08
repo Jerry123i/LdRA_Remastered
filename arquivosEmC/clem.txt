@@ -1,0 +1,44 @@
+0 - Tronco
+
+0 = Não rolou
+1 = Death
+2 = Forces
+3 = Life
+4 = Matter
+
+
+1 - Gato
+
+0 = Não rolou
+1 = Não viu tudo
+2 = Viu
+
+
+2 - Carro
+
+0 = Em chamas
+1 = Apagado
+
+
+3 - Olho
+
+0 = Não tem
+1 = Tem
+
+
+4 - Onde estava
+
+0 = Ali
+1 = Chegando
+
+
+5 - Paradox
+
+0 = Não rolou
+1 = Life
+2 = Matter
+
+6 - Aura
+
+0 = Não vendo
+1 = Vendo

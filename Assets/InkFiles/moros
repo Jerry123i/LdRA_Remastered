@@ -1,0 +1,234 @@
+== awaken_moros ==
+
+~ temp coins = 0
+
+Você segue pela estrada de ouro, o caminho limpo e polido, porém nada brilhante. A medida que você se aproxima do cemitério a estrada se apresenta mais decorada, detalhes com pedras preciosas adornam o caminho, belíssimas engravações de assassinatos e afogamentos, doentes moribundos e vítimas baleadas engravadas no metal.
+
+Qualquer luz que estivesse iluminando seu caminho esmorece a medida que postes feitos de ossos empilhados e lamparinas acesas em caveiras surgem para cumprir essa função. Você espera ouvir o som do fogo queimando, ou o cheiro de fumaça ou incenso, mas percebe que desde que escolheu esse caminho não ouve nem sente nada. Porém esse silêncio dos seus sentidos não te preocupa, mas te preenche de uma sensação de paz.
+
+Depois de andar pelo que parece toda uma existência você alcança os portões do cemitério, as grades de chumbo escuro e pesado trancadas.
+
+-(portoes)
+De pé ao lado da fechadura um homem feito de sombras aguarda. Como tudo que já foi vivo você sabe que deve duas moedas a ele.
+
+
++{coins==2}[Pagar sua entrada]
+    Você estende as moedas para o porteiro. Ele recolhe as duas e fala alguma coisa. Você pede que ele repita, tanto tempo no torpor do silêncio fez você esquecer como ouvir. Ele repete em algo que parece mais um eco do vento do que uma voz.
+    
+    "Sua dívida está paga, porém esses portões não serão abertos a uma alma viva"
+
+    --(howUdie)
+    Como você morre?
+    
+    **[Doença (Vida)]
+        ->moros_life->dentro_do_cemiterio
+    **[Fogo (Forças)]
+        ->moros_forces->dentro_do_cemiterio
+    **[Idade (Tempo)]
+        ->moros_time->dentro_do_cemiterio
+    **[Azar (Destino)]
+        ->moros_fate->dentro_do_cemiterio
+    **{not pergunte_ao_porteiro}[Pergunte para o porteiro]->pergunte_ao_porteiro
+    **{pergunte_ao_porteiro}[Ir até a fonte (Primórdio)]
+        ->moros_prime->dentro_do_cemiterio
+    **{pergunte_ao_porteiro}[Ir até a montanha (Espaço)]
+        ->moros_space->dentro_do_cemiterio
+    **{pergunte_ao_porteiro}[Ir até o vale (Mente)]
+        ->moros_mind->dentro_do_cemiterio
+    **{pergunte_ao_porteiro}[Invocar o espírito (Espírito)]
+        ->moros_spirit->dentro_do_cemiterio
+
++{coins!=2}[Procurar uma forma de pagar sua entrada]->moros_opcoes_procurar
+
+*[Falar com o porteiro] Você pede com educação que ele abra os portões.
+    --Você tenta conseguir a atenção dele, argumentar, implorar. A sombra não responde, não se move, não reage.
+    
+    --Você tenta negociar com a morte e falha, não foi {oa()} primeir{oa()}, não será {oa()} últim{oa()}.->continue->portoes
+
+=moros_opcoes_procurar
+-Então você precisa de {coins==0:um par de moedas|{coins==1:mais uma moeda}}, onde você procura?
+        **[Esvaziar seus bolsos]->bolsos
+        **[Procurar entre os mortos]->mortos
+
+=bolsos
+Você retira um pedaço de papel colorido do bolso. Em algum lugar esse pedaço de papel vale uma moeda, aqui ele é inútil, porém é tudo que você tem.
+
+A sombra exige moedas, você olha o papel, e percebe que na verdade ele é mais que isso, mais que uma única coisa. Você observa mais de perto. Decide trocar as coisas de lugar, remover algumas, discutir e convencer outras. 
+
+Eventualmente elas obedecem e se organizam a seu comando. Todas as coisas que eram papel, alinhadas, empilhadas e conectadas para serem uma moeda de metal dourado.
+
+~coins++
+->continue->portoes
+
+=mortos
+
+Você se afasta dos portões e procura entre os mortos, além das pilhas de ossos ao longo da estrada você encontra alguns corpos ao longo do portão. Talvez outras almas que não conseguiram entrar. 
+
+Ignorando por um momento a ideia de que você pode encontrar o mesmo destino, você concentra sua atenção em conseguir sua entrada.
+
+Alguns dos cadáveres, os que ainda tem alguma carne em seus ossos, se movem. Tentam se arrastar em sua direção ou erguem um braço pútrido tentando te tocar.
+
+Quando você estava prestes a desistir e retornar aos portões, um reflexo brilhante chama sua atenção. Dois corpos, apoiados um contra o outro, reduzidos a ossadas, exceto pelos braços. Apoiados um no ombro do outro, as almas tem os dedos pálidos entrelaçados como amantes.
+
+O brilho que você viu veio da aliança que um deles usa (apenas um). É dourado e redondo, você imagina que baste para pagar parte da sua dívida.
+
+*[Tomar o anel]
+    Você se inclina, para tomar o anel. Um pouco apreensiv{oa()} em relação a tocar os corpos, você delicadamente tenta separa-los. Subtamente os músculos apodrecidos  se contraem, os amantes se apertam com mais força , um dedo se descola um pouco e fica pendurado, ma s eles não parecem ligar.
+
+    Você não vai ser capaz de tomar a aliança a força. Pelo menos não enquanto eles tiverem alguma carne em seus ossos. Você deseja que eles não tivessem, que a morte terminasse de consumi-los. As sombras se movem como se te ouvissem, tremulam e crescem , formam uma garra fantásmagórica que se inclui no  aperto do casal. O que a sombra toca, apodrece e  definha, a carne se desfaz em pó, e a garra para  apenas quando os dois esqueletos se desmontam um sobre o outro.
+
+    Você pega a aliança e segue as grades de volta  até o portão, os corpos que conseguem se arrastam  quando você passa, tetando se afastar de você dessa vez.
+    ~coins++
+    ->continue->portoes
+
+
+*[Pedir]
+    A cena é tocante, mas você acredita que necessita mais do anel do que eles. Você se abaixa, e pede, por favor que lhe entreguem o anel.
+    
+    Não ha resposta, apenas o silêncio dos mortos. Seus sentidos ainda estão atordoados, mas você acredita que realmente eles não são capazes de falar. E stão tão fracos, parecem estar a muito tempo aqui.  Do lado de fora dos portões suas almas se corroeram como seus corpos. Um sentimento fraco pulsa no  centro delas, um fragmento do que um dia eles podem ter sido.
+    
+    É um sentimento familiar, porém nesse estado é ilegível, não resta muita coisa, não serve mais para  muita coisa. Com um aceno de mão você apaga essa última brasa.  
+
+    As mãos se soltam, nenhum deles reage quando você  pega a aliança. No caminho de volta você se pergunta por que apenas um deles tinha um anel. 
+    ~coins++
+    ->continue->portoes
+
+=pergunte_ao_porteiro
+Você pergunta a sombra como morrer. Ela abre um sorriso largo, você não tem certeza sobre olhos, mas a morte tem dentes .
+
+Naquela direção, existe uma montanha... dos ossos de todos os que morrem em guerras sem propósito... ela é... alta. Salte dela.
+
+A sua fala é pausada, e as pausas preenchidas por nada além do silêncio absoluto dos mortos e espectativa. Naquela direção... existe um vale de almas cujo os corpos ainda vagam, mas suas mentes... morreram.
+
+Naquela  direção... uma fonte, que promete poder absoluto a alma justa que beber dela... e morte as outras... não se preocupe,  sua alma não é justa... elas nunca são.
+
+E finalmente, embora seja... raro, você pode invocar um espírito da morte, porém eles são... tão... poucos. ->continue->howUdie
+
+
+=moros_forces
+~FORCES++
+Você vai até uma das pilhas de caveiras que iluminam a estrada. Você escala as ossadas, se apoiando em crânios e fêmures, derrubando tíbias e quebrando algumas peças mais antigas . No topo, você alcança um pequeno crânio amarelado, sujo de cera e com a luz trêmula de uma vela escorrendo das órbitas vazias. Você deixa a chama tocar os seus dedos e ela logo se espalha para o seu braço. Seu sentidos ainda estão cegos, e você não sente calor ou dor, o fogo apenas come sua carne e regurgita fumaça e cinza, você observa a ação do fogo como mais uma transformação do seu corpo, assim como ele cresce ou cicatriza ele queima. Você retorna aos portões mort{oa()} e cremad{oa()}, a sombra permite que você entre.
+->->
+
+=moros_prime
+~PRIME++
+Você encontra a fonte, uma torre prateada com três pratos e  uma grande bacia na base. A água que flui da estrutura que tem o tamanho de uma casa é completamente transparente, mas parece radiar uma leve luz azulada. Você junta as mãos em concha e deixa o líquido frio se acumular entre os dedos, você leva as mãos a boca e bebe devagar, gole por gole. Inicialmente você não sente nada, então do fundo do seu  ser você percebe, uma formigação, quase imperceptível, uma  sensação que cresce até você identificar como poder, puro e  imaculado, o absoluto sentido da palavra, a essência de capacidade e potencial prenche sua alma. Talvez você seja just{oa()}, você não precisa mais morrer, você pode conseguir o que quiser, você pode fazer o que quiser.
+
+Quanto mais o poder  cresce, mais possibilidaes existem, ambos, se expandem. As  possibilidades são infinitas, mas você só pode suportar tanto poder, enquanto existem possibilidades sua alma expande  e queima tentando conter todas elas. Eventualemente você cede, uma implosão e o som de um vácuo sendo fechado.
+
+Você consegue salvar apenas o bastante da sua alma para continuar a existir.
+
+Um pouco mais humilde você retorna aos portões, eles já estão abertos, tamanha a certeza do porteiro no seu fracasso.
+->->
+
+=moros_time
+~TIME++
+Você senta no chão e aguarda, não tem por que se esforçar, nada mais certo que a morte, não é mesmo? Cruzando suas pernas você deixa o tempo passar, seus cabelos logo crescem, e  sua pele enrruga, seus pêlos desbotam e suas costas se curvam, seus órgãos então lentamente reclamam, desaceleram, incham, rompem ou param. Seu coração continua, porém lento, seus pulmões apitam e se arrastam ao trabalhar. Deve estar perto agora, suas mãos estão manchadas e sua pele solta, suas  unhas amareladas e longas, você se distrai, quando foi a última vez que seu coração bateu? A sombra abre os portões.
+->->
+
+=moros_fate
+~FATE++
+Você pondera sobre a morte por alguns intantes, não como uma  grande parte do ciclo do universo, ou um processo de evolução espiritual. Apenas um acontecimento, um motorista que recebe uma mensagem de texto no momento errado, um maníaco que vira a esquerda e uma vítima que decide ir pelo caminho  mais longo pois a lua estava particularmente linda aquela noite, um raio que cai duas vezes no mesmo lugar. Apenas dois de paus e olhos de cobra no jogo do destino.
+
+Jogo...
+
+ Você tem uma ideia. Antes que você pudesse dizer qualquer coisa o porteiro sorri, da massa sombria sob seus robes ele tira um revolver, novo e brilhante, como uma peça de exposição que nunca foi usada. Ele estende a arma apontando-a para baixo e expondo o cilindro, então então joga uma única bala dourada  no tambor, que cai com exatidão no compartimento.
+
+Ele estende a arma para você. "Boa sorte".
+
+Você tenta lembrar de todos os pequenos rituais de boa sorte que conhece e executa todos antes de girar o tambor. Você encosta o cano da arma na têmpora, e puxa o gatilho. O barulho do disparo é  abafado pelo ranger dos portões se abrindo.
+
+->->
+
+=moros_mind
+~MIND++
+Você segue na direção que a sombra apontou. Algum tempo depois você percebe uma única mudança no relevo, uma decida íngrime que termina em um vale. Dentro do vale você percebe movimento, vários seres de forma humana vagam a esmo, segurando o que parecem ser grandes bolas de vidro escuro.
+
+Você se aproxima, eles parecem andar sem direção ou propósito carregando com as duas mãos as orbes de vidro escuro e esfumaçado, as vezes se esbarram ou derrubam suas esferas, alguns lentamente se abaixam pra recupera-las, tateando como cegos.  Outros as abandonam e continuam andando. Nenhum deles parece reconhecer sua presença ali, você aproveita para estuda-los de perto.
+
+Seus corpos estão quase como vivos, eles se movem e agem, a carne a pesar de pálida, não parece especialmente podre ou decomposta. As esferas estão empoeiradas, algumas trincadas por terem sido derrubadas algumas vezes,  observando de perto é óbvio para você agora, eles carregam  cascas vazias do que já foi sua consciência, o ar funebre decompôs a mente dos seres do vale como a carne daqueles fora dele.
+
+Você pega do chão um dos orbes abandonados e lentamente, despeja sua mente no receptáculo vazio. Com cuidado, antes de depositar a última gota, você deixa para trás suas memórias do caminho de volta, apenas torcendo que baste para que seu corpo vazio encontre os portões.
+
+Tudo fica  escuro, você sente apenas sua cosnciência flutuando sem direção, lentamente balançando de um lado para ou outro nas mãos do seu corpo físico. Quando você retorna a si, os portõe s estão abertos, e você está do outro lado deles, de corpo e mente. Você se sente primeiro aliviad{gen==1:a, e depois levemente orgulhosa|o, e depois levemente orgulhoso} por seu plano ter funcionado, você enganou a morte?
+
+A sombra vira lentamente a cabeça na sua direção e abre um sorriso cínico através das grades.
+
+Não, mas você aparentemente  a impressionou.
+->->
+
+=moros_space
+~SPACE++
+Você segue na direção que a sombra apontou, não demora para  encontrar a montanha. Um aclive imenso de ossadas empilhadas e diversas armas e peças militares, se elevando até onde  seus olhos podem ver. Você começa a escalar, se apoiando em  caveiras, espadas e baionetas, ossos, rifles e bombas.
+
+ A subida contina pelo que parecem horas e o final continua  tão longe do seu alcance como quando você começou. Você olha para baixo, o chão está a um passo dos seus pés, você não subiu um metro sequer.
+
+Frustrado você percebe que realmente nunca esteve tentando chegar ao topo, cada passo que você dava mirava apenas em dar um próximo, um passo em uma montanha que nunca para de crescer não significa nada.
+
+Você visualiza o topo, apenas ele, nada mais em seu caminho,  apoiando em uma armadura ensanguentada e no cano chamuscado de um tanque você joga seu corpo para cima.
+
+Você abre os olhos e está no topo, ao seu redor mais corpos caem do céu, sempre elevando o cume da montanha lúgubre. Você vai na  direção de um longo canhão enferrujado que se propele da lateral da massa de corpos, andando sobre ele como uma prancha, é impossível ver o chão dessa altura, porém você pula.
+ 
+Seu corpo ganha velocidade até estar completamente imerso  na sensação de queda livre, caindo como se sem peso, você  ainda está desprovido de audição, mas pode sentir o vento se arrastando nos seus ouvidos. Vários segundos passam até que você lembra que assim como a subida a descida é infinita. Você visualiza o chão, e repentinamente seu corpo para.
+
+Você levanta, mort{oa()}, e em um passo retorna aos portões  do cemitério, que a sombra cordialmente abre para você. Embora você agora acerdita que provavelmente poderia chegar do outro lado com um passo se quisesse.
+->->
+
+=moros_life
+~LIFE++
+Você vai até uma das pilhas de caveiras, e procura uma que tenha morrido devido a doença. De alguma forma você sabe com o cada uma dessas pessoas morreu. Então escolhe um crânio a propriado. Uma peça antiga, já bem amarelada, aparentemente  feminina, peste negra, tão jovem... Você esmaga o crânio n as mãos, um pó negro e fino sai dos ossos e flutua, suspens o como névoa. Você inspira profundamente.
+
+Os sintomas te  atingem assim que você solta seu fólego. Você sente inchaços pelo seu corpo e manchas azuladas e escuras crescem ao longo da sua pele. Você começa a suar intensamente, embora seus sentidos tenham se perdido ao longo da estrada você ima gina que sentiria um frio febril nesse momento, seu corpo começa a tremer, confirmando sua teoria. A infecção logo se  espalha para o resto do corpo, você pode sentir as bactérias se multiplicando e se espalhando dentro de você, espantado, você percebe que elas são a única coisa viva em todo ess e deserto desolado.
+
+As colônias prosperam nos seus outros  orgãos, eles se contorcem e minam sangue. Seus pulmões se contraem e derramam uma porção de sangue escuro em suas mãos  trêmulas e suadas.
+
+Alguns minutos depois seus orgãos param, você se dirige até os portões, mas a sombra pede que você aguarde.
+
+"Nenhuma alma viva." Ele diz. Você compreende, e espera até que a última célula da peste pereça dentro do seu corpo sem vida.
+
+A sombra então abre os portões.
+
+->->
+
+=moros_spirit
+~SPIRIT++
+Você pensa em invocar o espírito da morte e ele surge ao seu  lado. Coberto por um capuz preto e rasgado ele flutua sobre  uma pesada névoa escura que escorre do seu torso, ele aparenta não ter pernas. Inicialmente você acha que ele é um esqueleto, como as muitas ossadas pelas qual passou, observando mais de perto ele tem pele, pele pálida e coberta por cicatrizes, colada diretamente ao osso, mesmo sem músculos ele consegue manter uma expressão profundamente deprimida, duas linhas escuras marcam seu rosto, como se tivesse chorado  tinta.
+
+Ao mesmo tempo que ele indubitavelmente representa a morte ele parece estranhamente deslocado ali, simplesmente sua essência dá uma ideia de que não está morto, não exatamente vivo... porém não morto. Talvez por isso sejam tã o raros. Quando você percebe ele se foi, o porteiro já abriu os portões, ele te matou? Sim, você não tem certeza como,  talvez bastasse sua presença, talvez você estivesse mais distraíd{oa()} do que pensou.
+->->
+
+-(dentro_do_cemiterio)
+
+->continue->
+
+Além dos portões você se encontra no cemitério. Túmulos de toda forma e cultura cobrem o chão até onde seus olhos podem ver. Lápides, urnas, sarcófagos, algumas covas sem demarcação e até barcos vikings inteiros, todos perfeitamente ordenados e alinhados.
+
+No que você acredita ser o centro, voce avista uma enorme torre que te atrai como um imã. Coberta de uma infinidade de metais e pedras preciosas. E alta como um arranhacéu. Você entra, dentro da torre mais sepulturas, igualmente diversas, porém mais distintas de certa forma, urnas mais elaboradas, sarcófagos que poderiam pertencer a faraós, estátuas de anjos e cruzes cristãs moldadas por exímios escultores. Você continua a subir, qualquer coisa que lhe atrai está no topo. Andar após andar você passa pelos mortos.
+
+->continue->
+
+Você termina um lance de escadas e não encontra o próximo, o topo. Nesse andar apenas uma humilde lápide de pedra no centro. Em frente a ela uma enorme figura esquelética trabalha sem parar, com dezenas de braços de cada lado do corpo ela parece processar uma torrente de mortos que tira do centro escuro das suas costelas. As mãos a direita separam o corpo da alma, enterram o corpo no solo e libertam a alma como um fio de fumaça de incenso, branco e fino, deixando para trás um resíduo preto que é coletado emum cálice.
+
+As mãos da esquerda coletam bens materiais, recolhem jóias, carros e casas inteiras, esmagam e moem tudo em um fino po dourado porém opaco. Que se torna líquido ao cair no cálice a esquerda
+
+Você repara na lápide, o objeto que tão fortemente te atraiu até aqui. Ela é sua, porém está sem nome.
+
+*[Assinar com o resíduo das almas (Morte+)]
+    --~DEATH++
+    --Você pega a longa pena preta apoiada na lateral do cálice, mergulha a ponta na tinta viscosa turva.
+*[Assinar com a tinta dourada (Matéria+)]
+    --~MATTER++
+    --Apoiada no cálice da esquerda você encontra uma elegante caneta tinteiro, completamente preta e com uma gema vermelha como sangue fresco decorando a ponta. Usando a pequena alavanca na lateral você enche a caneta de tinta dourada.
+    
+-E se inclina para escrever seu nome 
+
+-#input
+-#nomeCompleto
+
+- ->continue->
+
+-Sua tumba está agora completa, {DEATH==2:a tinta escura escorre do último traço da assinatura, marcando a última letra do seu nome com uma grande gota cinza.|a caligrafia dourada brilha uma vez, refletindo luz que não parece vir de lugar nenhum.}
+
+-Você dá um passo para trás, para observar seu trabalho. Então a forma esquelética para, ela larga um carro de luxo e um punhado de almas gemendo no ar, parados em suspensão. Ela olha para você, um par de mãos feitas de ossos negros te agarra, com o cuidado de uma mãe segurando um filhote, a morte te leva ao peito.
+
+-Você afunda entre suas costelas em direção a escuridão.->->

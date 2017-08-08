@@ -1,0 +1,401 @@
+== awaken_mastigos ==
+
+Você escolhe a estrada de ferro. Não apenas uma calçada plana feita de ferro, o caminho é na verdade como um conjunto de trilhos de trem. Você segue pisando nos suportes de madeira entre as vigas de metal com o olhar fixo na enorme mansão no horizonte.
+
+Depois de alguns minutos andando você tem a impressão de ouvir alguma coisa a distância, longe de mais para distinguir inicialmente, mas se aproximando aos poucos. Um som pesado e rápido, dando a impressão de um conjunto de partes metálicas se movendo. Um trem óbviamente, se aproximando atrás de você.
+
+-(opcoes_trem)
+*(olhar_para_o_trem)[Olhar para o trem]
+    --Você decide virar para estimar melhor o quão longe o trem está.  Sem interromper seu passo você vira o pescoço par a trás, tentando olhar por cima do seu ombro. Você quase tropeça, sua visão se distorce e roda antes que você possa ter ideia do que aconteceu. Quando você se recupera ainda está encarando a mesma mansão, sua cabeça virada para trás e o som do trem  vindo da direção oposta. Porém a mesma estrada a sua frente.  
+
+    --Você testa, com mais calma dessa vez, virar para o lado. Toda a paisagem te acompanha, a mansão, a estrada e o próprio solo mudam de posição e se colocam insistentemente no seu caminho. O trem continua a se aproximar, sempre atrás de você, já muito perto.
+    
+    --{(opcoes_trem == 2):
+    
+        -Ele derrepente ganha velocidade, não há mais como correr, você fecha os olhos aguardando o impacto. Então ele para, os sons desaparecem, como se nunca tivessem estado ali. Sua adrenalina cai, você toma um segundo para  respirar, ainda incapaz de olhar paras trás você fecha os olho s e respira fundo para retomar a calma. Quando você abre os olhos A mansão desapareceu, o trem está  na sua frente, acelerando, não há tempo de reagir. Ele te acerta em cheio, seu corpo voa para trás e quica uma vez no chão antes de parar.->mansao
+        
+        -else:
+        
+            ->opcoes_trem
+    } 
+
+*(sair_dos_trilhos)[Sair dos trilhos]
+    --Você rapidamente libera o caminho, saindo da estrada de  ferro para permitir que o trem passe. Dando dois passos para o lado você se encontra sobre uma das placas de madeira, a mesma em que estava antes, como se não tivesse saído do lugar. Você repete o movimento, porém continua no caminho do trem, para  a direita, a esquerda ou diagonal, os trilhos sempre estão sob seus pés quando você termina um passo, sem que você nunca consiga sair do lugar.
+    
+    --{(opcoes_trem == 2):
+    
+        -Ele derrepente ganha velocidade, não tem para onde correr, você fecha os olhos aguardando o impacto. Até que ele para, os sons desaparecem, como se nunca tivessem estado ali. Sua adrenalina cai, você percebe o quanto suas pernas doem, você toma um segundo para  respirar, pensando em  sentar você abre os olhos. A mansão desapareceu, o trem está  na sua frente, acelerando, não há tempo de reagir. Ele te acerta em cheio, seu corpo voa para trás e quica uma vez no chão antes de parar. ->mansao
+        
+
+        
+        -else:
+        
+            ->opcoes_trem
+    }
+
+
+
+*{opcoes_trem>1}[Correr]
+    --Incapaz de {olhar_para_o_trem:ver de onde vem o trem|sair do caminho do trem} você corre. Saltando desajeitad{oa()} entre os trilhos, tomando cuidado para não cair, você dispara desesperad{oa()}. O ruído pesado te  ameaçando cada vez mais de perto e a mansão parecendo desaparecer no horizonte a cada passo que você dá em sua direção. O trem está perto, muito perto, você pode sentir os trilhos vibrando sob seus pés e ouvir o gemer do metal atrás de você, o  calor da fornalha pressionando sua nuca quase como uma ameaça, te intimidando.
+    
+    -- ->continue->
+
+    --Até que ele para, os sons e a vibração desaparecem, como se nunca estivessem ali. Sua adrenalina cai, você percebe o quanto suas pernas doem, você pode fechar os olhos e respirar por um segundo, seus pulmões queimam, pensando em  sentar você abre os olhos. A mansão desapareceu, o trem está  na sua frente, acelerando, não há tempo de reagir. Ele te acerta em cheio, seu corpo voa para trás e quica uma vez no chão a ntes de parar
+    -- ->mansao
+    
+= mansao
+->continue->
+Você levanta, seu corpo dolorido, porém é um milagre que você consiga andar. De alguma forma você caiu perfeitamente em frente a porta da mansão, ela é antiga e mal cuidada, mas enorme, de forma que parece se estender em todas as direções, impossivelmente alta e extensa, quanto mais você tenta enxerga-la maior ela se torna. Você olha para cima e ela é mais alta que os céus, se estendendo para longe e ao mesmo tempo sobre você, ameaçando tombar ao mesmo tempo que continua a crescer, ocupando todo e qualquer espaço que lhe é permitida.
+
+O absurdo finalmente te atinge como um choque, percebendo que tal estrutura não pode existir, sua mente se impõe sobre a casa. Contendo-a com amarras de lógica você consegue ancora-la na realidade. Uma realidade...
+
+A porta da frente se encontra entreaberta, uma leve luz irradia de dentro, um chiado pesado como a respiração de um enfermo pode ser ouvido.
+
+*[Entrar]
+    --Ao lado da porta, segurando um castiçal, uma criatura alta e grotesca esperava você entrar.
+*[Bater na porta]
+    --Você encontra um grande anel metálico nas mandíbulas de uma gárgola e bate contra uma pequena placa de bronze. O som é várias vezes mais alto do que você espera, ecoando como um gigantesco sino de igreja. Você cobre seus ouvidos enquanto a porta é aberta pela criatura que emite o chiado que você ouvia. Segurando um pequeno castiçal ela não fala mas rapidamente sinaliza para que você entre.
+*[Chamar por alguém]
+    --Você timidamente chama por alguém, imaginando que seja quem for que você esteja ouvindo te responda. A porta lentamente abre, uma criatura alta segurando um castiçal pequeno entusiasmadamente sinaliza para que você entre.
+    
+- De pele azulada e úmida como uma enguia, com apenas um grande olho turvo e amarelado no centro do torso, sem nenhuma forma que dê a idéia de uma cabeça. O par de pernas aparenta ser a única coisa vagamente humana na anatomia do ser, os braços são três, embora o terceiro, a esquerda parece atrofiado ou vestigial. Na altura da barriga, sob o olho, uma boca se abre de uma ponta a outra do tronco, e pendendo dela uma enorme língua acinzentada cria uma poça de saliva viscosa no chão.  
+
+- A criatura parece animada em te ver. Assim que você abre a porta ela começa a sacudir os braços animada e fazer algum som que é abafado pela própria língua. Ele entrega o castiçal nas suas mãos e aponta para as escadas no fím do cómodo como se te chamasse. Então corre naquela direção, desaparecendo na escuridão. 
+
+*[Subir as escadas]
+    -No andar de cima você encontra a criatura te esperando no topo da escada, ele bate as palmas como um chimpanzé animado quando te vê novamente, produzindo um som úmido que ecoa pelo enorme corredor vazio. Mais uma vez ele aponta em direção a escuridão, e te convida a segui-lo.
+    
+    -Vocês passam por várias portas idênticas ao longo do interminável corredor. Ele segue sempre em frente e você tenta acompanha-lo. Embora não pareça haver nada além de vocês dois ali, algumas sombras parecem surgir espontâneamente sob a luz da sua vela, correntes de ar frio passam pelo corredor, mesmo sem janelas e você dá de cara com bolsões de ar quente e úmido. 
+    
+    -Eventualmente ele para em frente a uma das portas. Cuidadosamente espiando dentro, depois olhando na sua direção animado, como se tivesse encontrado o que procurava. Colocando o indicador estendido em frente a língua ele parece tentar fazer um sinal de silêncio, antes de entrar cuidadosamente deslizando os pés, a fim de evitar o som que seus pés viscosos fazem quando anda.  
+
+*[Entrar]
+
+    -A parte de dentro do quarto é completamente diferente da mansão. Um quarto grande e bem arrumado, com iluminação elétrica e uma TV de tela plana presa a parede. Um abajur de desing moderno sobre uma mesa de cabeceira de vidro ilumina muito suavemente o cômodo com uma confortável meia-luz. Deitada na cama king-size, uma senhora, cujos cabelos apenas agora começaram a se tornar grisalhos, dorme profundamente.
+    
+    -Porém as sombras e ruídos do corredor parecem ter te seguido até aqui, silhuetas maiores se formam contra a luz, mas desaparecem antes que você consiga distinguir sua forma, as correntes frias e quentes percorrem seu corpo como fios finos entre suas roupas. Raiva, medo e apreensão parecem brotar na sua mente ao mesmo tempo antes de desaparecer com as sombras e calafrios. Todas sensações fúgidas, que desaparecem assim que você percebe que as está sentindo.
+    
+    -A criatura te cutuca para conseguir sua atenção, então segura a própria língua com as duas mãos, e desajeitadamente a enrola para que caiba dentro da boca. Com um pouco mais de espaço, mas ainda com dificuldade ele consegue dizer. "Quer fazer um pesadelo?"
+    
+    -"É só encostar nela assim..." Ele encosta o dedo coberto de saliva na testa da mulher, mas ela não acorda, nem dá sinal nenhum de ter sentido alguma coisa "E pensar as coisas pra dentro da cabeça dela."
+    
+*[Recusar]Você não quer atormentar os sonhos dessa senhora.
+
+    --"Mas... mas..." A criatura fica confusa, quase deixa sua língua escorregar. "Você já começou a fazer o pesadelo. Se você não pensar o pesadelo nela ele vai se pensar em você" 
+
+    --Embora ele não tenha feito muito sentido, provavelmente tem  algo a ver com as coisas que você tem pensado ver desde que você entrou na mansão, desde que você entrou no quarto elas tem se tornado uma distração cada vez maior,  parecendo cada vez mais reais. 
+    
+    **(tomou_o_pesadelo)[Deixar que o pesadelo aconteça com você]
+    **[Projetar o sonho nela]
+
+
+*[Tocar a testa dela]É inofensivo certo?
+
+
+-{tomou_o_pesadelo:As sombras e sensações vão rapidamente se organizando em uma forma específica. Em que tipo de pesadelo você está pensando?|Você cuidadosamente encosta o dedo sobre a testa da mulher, evitando o ponto com saliva. Que tipo de pesadelo você cria para ela? }
+
+*["No meio do mar, sozinh{tomou_o_pesadelo:{oa()}|a}, algo passa ao seu lado..."(Vida)]
+->pesadelo_vida->continue->
+*["Sobre a mesa de veludo preto a cartomante puxa mais uma carta..."(Destino)]
+    ->pesadelo_fate->continue->
+
+*["Tudo ao seu redor tem olhos, as paredes estão vivas..."(Espírito)]
+    ->pesadelo_espirito->continue->
+*["Você se prepara para um banquete, e os mortos entram na sala..."(Morte)]
+    ->pesadelo_morte->continue->
+*["A ampulheta se desfaz sobre você, nunca parando..."(Tempo)]
+    ->pesadelo_tempo->continue->
+*["Runas, selando um poder que você não consegue conter..."(Primórdio)]
+    ->pesadelo_prime->continue->
+*["Os fogos do inferno, chamas escuras que não iluminam..."(Forças)]
+    ->pesadelo_forces->continue->
+*["Em um poço de piche, seus pés presos e afundando..."(Matéria)]
+    ->pesadelo_materia->continue->
+
+- A criatura que te acompanhou até ali surge novamente, ele havia desaparecido durante o pesadelo enquanto você estava destraíd{oa()}.
+
+-Animado novamente ele bate palmas e tenta balbuciar alguma coisa a pesar da língua agigantada no caminho. A porta do quarto se abre, um homem com quase três metros de altura e a pele tingida de um tom escuro de vermelho entra. Vestido como um empresário e completamente careca exceto por um par de curtos chifres brancos.
+
+-"Muito bem Imp, temos outro chegando em..." Ele puxa a manga do terno completamente preto que usa e vê as horas em um relógio de aparência cara."Três meses, vá espera-lo na porta" ele ordena a criatura de um olho só, que prontamente retorna a entrada da mansão.
+
+-"Você! Venha comigo"
+
+-Ele volta ao corredor, esperando que você o acompanhe, antes mesmo que você possa decidir se segue ou não essa segunda criatura ele perde a paciência, estala os dedos e você se encontra ao lado dele. Em frente a outra das portas idênticas do infinito corredor."Me perdoe, eu esqueço como andar pode ser ineficiente."
+
+-Ele abre a porta, ao invés de outro quarto, você encontra um elevador. O demônio entra, e impacientemente pede que você o acompanhe.
+
+- ->continue->
+
+-Uma prancheta surge na mão dele, {pesadelo_prime:escrita com os mesmos símbolos que você viu no pesadelo. Porém  de forma bem mais ordenados|escritos em um alfabeto que você nunca viu antes}, ele corre o dedo pelas folhas procurando alguma informação específica. "Aqui! Só precisamos saber que tipo de tormentos crescem nos cantos húmidos e escuros dessa sua cabecinha..."
+
+-"{pesadelo_morte:Um jantar? Esqueletos e pó. Elegante! Ótima atenção aos detalhes e bom uso dos figurantes.}{pesadelo_fate:Uma cartomante? Exótico, ótimo uso do três de espadas, mas eu acho que, no seu lugar, teria  usado o dez. Mais impactante.}{pesadelo_forces:Fogo, destruição, dor. Meio batido, mas é um conceito sólido, e foi muito bem executado.}{pesadelo_vida:Oh! Água, interessante, a maioria nessa área costuma seguir uma coisa mais floresta,  selva, fica cansativo sabe...}{pesadelo_materia:Uhm... móveis derretendo, pessoas sendo arrastadas para dentro da  terra... incomum, inusitado até.}{pesadelo_prime:Runas ein? Ambicios{oa()} não é mesmo? Mas péssima caligrafia,  mas ei, dizem que pessoas inteligentes escrevem rápido de mais  para ter uma letra boa, não é mesmo?}{pesadelo_espirito:"Oh! Esse foi intenso não é mesmo? Que bom que você controlou  a situação, nós já tivemos problemas com essas coisas escapando  antes.}{pesadelo_tempo:As areias do tempo não é mesmo? Um clássico. E com isso eu  quero dizer que o conceito é bem velho. Mas honestamente, eu não  via ele ser tão bem utilizado a alguns anos.}"
+
+->continue->
+
+-"O elevador para, um sino toca e as portas se abrem. Vocês chegam em um enorme escritório no que parece ser o topo de um prédio. Decorado em uma mistura atemporal de mobília, estatuetas, bustos e quadros. Como uma galeria dos itens mais caros e elegantes de cada período histórico possível. As paredes e o teto são placas transparentes de vidro, a sala não tem portas nem janelas, inclusive o elevador pelo qual você entrou simplesmente não está mais la. Do alto você consegue ver, ao redor da mansão, uma estrada de ferro, com um antigo trem a vapor andando eternamente em círculos.
+
+"Por favor. Fique a vontade"
+
+Ele aponta para a cadeira de madeira de estilo colonial em frente a sua mesa, enquanto se senta na cadeira de escritório reclinável do lado oposto. O demônio se vira e procura por alguma coisa na última gaveta de um arquivo.
+
+"Aqui!" Ele puxa uma folha de papel, escrita {pesadelo_prime:novamente com as runas do {tomou_o_pesadelo:seu pesadelo|pesadelo que você criou}|no mesmo alfabeto que você viu antes}.
+
+"O contrato padrão, te dá o eventual acesso a toda as capacidades ocultas da alma humana e isenção de alguns dos efeitos detrimentais do contato com seres além da sua atual compreensão. Não nos responsabilizando por danos a propriedade, reputação, mente, corpo ou alma do favorecido ou seus entes queridos."
+
+Ele coloca o documento na sua frente, uma caneta bic preta surge sobre a mesa "Assine aqui no final".
+
+*[Assinar]
+    --Você pega a caneta, e procura uma linha onde assinar em meio aos  caracteres estranhos que você não compreende. Assim que você  a encontra, ele grita.
+    
+    --"Não! Espera!"
+*[Recusar]
+    --"Não vai assinar? Ok você tem razão em não concordar, o contrato  padrão é um lixo realmente"
+
+-"Eu gostei de você {gen==1:garota|rapaz}, não sei bem o que é, acho que só fui com a sua cara. Que fique entre nós, mas eu consigo um negócio melhor para você aqui. Vamos chamar de um adiantamento, livre de juros. O que você prefere? Facilitações de permutação e mobilidade espacial no plano físico ou concessão de acesso ampliado as faculdades mentais próprias e/ou de outrem?"
+
+*"Ahn... o primeiro... eu acho"(Espaço+)
+    --~SPACE++
+*"As concessões de... outrem?"(Mente+)
+    --~MIND++
+-Ele faz mais alguns ajustes no documento e coloca de novo na sua frente.
+
+-"Pronto, apenas assine seu nome aqui, do lado do x"
+
+#input
+#nomeCompleto
+
+- ->continue->
+
+-Assim que você termina de assinar ele arranca o contrato das suas mãos. Rapidamente dobra o documento e o coloca dentro de um envelope, ele arrasta uma unha afiada sobre a palma da mão e começa a sangrar um líquido espesso e escuro. Uma gota grande cai sobre a aba do envelope e ele pressiona um carimbo de madeira sobre ela, o sangue rapidamente seca como cera, criando um selo. Ele toca o envelope ele desaparece.
+
+-"Pronto, temos tudo acertado. Boa sorte"
+
+-Ele se levanta e estende a mão através da mesa, você, um pouco hesitante, responde. Ele dá um aperto de mão firme e confiante e com a outra mão estala os dedos.
+
+-O escritório desaparece, todo o prédio e a mansão desaparecem, você é {gen==1:deixada suspensa|deixado suspenso} no ar, e imediatamente começa a cair. Desesperad{oa()} você deseja estar em outro lugar, estala os dedos desejando estar em outro lugar. Você para de cair, tudo fica escuro.
+
+- ->->
+
+=pesadelo_vida
+
+~LIFE++
+
+{tomou_o_pesadelo:O quarto imediatamente desaparece, você se encontra no meio de um oceano turvo, sob um céu escuro, completamente sozinh{oa()}|A senhora imediatamente desaparece, mas mesmo de dentro do quarto você ainda consegue vê-la. Como se sua visão a tivesse acompanhado. Ela desperta, assustada e confusa no meio de um oceano turvo, sob um céu escuro.}
+
+ O horizonte não mostra terra em nenhuma direção, a água é fria e estranhamente plana, completamente sem  ondas, como um gigantesco lago. Durante alguns minutos tensos, {tomou_o_pesadelo:você|ela} simplesmente bate as pernas a fim de se manter flutuando em meio  a uma infinidade de água perfeitamente plana, em silêncio absoluto, sem nem ao menos o som do mar. 
+
+De repente alguma coisa se move, uma pequena onda circular a alguns metros  {tomou_o_pesadelo:de onde você|de onde ela} está. Talvez até mesmo causada por algum respingo de água e nada mais. Mas  outra surge no mesmo lugar logo em seguida, um pouco maior. É impossível ver com precisão algo distante sob a água turva e o céu  nublado, mas as ondas duas ondas logo se dissipam, e a quietude  retorna.
+
+->continue->
+
+Algo toca {tomou_o_pesadelo:sua perna. O susto te propele a nadar para longe, mas você logo para, provavelmente não foi nada, uma alga ou saco plástico.|a perna dela, você consegue sentir mesmo não estando lá, assim como consegue ver. Ela grita, e nada para longe, dando algumas poucas braçadas em uma direção qualquer. Então para, olha em volta e chega a conclusão que provavelmente não foi nada.}
+
+ Porém a tranquilidade dura bem menos dessa vez. Uma onda surge, do mesmo ponto  de antes, seguida imediatamente de uma segunda, uma terceira, uma após a outra  elas vão surgindo, se aproximando {not tomou_o_pesadelo: dela}. Cada uma maior que a anterior, {tomou_o_pesadelo:você| ela} tenta nadar para longe, mas as ondas acompanham, cada vez maiores.  Sempre no mesmo ritmo elas vão se aproximando, já grandes a ponto de você {tomou_o_pesadelo:sentir|ver} os jatos de água sendo jogada para cima.
+
+ {tomou_o_pesadelo:Você|A mulher} tenta nadar mais rápido, mas ainda sim as ondas se aproximam, uma delas é grande o bastante para {tomou_o_pesadelo:te cobrir|cobri-la} de água, a próxima eclode praticamente {tomou_o_pesadelo:ao seu lado, fazendo com que você afunde e volte a superfície lutando para recuperar seu fólego.|do lado dela, fazendo com que ela afunde, e volte a superfície lutando para recuperar o fólego.} 
+
+->continue->
+
+Então novamente, calma. As ondas cessam, o siléncio retorna e  o mar é novamente estático até onde os olhos podem ver. Mas mesmo assim {tomou_o_pesadelo:você|ela} decide nadar, em qualquer direção, contanto que se afaste dessa coisa.  Depois de um par de braçadas, algo encosta na {tomou_o_pesadelo:sua perna|perna dela} novamente, mas dessa vez ele se enrosca como um tentáculo,  e em um único movimento {tomou_o_pesadelo:te|a} puxa vários metros oceano a dentro.
+
+{tomou_o_pesadelo:Você afunda rapidamente, seja lá o que te puxa não dá sinal nenhum de que vai parar momento nenhum, você começa a se sentir sem ar, você precisa sair desse sonho, acordar.|Você não consegue mais vê-la, ela desaparece sob o mar turvo, e as águas voltam a ser um grande espelho plano. Sonho ou não isso já parece perigoso de mais, você precisa achar uma forma de tira-la dali.}
+
+->continue->
+
+
+"É só um pesadelo certo?" 
+
+Você pensa, chegando a conclusão  que tudo isso é apenas uma parte da sua imaginação, e se esse  for o caso, você pode controlar o sonho. A criatura que {tomou_o_pesadelo:te arrasta|arrasta aquela mulher} até as profundezas foi criada por você, é apenas um aglomerado de medos e instintos dado forma,  dado corpo, e tentáculos. Medos e instinto, matéria prima simples, estúpida.  Você encontra rapidamente a conciência do ser que você criou,  um ponto pífio em um aglomerado de emoções cruas, é simples o bastante repelir todas e alcançar o centro, você rapidamente ordena que ela retorne a superfície.
+
+{tomou_o_pesadelo:Subindo tão rápido quanto foi arrastad{oa()} para baixo você chega a superfície antes de desmaiar pela faltade oxigênio.|Você perde o contato com a consciência após dar a ordem, e simplesmente observa o oceano esperando que algo aconteça. Durante longos segundos o silêncio e a estática do oceano sãoabsolutos. Até ondas começarem a se formar, e uma enorme sombra surgir de entre elas, a mulher surge, lutando para recuperar seu fôlego, e a sombra desaparece novamente sob a água turva.} 
+
+->continue->
+
+Tão derrepente quanto surgiu, o oceano desaparece.
+
+{tomou_o_pesadelo:Você está de volta ao quarto, ao lado da cama. Sec{oa()} e segur{oa()}.|A mulher retorna a mesma posição que estava em baixo dascobertas, seca e a salvo. Sem acordar ela se move, inconscientemente passando a mão na perna, como se tentasse tirar alguma coisa. }
+
+
+->->
+
+=pesadelo_fate
+
+~FATE++
+
+{tomou_o_pesadelo:O quarto ao seu redor lentamente desaparece deixando em seu lugar um infinito vazio escuro que se estende em todas as direções. A senhora que dormia também desaparece, mas não a cama, que se transforma em uma mesa coberta de veludo preto com uma cadeira de cada lado. Você se senta em uma delas.|A mulher calmamente desperta e se levanta, o quarto ao seu redor desaparece deixando em seu lugar um infinito vazio escuro em todas as direções, a cama se transforma em uma mesa cobertade veludo preto com uma cadeira de cada lado. A mulher que dormia, sentada em uma delas.}
+
+ As sombras ao redor da mesa se agitam e parecem se mover, se  aglomerando na forma de uma silhueta, então se erguendo do chão,  e tomando a forma de uma figura coberta completamente por véus  negros, sentada na segunda cadeira.
+ 
+ A cartomante não fala nada, apenas produz um baralho de cartas  que habilmente embaralha e coloca sobre a mesa. Logo em seguida  puxando uma das cartas. A carta tem  o número 0 e mostra um homem em frente a um penhasco, como se estivesse prestes a dar um passo em direção ao abismo. A cartomante para por  um segundo, então fala em uma voz rouca e arrastada "O passado". A escuridão ao  seu redor desaparece, a mesa e as duas cadeiras estão agora no topo de um  planalto {tomou_o_pesadelo:sua cadeira|a cadeira da mulher}  posicionada de forma bastante precária na beirada do desfiladeiro rochoso.
+
+A cartomante procede, puxando uma segunda carta, colocando a direita da anterior. Essa mostra uma mulher com uma das mãos  sobre o coração, do seu peito protruem três adagas, e um fio de  sangue escorre por entre seus dedos até o chão. A cartomante  então recita "O presente".{tomou_o_pesadelo: Um trio de espadas surge nas suas costas, atravessando seu tronco de forma que você pode ver as pontas brotando do seu peito. Mas você não sente dor, ou desconforto, talvez uma súbta tristeza, uma memória muito vaga de se sentir traíd{oa()} ou talvez decepcionad{oa()} é difícil dizer, parece uma sensação muito distante.|Um trio de espadas surge no peito da mulher que sonha. Trespassando completamente seu corpo, você consegue ver as pontas perfurando o outro lado da camisola branca, que começa a se tornar vermelha, com o sangue que escorre. Porém ela não reage de maneira nenhuma, nem ao menos parece sentir dor, apenas continua sentada aguardando a próxima carta.}
+
+A cartomante pega mais uma carta do baralho, colocando-a a direita da segunda, assim que ela toca o veludo da mesa um calafrio  sobe a sua espinha. A carta tem o número 13 e mostra uma figura esquelética usando uma completa  armadura de metal, cavalgando em um cavalo branco, sobre o corpo de um rei, indo em direção  a um bispo, uma mulher e uma criança, pois a morte vem para todos.
+
+Você se desespera por um segundo, a cartomante vai falar algo a qualquer momento e se tornará real {not tomou_o_pesadelo:a mulher talvez morra, e será sua culpa,} "Mas é tudo um sonho, certo? Não pode ser real" Você pensa. A cartomante continua em silêncio, ela ri com os olhos, te provocando. "Sonhos podem  prever o futuro não é mesmo? Mas se eu sei que eu estou sonhando, eu posso controlar o sonho?"
+
+ "O..." A cartomante começa, sua voz mais arrastada do que antes.
+ 
+ Talvez você possa fazer algo. É seu sonho, seu destino, seu futuro, certo?
+
+->continue->
+
+"... Futuro" Ela conclui.
+
+Uma forte luz branca te cega por um segundo. Quando você abre os olhos consegue ver a terceira  carta na mesa. Uma mulher em um vale verdejante recolhe água de uma lagoa, sobre ela uma estrela brilhante  e o número 17 ocupam a maior parte da carta.  
+
+A cartomante se decompõe novamente em sombras, as espadas {tomou_o_pesadelo:no seu peito|nas costas da mulher} desaparecem. E o quarto lentamente sobrepõe o cenário  do despenhadeiro, a mesa volta a ser uma cama, e a senhora {tomou_o_pesadelo:surge novamente entre as cobertas|se deita sob as cobertas}
+
+->->
+
+=pesadelo_espirito
+
+~SPIRIT++
+
+Você ouve um sussuro. Um resmungo, você acha que pode ter vindo da criatura que te acompanhou até aqui, mas ele parece ter  saído quando você não estava olhando. Você percebe que vem  da cama, não da pessoa deitada sobre ela, mas a cama em si resmunga, {tomou_o_pesadelo:embora a mulher não acorde|acordando a senhora}. A cama reclama sobre como está cansada, como ela nunca tem  uma chance de descansar.
+
+{not tomou_o_pesadelo:A mulher levanta, ainda sonolenta, ainda confusa, sem saber de onde vem o som, e sem conseguir te ver aparentemente.}
+
+Então a luminária, discute com o abajur sobre como um deles não tem respeitado os horários do outro. Logo em seguida  os armários e a TV começam, porém você já não consegue discernir sobre o que falam em meio as outras vozes.
+
+{not tomou_o_pesadelo:A mulher continua sentada na cama, ainda sonolenta e confusa , como se ainda não conseguisse entender o próprio sonho.}
+
+As vozes vão se multiplicando, logo as quatro paredes conversam  entre si, o teto e o chão tentam participar, cada peça de roupa  grita assustada dentro do armário escuro e o próprio ar parece  estar tentando conseguir a atenção de alguém.
+
+{tomou_o_pesadelo:Você só ouve gritos, o som de milhares de vozes ao mesmo tempo, sem conseguir compreender nenhuma delas. Isso te incomoda profundamente, seu incómodo cresce, até ele também ter voz. Seu incómodo fala especialmente alto, com uma voz especialmente aguda, alimentando a si mesmo ele rapidamente se torna raiva.|Ela tenta tapar os ouvidos com as mãos, icomodada. Seu incómodo cresce, até ele também ter voz. O incómodo fala especialmente alto, com uma voz especial mente aguda, alimentando a si mesmo ele rapidamente se torna raiva.}
+
+A raiva grita, mais alto que todas as outras vozes, e ela {tomou_o_pesadelo:te ameaça|ameaça a mulher}. Ela sabe que vai continuar a crescer, diz que vai {tomou_o_pesadelo:crescer até ser a única voz da sala, a única voz que você vai conseguir ouvir. Ela vai gritar até seus ouvidos sangrarem e seucérebro ser tomado de frustração, até sua mente ser apenas raiva e ela se transformar em ódio.|crescer até ser a única voz da sala, a única voz que qualquer um consiga ouvir. Ela vai gritar até ouvidos sangrarem e o cérebro da mulher ser tomado de frustração, até a mente dela ser apenas raiva e a raiva se transformar em ódio.}
+
+{tomou_o_pesadelo:Você começa a ficar assutad{oa()}, e consegue ouvir o medo sussurrar|Ela começa a ficar assustada, e você consegue ouvir o medo dela sussurrando}.
+
+O medo cresce e em breve você vai ter que lidar com a raiva e o terror. Provavelmente é hora de {not tomou_o_pesadelo:ela }acordar desse pesadelo. Você tenta se concentrar na sensação de ralidade de acordar de um sonho, no quarto em seu estado  normal. Mas é impossível se concentrar com as vozes gritando, com  a raiva crescendo, você não tem certeza se vai conseguir, o medo percebe  sua dúvida e cresce um pouco mais.
+
+ Você precisa apenas de um segundo de paz, basta um momento. A  voz da raiva já é mais alta que as outras, gritando sem parar, {tomou_o_pesadelo:diretamente no seu ouvido. Você estende o braço|diretamente no ouvido da mulher. Você vai até ela}, e literalmente agarra a raiva pelo pescoço, ela se cala, e mais alto que a raiva e todas as outras vozes juntas você grita.
+ 
+  "CALEM! A PORRA! DA BOCA!!!"
+  
+   Tudo se cala, existe um momento de perfeito silêncio no qual você consegue  se concentrar e {tomou_o_pesadelo:acordar. A mulher enquanto isso não parece sequer ter se mexido na cama|encerrar o pesadelo. A mulher imediatamente se deita e volta a dormir}
+   
+   Você tem a impressão que as coisas ainda falam, mas você não  pode mais ouvi-las. Ou talvez elas tenham aprendido a manter a voz  baixa quando estão perto de você.
+
+    ->->
+
+=pesadelo_morte
+
+~DEATH++
+
+O quarto desaparece, como em um sonho, em que você simplesmente  está em outro lugar quando se dá conta, você {not tomou_o_pesadelo:e a mulher se encontram|está} em uma enorme sala de jantar. A imensa mesa no centro está posta  para receber centenas de convidados.
+
+{tomou_o_pesadelo:Você se senta a cabeceira da mesa|Ela senta a cabeceira da mesa, e você a sua direita}. Os convidados então começam a chegar, marchando em duas filas  ordenadas, uma de cada lado da mesa, homens e mulheres, elegantes e bem  vestidos, porém você não consegue ver seus rostos. Você tem certeza  de que eles tem rostos, mas quando olha em sua direção vê apenas borrões distorcidos.
+
+->continue->
+
+Os pratos surgem a sua frente tão de repente quanto todo o resto. Talheres de ferro e louça escura, o jantar sendo servido é uma grande pilha de pó cinza e seco. Os convidados colocam os  guardanapos de pano sobre o colo e se põe a comer. Enchendo  suas bocas de areia em porções educadas, mastigando um número a dequado de vezes antes de engolir.
+
+{tomou_o_pesadelo:Você olha para o seu prato, por sorte você foi servid{oa()} uma porção de assado de carne com batatas. E você percebe que está famint{oa()}, você come uma garfada genereosa de batatas coradas, antes de notar os outros convidados.|A mulher parece um pouco insegura, ela pega uma colher e hesita, olha um pouco incerta para os outros convidados antes de provar uma colherada de cinzas.}  
+
+Ao longo da mesa todos comem sem parar. Dois acentos  a sua direita o braço de uma mulher cai, sua carne se transforma  em areia cinza e se desgruda do corpo, deixando um osso perfeitamente  branco conectando a mão ao resto do corpo, que continua diligentementea comer. O mesmo ocorre com os outros, cada convidado se tornando  pó cinza, e deixando para trás um esqueleto, que continua a comer  até o pó da sua colher cair por entre os ossos do maxiliar.
+
+{tomou_o_pesadelo:Você sente algo, na altura da sua perna, sua pele se torna seca, muito seca, então dormente, em seguida você sente apenas areia escorrendo pelos seus pé. A coisa começa no seu torso, e se espalha para sua outra perna.|Você vira para a mulher ao seu lado, ela parece também ter percebido o que ocorreu com os outros. Ela larga os talheres assustada, os dedos dela começam a se tornar areia. Ela grita, incapaz de se levantar da mesa, vendo seus braços se tornarem pó.}
+
+->continue->
+
+O pesadelo já foi longe de mais. Você precisa acordar, é só um  sonho certo? Você se concentra em acordar, em acabar com tudo  isso. Nada acontece, frustrad{oa()} você da um soco sobre a mesa, e ela vira pó. Partindo do ponto em que você  tocou e se espandindo como uma onda, a mesa, as cadeiras, o que  resta dos convidados. Tudo se tornando fina e cinza.
+
+Quando resta{tomou_o_pesadelo: apenas você|m apenas você e a mulher que está sonhando} de pé cercado{not tomou_o_pesadelo:s} de pó e nada mais. A sala desaparece.
+
+{tomou_o_pesadelo:Você está de volta no quarto, exatamente como o deixou.|Vocês estão de volta no quarto, você de pé ao lado da cama, ela dormindo como se nada tivesse acontecido.}
+
+->->
+
+=pesadelo_tempo
+
+~TIME++
+
+O teto quebra. Uma rachadura surge sobre a sua cabeça,  pequenos grãos de areia muito fina começam a cair para dentro  do quarto, pouco no começo, então uma torrente considerável deles.
+
+ A rachadura está exatamente sobre a cama{tomou_o_pesadelo:, mas a mulher continua a dormir, a areia parece ignora-la completamente, atravessando-a como a um fantasma. Você não tem tanta sorte, e tem que constantemenet tentar manter seus pés sobre a areia, a fim de não ser soterrad{oa()}. Os grãos finos tornam a tarefa bastante difícil, e seu spés passam a simplesmente afundar na considerável duna que já se formou no centro do quarto.|, a areia cai sobre os lençóis, até acordarem amulher. Ela levanta assustada, olhando para o teto e observando seu belo quarto ser destruído. Ao notar que o chão já está totalmente coberto de areia ela corre até a porta, e a encontra trancada.}
+ 
+{not tomou_o_pesadelo:Você parece ser simplesmente invisível a ela e a areia também parece te ignorar, deslizando sempre sob seus pés,de forma que você nunca seria soterrad{oa()}, caso o nível continuasse a subir.}
+ 
+Porém é só depois que a quantidade de areia já ultrapassa a altura da cama que você percebe seu verdadeiro efeito.
+
+{tomou_o_pesadelo:Seu corpo doi, e sua visão falha, suas juntas ardem enquanto você se move para tentar se manter sobre a areia. Suas mãos parecem rapidamente enrugar e você logo sente seus ossos doerem. A areia vai lhe envelhecendo conforme cai|A mulher para assustada olhando para as próprias mãos, seus cabelos começam a rapidamente ficar grisalhos em frente a  os seus olhos, mas ela não parece notar. Suas costas parecem arquear, suas mãos enrugam e suas unhas crescem. A areia a envelhece conforme ela cai.}
+
+->continue->
+
+{tomou_o_pesadelo:A rachadura parece maior, mas você simplesmente não encherga mais bem o bastante para ter certeza, seu corpo não consegue mais lutar contra a força da areia que se torna cada vez mais intesa. Você precisa acordar desse pesadelo, precisa se livrar da areia, mas é impossível chegar até a porta, ou as janelas. A única saída seria de volta pela rachadura.|Ela logo é uma senhora idosa, completamente sem forças para lutar contra as ondas de areia, a duna começa a crescer sobre ela.  Você precisa acorda-la desse pesadelo, precisa se livrar da areia, mas é impossível chegar até a porta, ou as janelas. A única saída seria de volta pela rachadura.} 
+
+Você lembra que tudo que está acontecendo não passa de algo  que sua mente criou, uma sequência de eventos, criada artificialmente, não é a realidade. Não é diferente de um filme, ainda passando na sua mente, momento  a momento foi criado por você. Até que você para, para de pensar  e a areia para de cair{not tomou_o_pesadelo: a mulher congela onde estava, coberta até o pescoço de areia}.
+
+Então ao invés de continuar a pensar, você se lembra, do momento antes desse.  E ele se faz real, você lembra do momento anterior a esse, e do  anterior. A areia vai quadro a quadro retornando a rachadura, {tomou_o_pesadelo:seu corpo vai lentamente voltando ao normal|os anos da mulher vão lentamente retornando, cada cabelo caído voltando a sua cabeça como a areia retorna ao teto}.
+
+Você retorna até o momento que o primeiro grão caiu, o momento  que a primeira linha da rachadura surgiu, e então antes disso.  Quando o quarto ainda estava em perfeito estado. {tomou_o_pesadelo:E você tinha a idade correta|E a mulher dormia tranquila em sua cama.}
+->->
+
+=pesadelo_prime
+
+~PRIME++
+
+{tomou_o_pesadelo:Começa devagar, como pequenos rabiscos que parecem surgir sobre a sua mão. Eles coçam, alguns ardem, e eles começam a se espalhar, as linhas se movem formando novos caracteres ao longo do braço, subindo até alcançarem o ombro.|Ela não acorda imediatamente, um pequeno rabisco surge sobre sua mão, ela coça inconscientemente. Os traços começam a se espalhar,as linhas se movem formando novos caracteres ao longo do braço, subindo até alcançarem o ombro. Só então ela levanta,olhando assustada para o braço já coberto de runas, sem notar sua presença ali.}
+
+As marcas começam a brilhar uma luz azulada forte, ao mesmo  tempo que continuam se espalhando, cada vez mais rápido. {tomou_o_pesadelo: Seu braço começa a doer, você sente uma pressão se acumulando sob as runas. Os caracteres já espalharam por metade doseu corpo. O brilho se torna mais intenso, você sente que as marcas parecem atrair e conter uma energia dentro de você, energia de mais para o seu corpo sustentar.|Ela tenta apagar as runas, esfregando o braço com as mãos e contra os lençóis, sem efeito, então começa a gritar. Os caracteres continuam a se espalhar sob as roupas dela.} 
+
+A marcas logo tomam {tomou_o_pesadelo:seu|o} corpo todo, mas continuam a se espalhar, se sobrepondo umas as outras desordenamente. Eles perdem  a forma, mas o brilho se intensifica. {tomou_o_pesadelo:A pressão aumenta e você já a sente no seu corpo inteiro, os pontos onde os símbolos se sobrepõe parecem instáveis, a pressão parece maior, menos contida, rapidamente se transformando em uma dor intesa.|A mulher parece desesperada, as runas brilham mais e mais intensamente, a escrita vai se tornando um rabisco desordenado, o que parece só intensificar a luz. O quarto se torna quente, a mulher irradia luz como uma lareira.}
+
+Mas é só um sonho certo? Provavelmente {tomou_o_pesadelo:você|ela} já deveria ter acordado. As runas continuam a se espalhar e brilhar  cada vez mais.  {tomou_o_pesadelo:Você tenta apaga-las, mas elas são como tatuagens na sua pele. Você põe a mão sobre o ponto onde o primeiro traço surgiu.|Você se aproxima dela, e com cuidado põe a mão sobre seu braço.} Se concentrando como faria ao tentar acordar de um pesadelo.  Se ancorando na realidade, a realidade que você conhece, a mulher  dormindo, o quarto calmo, antes do pesadelo começar. A luz para de se espalhar pela {tomou_o_pesadelo:sua pele|pele dela}, e como se traçassem seu caminho de volta, começam a desaparecer.  O brilho e {tomou_o_pesadelo:pressão|o calor} cedendo conforme as runas se desfazem. Até retornarem ao  primeiro traço sobre a mão, e este também desaparecer com um flash.{not tomou_o_pesadelo: A mulher imediatamente volta a deitar, e cai no sono como se nada tivesse ocorrido.}
+->->
+
+=pesadelo_forces
+
+~FORCES++
+
+O quarto parece se tornar mais e mais quente, a cada segundo, {tomou_o_pesadelo:porém a mulher continua a dormir tranquila, você parece sero único a sentir o calor,|a mulher começa a rolar de um lado para o outro na cama, rapidamente se livrando do lençóis,} sua pele começa a suar, e as roupas rapidamente se tornam trapos úmidos. {not tomou_o_pesadelo:Ela levanta assustada, olhos arregalados. Nesse exato momento o|Então o} chão irrompe em fogo. Colunas de chamas explodem o assoalho,  e rapidamente se alastram pelos móveis, cobrindo todos em uma  chama opaca, que não ilumina nem aquece, apenas queima e consome.
+
+{tomou_o_pesadelo:A senhora continua a dormir em perfeita paz, as chamas atingem toda a mobília, e se alastram pelo piso, mas poupam a cama.}
+
+{tomou_o_pesadelo:Um círculo de fogo se forma ao seu redor, as labaredas parecem investir contra você, mas sem realmente lhe queimar,apenas te assustando, fazendo você se contorcer. Até uma delas queimar seu braço, outra atingir suas roupas e começara se espalhar.| As chamas logo alcançam a cama, subindo lentamente pelos lençóis, a mulher se encolhe em um canto, desesperadamente sacudindoos edredons floridos. As labaredas parecem avançar especialmente devagar, provocando sua vítima, dando botes e depois recuando. Até queimarem sorrateiramente uma ponta do pijama.} 
+
+"Ok, isso já foi longe de mais" Você pensa, você precisa de uma forma de  parar as chamas. Elas são um pesadelo, fruto da sua mente. Você pode controlar um sonho se você sabe que é um sonho, não é? É difícil se concentrar com {not tomou_o_pesadelo:os gritos assustados da mulher, e o calor inssuportável da sala|as labaredas dançando ao seu redor e o fogo começando a sealastrar sobre seu corpo}, mas você faz o possível. Memórias de dias chuvosos, pensamentos calmos, emoções frias.  Você recolhe todos os que consegue encontrar em sua mente, e derrama sobre imagem das chamas. O  fogo rapidamente recede até desaparecer e você cai de joelhos com as mãos nas têmporas,  o choque térmico entre as imagens mentais te atingindo como a mais forte dor de cabeça de sorvete que você já sentiu. Forte, porém curta, você logo se recupera, quando olha ao redor o quarto está exatamente como estava quando você entrou.
+{tomou_o_pesadelo:Completamente alheia a tudo o que ocorreu, a senhora continua a dormir tranquila.|A senhora inclusive, está ilesa e ainda dorme, porém ela parece estar um pouco suada.}
+->->
+
+=pesadelo_materia
+
+~MATTER++
+
+Os móveis são afetados primeiro, a TV e e o abajur, começam a se desfazer sob  o próprio peso. Como cera quente formando grandes gotas de líquido espesso que  escorre até a base, onde vão formando poças amorfas do que já foi  vidro plástico e metal.
+
+Em seguida o teto. A forma líquida vai se concentrando em pontos ao longo da superfície, até estes se tornarem pesados de mais e caírem como grandes gotas viscosas, que continuam a fluir em um fio contínuo. {tomou_o_pesadelo:As porções do teto parecem cair principalmente sobre você e ao seu redor|Um desses cai sobre a senhora,que inconscientemente leva a mão ao rosto para limpar, então confusa, acorda. Ela abafa um grito, chocada em encontrar metade da mobília em poças acinzentadas no chão. Ela levanta da cama, e tenta fugir pela porta, mas a maçaneta se desfaz em uma pasta prateada em sua mão.}
+
+->continue->
+
+{tomou_o_pesadelo:Você|Ela} olha para baixo. O chão parece macio sob seus pés, como andar  sobre uma almofada, que vai se tornando cada vez mais macia, até que {tomou_o_pesadelo:você|a senhora} está afundad{tomou_o_pesadelo:{oa()}|a} até o tornozelo. A mesa de cabeceira e a TV já derreteram completamente e boa parte da cama já se desfez, {tomou_o_pesadelo:embora a mulher continue a dormir, completamente alheia a tudo.} O líquido escorre na {tomou_o_pesadelo:sua direção |direção dela} tornando tudo mais viscoso e toda tentativa de se mover mais árdua.
+
+Cada segundo {tomou_o_pesadelo:você|ela} afunda mais, e é mais difícil de se mover. O chão logo se torna  como areia movediça e quando chega aos seus joelhos já é impossível  dar mais um passo. O teto continua a se desfazer, acelerando o soterramento. {tomou_o_pesadelo:Você|Ela} tenta agarrar o pé da cama e puxar, mas ele desmancha em suas mãos.  O chão traga {tomou_o_pesadelo:seu corpo|a mulher} cada vez mais rápido,  {tomou_o_pesadelo:você|ela} logo está imobilizad{tomou_o_pesadelo:{oa()}|a}  até a cintura, desesperadamente arranhando o chão tentando escapar.
+
+{tomou_o_pesadelo:"Eu preciso me acalmar"|"Sonho ou não, isso já foi longe de mais"}
+
+ Você pensa. "Deve haver uma forma de parar isso, é só um sonho, certo?"
+
+Você se concentra, procurando em sua memória a imagem de cada objeto quando entrou na sala, copiando suas formas e metalmente separando todo metal, tinta e madeira da massa cinza {tomou_o_pesadelo:na qual está cobert{oa()} até o pescoço|que cobre aquela senhora até o pescoço}. Você então dá a sua memória forma, impondo ela sobre o pesadelo, retomando  tudo a seu estado original. Inclusive  {tomou_o_pesadelo:o chão, que imediatamente se torna novamente firme sob seus pés|a senhora, que está de volta a cama, dormindo e perfeitamente segura}
+->->
+
+->continue->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+->END

@@ -1,0 +1,193 @@
+== awaken_thyrsus ==
+
+-Você segue pela estrada de terra, o chão é batido, como de um caminho muito percorrido, mas o solo é escuro e fértil. Aos poucos você repara em alguns animais que compartilham a estrada com você. Primeiro insetos, depois pássaros cantando as mais belas canções que você já ouviu homem ou animal produzir. Logo chegam coelhos, tatus, raposas.
+
+-Distraíd{oa()} , você não percebe a mata se fechando ao seu redor, você passa a ver menos dos animais, mas ouve grunhidos e passos rápidos vindo dos arbustos e dos galhos acima. Os sons e movimentos passam a te deixar inquiet{oa()}, você ouve todos eles e enxerga todos eles, mesmo na escuridao sob a copa das árvores, seus sentidos precisam estar mais que alertas já que... Você ouve os passos, ele tenta se esconder entre as folhas, mas você ouve sua respiração. Entre as árvores você avista...
+
+*(predador)[Um coelho]
+
+    --Ele está distraído, mordiscando um pedaço de raiz, você não deveria estar tão expost{oa()} assim na estrada, não ha tempo para espreita-lo, você ataca!
+
+    --Seu primeiro passo quebra um galho, alertando sua presa, ele ergue as orelhas e suas pupilas escuras dilatam. Ele dispara por entre as raízes, você segue, desviando dos  troncos, saltando sobre os galhos, seu corpo se move por instinto, sua mente existe apenas para indicar que você tem fome, e que aquela presa sacia a fome. Você vai mais e mais fundo na floresta, já é difícil enxergar, mas seu olfato te guia, ele tenta se esconder, mas o coração acelerado e a respiração nervosa entregam sua posição. Você salta rapidamente encontrando a nuca do animal acuado, suas presas fecham e sua boca se enche de pelo, sangue e finalmente carne.
+
+    -- ->continue->
+
+    -- Você devora cada parte, cortando com garras, soltando ossos com dedos, alcançando entranhas com o bico. Apenas desejava ter um fim para os ossos, mas os insetos e plantas terão sua vez com eles agora. Repleto da paz de um estômago cheio você olha ao seu redor, e percebe a quantidade de vida, vida essa a qual você agora faz parte, os pássaros e insetos, mas também os rios e as pedras, também a raiva e o medo, o sangue e a primavera. Todos interessados na sua presença aqui. Você decide falar com um deles
+
+*(presa)[Um tigre]
+
+    --Ele tem os olhos focados em você, por um segundo nenhum dos dois move um músculo se quer. O tigre inspira, você dispara, ele segue atrás, tão rápido quanto, porém não mais rápido. Você corre entre as árvores, e os galhos, seus olhosfixos no caminho a frente, seus ouvidos aferindo a distância e a velocidade do seu perseguidor, perto, e muito rápido. Seu coração bate em um ritmo que machuca seu peito, seus pulmões queimam, mas você precisa correr, você precisa sobreviver antes de tudo, você foi feit{oa()} pra isso antes de tudo.Você já consegue ouvir a respiração dele, seus olhos procuram um buraco para se esconder na escuridão, você se encolhe acuad{oa()} entre raízes, mas as garras do predador destroem seu abrigo.
+    
+        --Não existe direção na qual correr, você salta para cima dele, a última opção de uma presa acuada. Você cresce, você tem espinhos, tem garras e tem veneno, o tigre cabaleia para trás rugindo. Você morde, chuta e ferroa. Vocês rolam pelo chão, toda a floresta foge do caos da sua luta por sobrevivência. Quando vocês se separam o predador dá um passo cambaleante para frente, outro para trás. Então cai, morto.
+        
+        -- ->continue->
+        
+        --Você respira fundo, {gen==0:vivo, ferido e cansado e vivo|viva, ferida e cansada e viva}. Ao seu redor a floresta se aproxima curiosa ao redor da presa que sobreviveu, os pássaros e insetos, mas também os rios e as pedras, também a raiva e o medo, o sangue e a primavera. Todos interessados na sua presença aqui. Você decide falar com um deles.
+        
+-*[Falar com o vento (Forças)] ->o_vento
+*[Falar com a estrada (Espaço)] ->a_estrada
+*[Falar com a montanha (Matéria)] ->a_montanha
+*[Falar com os ossos (Morte)] ->os_ossos
+*[Falar com as estrelas (Primórdio)] ->as_estrelas
+*[Falar com o inverno (Tempo)] ->o_inverno
+*[Falar com o medo (Mente)] ->o_medo
+*[Falar com o gato (Destino)] ->o_gato
+
+
+=o_vento
+~FORCES++
+O vento é um jovem de cabelos claros e longos, ele fala rápido, andando de um lado para o outro, de vez em quando estalando os dedos ou murmurando para si mesmo como se tivesse pensando em dezenas de outras coisas enquanto conversa. Ele passa por você uma vez, levantando seus cabelos e te forçando um passo para trás.
+
+"Desculpa não te vi aí. Mas ei, bela luta que vocês dois tiveram. Você é mesmo rápid{oa()} não é? Quer apostar corrida até aquela árvore? Não, você não ganharia, seria perda de tempo. Eu corro ao seu lado, eu posso desacelerar um pouco, faz tempo que eu não sou uma brisa. Vamos? Vamos!"
+
+Ele dispara entre as árvores, mesmo como uma brisa você se esforça para alcança-lo. Mas vocês conversam no caminho, ele lhe ensina como correr e como voar, fala sobre seus irmãos, o trovão, o raio e o fogo. Conta histórias de tempestades e terremotos, ondas e tufões. Na velocidade em que estavam logo chegam até a árvore, você para para recuperar o fólego, ele continua, se despedindo enquanto ganha velocidade e sobe, tomando a direção de uma nuvem negra mais ao longe no horizonte "Reunião de família" ele grita antes de desaparecer.
+->a_arvore
+
+=a_estrada
+~SPACE++
+A estrada é uma moça alta, muito solícita e atenciosa. Suapele morena como a terra é em trechos bonita e lisa e em outros enrugada e marcada. Você tem dificuldade em falar com ela, você não sabe por onde começar, para que parte da estrada olhar, ela começa a ficar impaciente, andando de um lado para o outro sobre si mesma, mas sem nunca sair do lugar. Claro que não, por que sairia? Você enxerga a estrada com nitidez agora, você caminha junto dela conversando, vocês riem da idéia de distância como uma mentira que contam para crianças.
+
+"A estrada não é nada além de um ponto, nenhum caminho, trilha ou linha separa quaisquer duas coisas, elas estão tão longes quanto o viajante desconhece seu destino" Ela explica. "Porém se você precisa chegar onde nunca esteve, talvez precise de ajuda."
+ 
+ Ela se extende ao longo da floresta, abrindo caminho entre árvores e fazendo pontes sobre rios, levando você diretamente até a árvore mais alta do bosque.
+->a_arvore
+
+=a_montanha
+~MATTER++
+A montanha é uma mulher forte e corpulenta, de cabelos cobertos de neve e um vestido de folhas e cascalho. Ela te encontra com facilidade mesmo lhe vendo tão do alto. "Mais uma criaturinha fazendo barulho nos meus arredores não é?" Ela se inclina para te ver de perto, causando alguns desmoronamentos nas suas costas. "Mas você não é como os outros não é mesmo…? Você muda não é?" Ela cuidadosamente te segura com as pontas dos dedos e te ergue para ver mais de perto. "Tão preciosa essa habilidade não é mesmo? As pessoas olham pra mim e pensam como eu sou eterna. A terra nunca é, eu já mudei tanto, e ainda sou tão jovem. Cada pedregulho ainda pode ser ouro um dia e cada montanha um deserto."
+
+Ela fala sobre sua infância como lava, o relacionamento que teve com um riacho quando jovem e o que espera que aconteça no futuro. "Nada nessa vida prentende continar como está" ela diz "O ouro cansa de ser brilhante e a água de ser transparente, com um pouco de convencimento você pode muito bem acelerar esse processo. Você deveria ir andando de qualquer forma, toda essa minha metade parece que vai ruir em breve de qualquer forma, talvez eu vire um vulcão, quem sabe?"
+
+Do alto dos ombros dela você repara na árvore mais alta da floresta, tão alta quanto a montanha em que você está, algo sobre ela parece te atrair. A montanha te coloca cuidadosamente no chão, e acena enquanto você segue na direção da árvore, você pode ouvir seu braço caindo e se tornando um morro menor ao seu lado.
+->a_arvore
+
+
+=os_ossos
+~DEATH++
+Os ossos são jovens pálidos e magros, sorridentes e simpáticos eles lhe comprimentam quando você se aproxima. Eles são espíritos tão vivos quanto a água ou os pássaros ao seu redor, mas sentam confortáveis e conversam enquanto os outros lutam para sobreviver. "Aposto que aquele peixe vai morrer logo", um comenta "Não antes daquele rato" o outro responde. Um urubu passa por eles um dos mais jovens lhe dá os poucos pedaços de carne que ainda tem. "O que você acha?" eles se viram para você "O rato ou o peixe?"
+
+*"O rato"
+    --Assim que você dá sua opinião, você tem sua resposta. De uma toca sob um leito de folhas salta uma víbora fincando as presas no camundongo, por esmagamento ou peloveneno ele logo morre e confirma suas suspeitas.
+*"O peixe"
+    --No exato momento em que você termina de falar o lago se agita, em baixo de uma pedra, camuflado em cinza e verde um peixe maior se escondia, ele sai da tocaia já de boca aberta, engolindo o objeto da aposta.
+
+-->continue->
+
+-"E ali?"
+
+Um fêmur já mais velho e amarelado aponta para outra direção "O javali ou a hiena?"
+
+*"O javali eu acho..."
+    --O javali vagueia tranquilo na mata, vagaroso, aparentemente fora de perigo, você aposta nele sem pensar muito. Ele imediatamente deita, respirando ofegante, talvez a lentidão não fosse calma, mas sim doença. Ele encosta a cabeça no chão e fecha os olhos, parece que você acertou mais uma.
+*"Provavelmente a hiena"
+    --As hienas andam em grupos, e aquela para qual o osso apontou parece bem saudável e fora de perigo, mas você escolhe ela mesmo assim. Outra hiena passa por ela, elas se estranham por um segundo, e basta para que partam uma para cima da outra, pêlos e sangue voam em todas as direções até que a hiena que você observava cai morta.
+
+- ->continue->
+- Você é bo{gen==0:m|a} mesmo nisso ein. E aqueles ali? O que você acha?" Eles continuam, e vão continuar para sempre, aposentados do jogo da sobrevivência os ossos se tornaram platéia do espetáculo, sempre procurando assistir apenas os melhores momentos. Você pede licença para se retirar, e seguir viagem, mas antes que você pudesse ir um deles pega o ulitmo pedaço de carne que ainda tinha e joga para um corvo.
+
+- "Aqui! Guie noss{gen==0:o amigo para o destino dele|a amiga para o destino dela}. Considere como o pagamento das apostas" O corvo segue em direção a árvore mais alta da floresta e você vai atrás. Ouvindo ainda "Aposto no falcão antes da coruja"...
+->a_arvore
+
+=as_estrelas
+~PRIME++
+As estrelas são como pequenas crianças de cabeça brilhante, com olhares distantes e olhos antigos e sábios. Você parece atrair a atenção de uma constelação, que desce até você sem desfazer sua forma. Elas te observam curiosas, apenas algumas delas, outras tem o olhar entediado fixo no céu,aparentemente foram obrigadas a descer. As outras uma por uma vão lhe fazendo perguntas sobre o ocorrido "O que era aquele animal que {predador:você perseguiu?|te perseguiu?}"
+
+*"{predador:Um coelho|Um tigre}"
+*"{predador:Comida|Alguém com fome}"
+*"Ele está morto de qualquer forma["], não importa mais"
+
+-"Por que ele está assim {predador:caído|em pedaços}?"
+
+*["Ele morreu"]"Porque ele morreu"
+*["Eu matei ele"]"Porque eu matei ele"
+*["{predador:Eu precisava comer|Ele tentou me matar}"]"{predador:Eu matei ele porque precisava comer|Eu matei ele porque ele tentou me matar}"
+
+-"E o que é morrer?"
+
+*"É concluir o ciclo da vida"
+*"Abrir espaço para o mais forte"
+*"Perder"
+
+- As perguntas tem a curiosidade de uma criança que passou a vida nos céus longe da terra, desse mundo de carne, e ao mesmo seu tom e sua voz é de um ser que é quase tão velho quanto o tempo. Finalmente elas parecem ter sanado todas as dúvidas que tinham, e se oferecem para guia-l{oa()} de volta a seu caminho.
+->a_arvore
+
+=o_inverno
+~TIME++
+O inverno é um idoso com todos os anos possíveis de idade seu rosto é duro como o frio, suas mãos afiadas como o vento, mas seu peito é morno como uma lareira. Ele dormia, sua presença ali o acordou, quando ele levanta a grama ao seu redor se cobre de branco, os animais fogem para o sul ou procuram abrigo onde hibernar.
+Você pergunta a ele sobre o frio e o gelo. Mas ele sabe pouco sobre isso. Assim como um rei sabe pouco sobre guerra e economia e confia em seus conselheiros. O inverno controla o vento e a neve, assim como você talvez um dia controle. Ele sabe apenas sobre uma coisa, o tempo, ele sabe o tempo de chegar e de partir, ve nas nuvens como um jogo de búzios quando é tempo de mandar neve ou tempestade. Sabe quando vai afastar o outono e prevê que terá que abrir espaço para a primavera.
+
+Ele sabe o futuro e o passado pois sempre estará em ambos, vocês conversam por algum tempo, ao seu redor você começa a perceber os animais que não fugiram ou conseguiram abrigo, encolhidos no frio muitos morrem ou se perdem, o inverno não parece notar, mas você acha melhor se retirar. Como um último favor para você ele ordena que a tempestade abra o caminho que leva até a árvore mais alta da floresta.
+->a_arvore
+
+=o_medo
+~MIND++
+Ele não tem aparência ou forma, mas parece lisonjeado que você resolveu conversar. "Obrigado pela atenção. Poucos me percebem por aqui" a voz dele é grave, mas destona súbitamente no meio de palavras, e pontua frases com um suspiro que lembra o som de um disco arranhando. "Os que percebem não me dão valor, parece que eu sou uma dessas coisas que simplesmente existe. Quando até o vento e as pedras estão lutando para sobreviver o medo é só mais uma coisa que acontece."
+
+Ele se afasta de você e passeia em quanto fala "Tudo que é vivo teme a morte, e o medo é necessário pra vida. Sem mim ninguém tentaria, todos estariam deitados esperando o fim, sem o medo o mundo iria morrer" Ele vai fazendo círculos mais fechados ao seu redor. "O cervo não fugiria do lobo, o lobo não teria medo do fogo, seria completo caos não seria?"
+
+Ele olha diretamente na sua direção, você pode sentir um olhar penetrante e cruel naquela sombra amorfa te forçando a dar passos para trás "Eu sou tão subestimado não sou? TUDO iria morrer e NADA iria ligar! TUDO POR CAUSA DE MIM!" A sombra tremula e explode em uma risada maníaca e dissonante, todos os animais ao seu redor fogem, o vento muda de sentido e o rio parece correr ao contrário. Você correria, mas está paralizad{oa()}, encurralad{oa()} frente a uma parede de pedra.
+
+Ele finalmente termina de rir e se contém, a atmosfera tensa desaparece, e você consegue relaxar."Perdão, é apenas minha natureza. Obrigado pela conversa de qualquer forma, como desculpas deixe que eu te leve em segurança onde você precisa ir." Ele vira na direção da árvore mais alta e solta um rosnar que poderia ser ouvido do outro lado da floresta. Você pode ouvir centenas de animais correndo entre as folhas, abrindo um caminho para você. "Boa sorte. E ei, se quiser conversar de novo, eu sempre estarei aqui...  sempre".
+->a_arvore
+
+=o_gato
+~FATE++
+O gato é preto e branco, com o pelo marcado em padrões complexos que parecem desenhados a mão, mas desconexos uns dos outros, você reconhece alguns como runas ou símbolos de boa sorte, seu rabo é marcado em anéis e é quase três vezes o tamanho do corpo. Ele te observava do topo de um galho mais elevado, e pareceu um pouco surpreso que você o notou, mas desce para falar com você. Ele anda ao redor do{predador:s restos do coelho| corpo do tigre}.
+
+"Muito bom trabalho" ele elogia "Mais um que viveu outro dia em cima do azar do próximo. Eu já estava de olho nesse aqui, a algum tempo,{predador: a pata só ajuda depois que eles morrem sabe? Uma pena que você já comeu, podia ser útil.|sempre o achei meio metido, não importa o quão grande seja, cada gato tem só sete vidas, ele sempre abusou da sorte.}"
+
+Ele se vira na sua direção, com aquele olhar que os gatos tem quando um objeto curioso balança em sua frente. "E você? {predador:Como anda sua sorte|Quantas vidas ainda tem}?"
+
+Ele salta na sua direção como se tentasse pegar um rato invisível entre seus pés, enquanto a longa cauda se contorce delicadamente no ar e toca sua testa. O felino dá alguns passos para trás e para ereto, com as patas juntas, te medindo de cima a baixo. "A direção que você precisa ir é aquela." seu rabo aponta para uma parte da floresta que parece aleatória. "E boa sorte para qualquer {predador:coelho|tigre} que cruzar seu caminho, porque você com certeza não precisa" Ele escala um tronco próximo e desaparece na copa da floresta, rindo da própria piada. Você vira na direção que ele apontou, e percebe no que parece ser o centro da floresta uma árvore com no mínimo o dobro da altura de qualquer outra ao seu redor.
+->a_arvore    
+        
+        
+=a_arvore
+->continue->
+Você se encontra em frente a árvore. Mais alta que qualquer arranha-céu. No centro do tronco, esculpido na madeira, a enorme cabeça de um lobo observa cansado a floresta. Diretamente abaixo dele, de um lanho pro fundo na madeira, uma torrente de sangue lentamente escorre como a nascente de um rio, manchando as folhas verdes e marrons ao seu redor.
+
+Na base, as raízes, altas como como um homem adulto se retorcem pela terra, formando nichos, que se enchem como piscinas vermelhas ao redor da árvore. Animais e espíritos se reúnem ao redor delas, descansando em suas margens como uma pequena clareira tranquila em meio a selvageria da eterna luta ocorrendo ao seu redor, ignorando seus papéis de presas ou caçadores em tempoária paz. Entao os galhos se movem, um grupo de cipós e folhas abre um nó na madeira do tronco, formando um portal para o interior da árvore, do outro lado de uma das piscinas de sangue. Todos olham em sua direção, alguns se levantam para deixar o caminho livre entre você e a porta. O lobo solta um curto uivo, te convidando a subir.
+
+*[Subir]
+
+-Eles se curvam, sentam ou põe seus rabos entre as pernas quando você passa, subindo com cuidado nas raízes altas, e adentrando o lago vermelho, o sangue morno e vívido manchando suas pernas e suas mãos. O interior da caverna é iluminado por vagalumes e cogumelos que brilham em um etério tom de azul, nas paredes você percebe uma infinidade de nomes cravados nas paredes, em várias línguas e idiomas. Uma rampa de ramos retorcidos aponta para o topo.
+
+Você sai da estreita caverna sobre a cabeça do lobo, mais de perto você pode ver, a cabeça não é mera escultura no tronco de uma árvore, ele respira e se move, porém muito lentamente, além de ferido ele parece idoso, com olhos cansados e pelos longos, o tronco escuro e coberto de limo. Sobre ele ainda mais nomes, engravados na madeira, pintados ou marcados de diferentes formas. Ele te chamou até aqui, você supõe que deva marcar o seu também. Porém, onde?
+
+*(olhos)[Nos olhos, que encaram fixos a lua nascer no horizonte(Espirito+)]
+    --~SPIRIT++
+    --Você caminha pelo seu focinho até alcançar os olhos. O lobo não parece ligar, feito de madeira, outros já marcaram seus nomes ali antes de você. Com o sangue que mancha suas mãos você escreve seu nome.
+
+*(presas)[Nas presas, que um dia caçaram tudo que nasceu sobre essa terra(Vida+)]
+    --~LIFE++
+    --Você se apoia nas laterais do focinho e procura galhos onde consiga ficar de pé. Os dentes também de madeira estão gastos e marcados, cheios de lascas soltas e ranhuras, porém a maioria ainda parece bantate afiado. Você se aproxima com cautela e estende a mão coberta de sangue para escrever seu nome.
+
+- #input
+- #nomeCompleto
+
+->continue->
+
+- {presas: Assim que termina de escrever o lobo abre a boca e solta um longo uivo seguido de algo que soa como um latido. Ele parece de certa forma orgulhoso.|Quando você escreve a última letra, um raio da lua cheia parece brilhar diretamente sobre seu nome. Uma lágrima se forma ao seu lado e escorre pelo tronco, caindo em uma das poças de sangue entre as raízes.}
+
+-Seu nome agora pertence entre os outros que atravessaram a floresta e escalaram a árvore. O lobo então inclina lentamente o focinho para baixo, você tenta agarrar em algum galho, mas todos parecem se afastar. Você desliza e cai {olhos:como a lágrima }em direção ao chão. No caminho você passa pela nascente rubra no peito do lobo, e pode por um segundo ver seu coração em carne, pulsando dentro da madeira.
+
+-Seu corpo cai na poça de sangue, afundando lentamente no líquido espesso. Você consegue ouvir {presas:mais um|um} longo e emocionado uivo antes de desmaiar.
+
+//FIM DO DESPERTAR
+
+- ->->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
