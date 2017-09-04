@@ -24,6 +24,7 @@
 
 0 = Não tem
 1 = Tem
+2 = Janus
 
 
 4 - Onde estava
@@ -38,7 +39,83 @@
 1 = Life
 2 = Matter
 
+
 6 - Aura
 
 0 = Não vendo
 1 = Vendo
+
+
+7 - Conversa sobre o olho
+
+0 = Não falou
+1 = Comentou
+
+
+8 - Amiguinhos
+
+0 = Janus
+1 = Yoonir
+
+
+9 - Quem está com o olho no final
+
+0 = Não é você
+1 = É você
+
+
+10 - Shots fired
+
+0 = Not fired
+1 = shots fired (hit)
+
+
+11 - Armed
+
+0 = Nope
+1 = Yep
+2 = Bang Bang
+
+
+12 - Lanche
+
+0 = Nada
+1 = Água
+2 = Café
+3 = Coxinha
+
+
+13 - Nome Famoso
+
+0 = José
+1 = Eike Batista
+
+
+14 - Posição
+
+0 = Tamo junto
+1 = Mudei de ideia
+2 = Não quero me envolver
+
+
+15 - Ultima visão magica
+
+0 = Cego
+1 = Destino
+2 = Espaço
+
+ƒ
+
+Vinícius
+Vinicius
+Farinha
+Tupucã
+Tupuca
+Pierre
+Ares
+Jacob
+Corvo
+Pandora
+Elizabeth
+Mano
+

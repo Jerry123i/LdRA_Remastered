@@ -41,11 +41,19 @@ VAR donoDaPedra = 0
     CONST NINGUEM = 0
     CONST EU      = 1
     CONST JANUS   = 2
+    CONST YOONIR  = 3
     
 VAR ondeEstava = 0
     CONST ALI      = 0
     CONST CHEGANDO = 1
+    
+VAR auraVision = 0
+    CONST OFF = 0
+    CONST ON = 1
+    
+VAR conversaSobre = 0
 
+VAR amigos = 0
 
 
 ->intro_Genero
@@ -212,9 +220,9 @@ Você tenta se lembrar do que ocorreu, sua memória está completamente perdida,
 
 {LIFE>0:<> Mas depois desse sonho, você acredita que pode fazer algo quanto a isso.}
 
-*{SPIRIT>0 and SPACE>0}[Ir na direção do espírito]->persegue_o_gato->
-*{SPIRIT>0 and !SPACE>0}[roll{((SPIRIT-1)*10)+60-(dano+danoDox)*danoStep}_Perseguir o espírito]->persegue_o_gato->
-*{PRIME>0 or FATE>0}[Investigar o carro] ->investiga_o_carro->
+*{SPIRIT>0 and SPACE>0}[Ir na direção do espírito]->persegue_o_gato
+*{SPIRIT>0 and !SPACE>0}[roll{((SPIRIT-1)*10)+60-(dano+danoDox)*danoStep}_Perseguir o espírito]->persegue_o_gato
+*{PRIME>0 or FATE>0}[Investigar o carro] ->investiga_o_carro
 *{LIFE>0}[life_mana{path!=THYRSUS:2|1}_Cuidar dos seus ferimentos]->cura->
 *[Procurar ajuda]->procura_ajuda->
 
@@ -239,21 +247,101 @@ Você tenta se lembrar do que ocorreu, sua memória está completamente perdida,
     ->leitura_de_aura->
 }
 
+->continue->
+
+{(ondeEstava==CHEGANDO):
+        ->interacao_janus_longe->
+    -else:
+        Assim que te vê próximo ao carro, em meio a cena do acidente, ele guarda o capacete na moto e acena, indo na sua direção. Ele é jovem, tem os cabelos loiros despenteados e olhos claros, usa uma jaqueta escura e uma calça jeans bastante desbotada.{auraVision==ON: As cores vibrantes ao redor dele esmaecem e dão espaço a um tom fechado de azul que sugere desconfiança.} 
+}
+
+->continue->
+
+"Ei! Tudo bem com você?"
+
+Ele tem olhos grandes e sorridentes, estatura mediana, e mãos que não parecem acostumadas a trabalho físico, emboraele não aparente estar fora de forma, ou ao menos não parece especialmente gordo ou franzino.
+
+"... é o seu carro? Você se machucou?"
+
+*"Claro que sim! Você viu o estado do meu carro?"
+*"{dano>0:Um pouco, eu acho que tive sorte na verdade..."|Não, eu acho que já dei jeito nisso na verdade"}
+*"{ondeEstava==CHEGANDO:O que você quer com o meu carro?"|Um pouco, obrigado por parar para ajudar"}
+
+
+
 ->DONE
+
+= interacao_janus_longe 
+Você não tem certeza do que ele está procurando, mas ele ainda não te viu. Você poderia usar a oportunidade a seu favor.Ou simplesmente se aproximar, ele pode estar procurando por sobreviventes. #roll
+
+*[Ir até lá cumprimenta-lo]
+    --Você vai na direção dele, acenando para chamar sua atenção "Ei!". Ele logo vira na sua direção, e você consegue vê-lo melhor. Ele é jovem, tem os cabelos loiros despenteados e olhos claros, usa uma jaqueta escura e uma calça jeans bastante desbotada. Quando te vê ele para o que estava fazendo e acena de volta, te chamando para se aproximar.{auraVision==ON: As cores vibrantes ao redor dele esmaecem e dão espaço a um tom fechado de azul que sugere desconfiança.}
+*[{rollTag(60)}Se aproximar silenciosamente]
+    {(rollResult <= calcRoll(60)):
+        -Você se aproxima com cuidado, usando as sombras da folhagem e a iluminação imprecisa das chamas ao seu favor. Você consegue chegar perto o bastante para vê-lo melhor. Ele é jovem, tem os cabelos loiros despenteados e olhos claros, usa uma jaqueta escura e uma calça jeans bastante desbotada. Ele está com certeza procurando alguma coisa ao redor do seu carro. {((PRIME>0) or (FATE>0)):Você se lembra da {(PRIME>0):aura que viu vindo dessa direção.|sensação de atração que sentiu.}|Ele constantemente olha para alguma coisa no banco de trás do carro.}
+
+    Ele xinga baixo sobre ter queimado os dedos e parece estar procurando ao redor por algo que o ajude a alcançar o banco. Você teria que se aproximar para ver o que ele está procurando, e de qualquer forma se está no seu carro provavelmente te pertence. 
+
+    Você sai das sombras e vai na direção do carro. Ele acena assim que te vê, de forma amigável aparentemente.
+    -else:
+        Você se aproxima com cuidado, usando as sombras da folhagem e a iluminação imprecisa das chamas ao seu favor. Você consegue chegar perto o bastante para vê-lo melhor. Ele é jovem, tem os cabelos loiros despenteados e olhos claros, usa uma jaqueta escura e uma calça jeans bastante desbotada.
+        
+         Ele parece estar resmungando ou falando sozinho, chegando mais perto você poderia...
+
+        CRACK!
+
+        Um galho especialmente seco e barulhento quebra quando você dá mais um passo. O homem olha na sua direção, e acena, de forma amigável aparentemente, convidando você a se aproximar. {auraVision==ON: As cores vibrantes ao redor dele esmaecem e dão espaço a um tom fechado de azul que sugere desconfiança.}
+    }
+*{FORCES>0}[{arcanaTag("forces")}Se aproximar silenciosamente controlando o som]
+    --Se concentrando nas vibrações do ar, você consegue enxergar a energia em forma de som emanando sutilmente da sua respiração, das folhas sacudidas pelo vento e do rapaz que parece estar falando sozinho enquanto procura por algo ao redor do seu carro. Tocando nos seus pés você imagina um vácuo ao redor de cada um deles, uma bolha suprimindo som, e impedindo que o ar se mova. Em perfeito silênciovocê consegue se aproximar.
+    
+    Ele é jovem, tem os cabelos loiros despenteados e olhos claros, usa uma jaqueta escura e uma calça jeans bastante desbotada. Ele fala sozinho, reclamando sobre como queimou os dedos tentando pegar "a droga do olho". {((PRIME>0) or (FATE>0)):Você se lembra da {(PRIME>0):aura que viu vindo dessa direção.|sensação de atração que sentiu.}}
+    
+    Independente do que se trate se está no seu carro provavelmente te pertence. Você não vai descobrir mais do que isso se escondendo, liberando os seus pés do vácuo que você criou você decide falar com ele.
+
+    "Ei!"
+
+    Ele vira na sua direção quando te ouve e acena de forma amigável, convidando você a se aproximar. {auraVision==ON:As cores vibrantes ao redor dele esmaecem e dão espaço a um tom fechado de azul que sugere desconfiança}
+*{SPACE>0}[{arcanaTag("space")}Estender seus sentidos naquela direção]
+    --Ele ainda não parece ter te visto, por sorte não existe necessidade de se aproximar. Você mentaliza seus sentidos, sua audição e sua visão, desligados dos seus orgãos ou do seu corpo, uma entidade maleável, móvel. Você gentilmente arrmessa sua percepção na direção do carro, observando o homem como se estivesse ao seu lado.
+
+    Ele é jovem, tem os cabelos loiros despenteados e olhos claros, usa uma jaqueta escura e uma calça jeans bastante desbotada. Ele constantemente olha para dentro do carro, na direção do banco de trás. {PRIME>0 or FATE>0:Você logo se lembra da {PRIME>0:aura|sensação de atração} que vinha do carro.}
+    
+    Ajustando um pouco o ângulo dos seus setidos você consegue ver o que parece ser uma pedra preciosa ou um cristal, redondo, do tamanho de uma bola de gude caído próximo ao cinto de segurança. Independente do que seja, se está dentro do seu carro provavelmente te pertence, mas você não vai conseguir fazer muito mais do que observar de onde está.
+
+    Saindo do seu esconderijo o rapaz logo percebe sua aproximação e acena amigávelmente para que você se aproxime.
+
+- ->->
+
+
 
 = leitura_de_aura
 
-Antes mesmo de conseguir enxerga-lo direito você tem a impressão de que pode ver algo, ao redor dele, .
+Antes mesmo de conseguir enxerga-lo direito você tem a impressão de que pode ver algo, ao redor dele, 
+
+{((PRIME>0 and path != OBRIMOS) or (MIND>0 and path != MASTIGOS)):
+    <> mas vai ser necessário um pouco de esforço para realmente discernir o que é.
+    
+    -else:
+    <> claro como o dia.
+}
+
 
 *{PRIME>0}[prime_{path!=OBRIMOS:mana1_}Ver a alma dele]
-
+    ~auraVision = ON
+    --Você vê percebe a alma como uma silhueta de luz ao redor e dentro do corpo, mas você não consegue distinguir nada de útil. Exceto pelas pequenas faíscas de luz que parecem piscar ao redor dele parece uma alma "normal" até onde você pode dizer. Na verdade algumas faíscas piscam ao redor da sua também,algo te diz que isso tem a ver com seu sonho e as coisas estranhas que você tem visto e feito desde que levantou. Algo te diz que ele também pode ver e fazer coisas.
 *{MIND>0}[mind_{path!=MASTIGOS:mana1_}Ler a aura dele]
-
+    ~auraVision = ON
+    --Você consegue distinguir uma aura turva de luz colorida aoredor dele  {ondeEstava==0:enquanto ele se aproxima|mesmo contra a luz das chamas, ela se sobrepõe}. A aura é principalmente de um tom forte de violeta, com feixes vermelhos surgindo momentáriamente e se dissipando. Felicidade, euforia, é surpreendentemente óbvio o que as cores significam. Alguém está bastante animado em ver um acidente de carro.
 *{MIND>0 and PRIME>0}[prime_mind_mana1_Ver ambos]
-
+    ~auraVision = ON
+    --Você vê percebe a alma dele como uma silhueta de luz, tingida pelas cores da aura ao redor e dentro do corpo, você não consegue distinguir nada de útil da alma em siexceto pelas pequenas faíscas de luz que parecem piscar ao redor dele, ela parece uma alma "normal" até onde você pode dizer. Na verdade algumas faíscas piscam ao redor da sua também, algo te diz que isso tem a ver com seu sonho e ascoisas estranhas que você tem visto e feito desde que levantou. Algo te diz que ele também pode ver e fazer coisas.
+    
+    --A aura é principalmente de um tom forte de violeta, com feixes vermelhos surgindo momentáriamente e se dissipando. Felicidade, euforia, é surpreendentemente óbvio o que as cores significam. Alguém está bastante animado em ver um acidente de carro.
 *[Ignorar a aura ao redor dele]
+    --Seja lá o que for não vale a pena se distrair com isso no momento. Você dispersa a imagem que emana dele e se concentra na pessoa em si.
 
-->->
+- ->->
 
 ==cena_do_tronco
 O peso que você sentia sobre as pernas é na verdade um tronco de á rvore que tombou sobre você.
@@ -288,7 +376,7 @@ O peso que você sentia sobre as pernas é na verdade um tronco de á rvore que 
     -else:
         Em peque nas lascas, partes do tronco criam pernas e se desgrudam. Em seguida criam grandes asas coloridas, e voam para longe, inicialmente uma por uma, logo mais e mais, até que estão saindo as dezenas de cima de você. Em um pequeno turbilhão de cores e centenas de asas batendo as últimas borboletas levantam voo, levando o que restava do tronco com elas.
     }
-*{FORCES>0} [forces_{path!=OBRIMOS:mana1_}Usar o fogo]
+*{FORCES>0} [{arcanaTag("forces")}Usar o fogo]
     --Alguns metros a sua direita um carro (provavelmente seu carro) se encontra com o parachoque ao redor de um poste de luz, o capô aparentemente voou juto com você e está em algum canto escuro da beira da estrada, toda a parte da frente do carro está em chamas. Não está próximo o bastante para que você sinta miuta coisa além de uma ocasional onda de calor quando o vento bate. Curiosamente você sente as ondas de calor de forma diferente, o calor tem textura e cor, se você se concetrar pode ver ao redor das chamas ele se dissipando no ar frio da noite. Como corante em um vidro de água, subindo em ondas, sendo dispersado pelo vento.
 
     --O fogo poderia te ajudar, queimar esse tronco para que você pudesse se mover. Você poderia traze-lo a té aqui, você estica o braço na direção das chamas, muito longe com certeza, mas um vento mais forte bate, o calor é empurrado na sua direção e você agarra um punhado, uma onda de calor, segura na sua mão como uma porção de areia. Você abre a mão e ele se dispersa no ar, não bastaria de qualquer forma, você precisa do fogo.
@@ -413,6 +501,7 @@ Você se concentra no seu corpo, nos seus ferimentos, nas suas células, cada co
 
 {danoDox>0:Você não consegue se curar pois a forma {cena_do_tronco.tronco_vida:das suas pernas saudáveis e intactas|do seu ombro saudável e intacto}} deixou de exisir. Temporáriamente claro... você tem quase certeza.
 
+~ondeEstava = ALI
 ->encontra_Janus
 
 == investiga_o_carro ==
@@ -427,8 +516,8 @@ Se arriscando um pouco mais de perto, você pode ver {PRIME>0:a origem do brilho
 *[roll{70-((dano+danoDox)*danoStep)}_Arriscar e pegar a pedra pela janela]->carro_pegar->
 *[Deixar a pedra como está]->carro_ignorar->
 *{FORCES>0}[forces_{path!=OBRIMOS:mana1_}Reduzir as chamas]->carro_forces->
-*{DEATH>0}[death_{path!=MOROS:mana1}Sufocar as chamas]->carro_death->
-*{MATTER>0}[matter_{path!=MOROS:mana1}Destrancar a porta]->carro_matter->
+*{DEATH>0}[death_{path!=MOROS:mana1_}Sufocar as chamas]->carro_death->
+*{MATTER>0}[matter_{path!=MOROS:mana1_}Destrancar a porta]->carro_matter->
 
 - ->final
 
@@ -474,6 +563,7 @@ A tranca da porta parece ter sido danificada no acidente, na ve rdade você tem 
     Ela parece ter sido feita com a intenção de se assemelhar a um olho.
 }
 //END CARRO
+~ondeEstava = ALI
 ->encontra_Janus
 
 == procura_ajuda ==
@@ -520,13 +610,88 @@ Algumas situações arriscadas, difíceis ou perigosas vão ter uma chance de fa
     ~return "a"
 }
 
-== function mana_check(baseCost, torreCorreta) ==
-{path!=torreCorreta:
-~baseCost++
-}
-{baseCost==0:
-    ~return ""
--else:
-    ~return "({baseCost} Mana)"
+== function rollTag(baseValue)
+{    ~return roll{baseValue-((dano+danoDox)*danoStep)}_}
+
+== function calcRoll(baseValue)
+    ~return (baseValue-((dano+danoDox)*danoStep))
+
+
+
+== function arcanaTag(arcana) ==
+{ 
+-arcana == "death":
+    {
+        -path == MOROS:
+            ~return "death_"
+        -else:
+            ~return "death_mana_1"
+    }
+-arcana == "fate":
+    {
+        -path == ACANTHUS:
+            ~return "fate_"
+        -else:
+            ~return "fate_mana_1"
+    }
+-arcana == "forces":
+    {
+        -path == OBRIMOS:
+            ~return "forces_"
+        -else:
+            ~return "forces_mana_1"
+    }
+-arcana == "life":
+    {
+        -path == THYRSUS:
+            ~return "life_"
+        -else:
+            ~return "life_mana_1"
+    }
+-arcana == "matter":
+    {
+        -path == MOROS:
+            ~return "matter_"
+        -else:
+            ~return "matter_mana_1"
+    }
+-arcana == "mind":
+    {
+        -path == MASTIGOS:
+            ~return "mind_"
+        -else:
+            ~return "mind_mana_1"
+    }
+-arcana == "prime":
+    {
+        -path == OBRIMOS:
+            ~return "prime_"
+        -else:
+            ~return "prime_mana_1"
+    }
+-arcana == "space":
+    {
+        -path == MASTIGOS:
+            ~return "space_"
+        -else:
+            ~return "space_mana_1"
+    }
+-arcana == "spirit":
+    {
+        -path == THYRSUS:
+            ~return "spirit_"
+        -else:
+            ~return "spirit_mana_1"
+    }
+-arcana == "time":
+    {
+        -path == ACANTHUS:
+            ~return "time_"
+        -else:
+            ~return "time_mana_1"
+    }
+
+ -else:
+    ~return "0"
 }
 
