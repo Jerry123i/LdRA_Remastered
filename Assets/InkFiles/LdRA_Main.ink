@@ -52,6 +52,7 @@ VAR auraVision = 0
     CONST ON = 1
     
 VAR conversaSobre = 0
+VAR viuOOlho = 0
 
 VAR amigos = 0
 
@@ -264,9 +265,79 @@ Ele tem olhos grandes e sorridentes, estatura mediana, e mãos que não parecem 
 "... é o seu carro? Você se machucou?"
 
 *"Claro que sim! Você viu o estado do meu carro?"
-*"{dano>0:Um pouco, eu acho que tive sorte na verdade..."|Não, eu acho que já dei jeito nisso na verdade"}
-*"{ondeEstava==CHEGANDO:O que você quer com o meu carro?"|Um pouco, obrigado por parar para ajudar"}
+    --"Wow! Desculpa por ter perguntado. Considerando o estado do carro eu to surpreso que alguém tenha saído vivo de lá. Bem... não muito surpreso"
+*{dano>0}"Um pouco, eu acho que tive sorte na verdade..."
+    --"Sorte!" Ele sorri e faz aspas com as mãos quando fala. "Sei bem como é"
+*{dano==0}"Não, eu acho que já dei jeito nisso na verdade"
+    --"Ah! Entendi, bom pra você, eu não ia poder te curar. Não que eunão queira nem nada, eu só não sei mesmo"
+*{ondeEstava==CHEGANDO}"O que você quer com o meu carro?"
+    --"Hum... Eu..."
+    Ele coloca a mão na nuca e vira o rosto para os lados evitando seu olhar.
+    "Eu meio que esqueci uma coisa no seu carro"
+*{ondeEstava==ALI}"Um pouco, obrigado por parar para ajudar"
+    --"Não que eu não fosse parar para ajudar alguém em um acidente,mas para ser sincero eu já estava procurando por você"
+    
+-*"Como assim?"
 
+-"Quer dizer..." Ele para, te encarando de forma especialmente confusa. {auraVision==ON:A aura ao redor dele muda para um tom mais calmo e menos escuro, você pode ver a dúvida dele na forma de pequenos pontos coloridos que rapidamente surgem quando ele pergunta.}
+ 
+-"Ei, mas qual seu nome?"
+
+*"{nomeCompleto}, e o seu?"
+*"{nomeCurto}, mas pare de mudar de assunto!"
+
+-"Mas, esse é seu nome de verdade?! Como assim? Você acabou de despertar por acaso?!"
+
+*"Hun? Do que você está falando?"
+    --"Você não sabe mesmo!"
+*"Claro que é meu nome de verdade, o que você esperava?"
+    --"Qualquer coisa menos seu nome de verdade. Hahahaha!"
+*"Despertar? Você quer dizer o sonho..."
+    --"Sim! Sim!"
+
+-Ele aponta para você e começa a falar rápido em um tom entusiasmado e agitando os braços, você tem a impressão queele está se contendo para não lhe segurar e te sacudir no ar.{auraVision==ON:Ondas de vermelho e amarelo se alternam rapidamente em um padrão frenético, a aura refletindo a animação dele.}
+
+-"Logo depois desse acidente provavelmente. Você teve um sonho muito real, e desde que ele acabou você vê as coisas de forma diferente. Consegue fazer coisas que não deveriam fazer sentido, mas que parecem perfeitamente naturais para você, mesmo que você não saiba explicar?"
+
+*"Sim... exatamente isso"
+
+-"Ah! Eu sempre quis ser o primeiro a contar pra alguém" Ele dá um passo para trás e abre os braços como se jatos de confete e efeitos pirotécnicos fossem surgir atrás dele.
+
+-"Você é um{gen==1:a} mago{oa()}!!!"
+
+*"Tipo com varinhas e chapéis pontudos e caldeirões?"
+    --"Não! Claro que não!"
+    --"Quer dizer... as varinhas sim, mas são opcionais. Na verdade eu já ouvi falar de algumas pessoas que usam caldeirões... Mas definitivamente sem chapéis pontudos!"
+*"E é por isso que eu não me lembro de nada?"
+    --"Você perdeu a memória? Não, eu acho que você só bateu a cabeça mesmo. Mas eu tenho uma amiga que talvez possa te ajudar com isso."
+*"Ok, mas falando sério agora sério agora..."
+    --"Sempre tem um cético não é mesmo?" Ele rola os olhos, sarcástico. 
+    --Você não está vendo o mundo de forma diferente? Não fez nada que não consiga explicar desde que acordou? Sua alma não se sente livre deuma âncora que te acompanhava a vida toda?! Eu estou literalmente olhando pra ela nesse momento. {gen==1:Moça, você é uma maga|Cara, você é um mago}."
+    
+-"Primeira lição sobre ser um mago. Nomes tem poder, evite contar seu nome verdadeiro para outros magos, mais fácil de te encontrarem, espionarem em você e coisas assim. Geralmente usamos nomes falsos entre nós, e mesmo esses ainda tem um pouco de poder, mas ia ser tipo, impossível, conviver sem chamar as pessoas de alguma coisa. Você pode me chamar de Janus falando nisso."
+
+->continue->
+
+{conversaSobre==ON:"Mas eu quase esqueço. Como eu dizia tem um motivo para eu ter te encontrado aqui. Seu carro, eu esqueci uma coisa dentro dele|Ele para um momento e dá um passo para trás como se te estudasse}.
+{conversaSobre==OFF:"Eu acho que eu posso te contar de qualquer forma, eu não te encontrei por acaso passando pela estrada, eu deixei uma coisa no seu carro.}
+
+{ ondeEstava==CHEGANDO:
+     "Ficou ali atrás está vendo? Aquele cristalzinho roxo."
+     
+     Ele aponta para dentro do carro, você se aproxima para ver mais de perto, ele está largado no banco do passageiro perto do cinto.
+     { (FATE>0 or PRIME>0) and (viuOOlho==OFF):
+        Era, afinal, essa a fonte da {PRIME>0:aura que você viu|força que parecia te atrair nessa direção}.
+     }
+     { viuOOlho == ON:
+        O mesmo cristal que você tinha avistado antes.
+     }
+     
+    -else:
+    Tipo um cristal, parece um olho. Ele é um artefato mágico, então talvez você tenha percebido ele.
+
+}
+
+#ONDE EU PAREI
 
 
 ->DONE
@@ -308,6 +379,7 @@ Você não tem certeza do que ele está procurando, mas ele ainda não te viu. V
     Ele é jovem, tem os cabelos loiros despenteados e olhos claros, usa uma jaqueta escura e uma calça jeans bastante desbotada. Ele constantemente olha para dentro do carro, na direção do banco de trás. {PRIME>0 or FATE>0:Você logo se lembra da {PRIME>0:aura|sensação de atração} que vinha do carro.}
     
     Ajustando um pouco o ângulo dos seus setidos você consegue ver o que parece ser uma pedra preciosa ou um cristal, redondo, do tamanho de uma bola de gude caído próximo ao cinto de segurança. Independente do que seja, se está dentro do seu carro provavelmente te pertence, mas você não vai conseguir fazer muito mais do que observar de onde está.
+    ~viuOOlho = ON
 
     Saindo do seu esconderijo o rapaz logo percebe sua aproximação e acena amigávelmente para que você se aproxime.
 
@@ -328,11 +400,10 @@ Antes mesmo de conseguir enxerga-lo direito você tem a impressão de que pode v
 
 
 *{PRIME>0}[prime_{path!=OBRIMOS:mana1_}Ver a alma dele]
-    ~auraVision = ON
     --Você vê percebe a alma como uma silhueta de luz ao redor e dentro do corpo, mas você não consegue distinguir nada de útil. Exceto pelas pequenas faíscas de luz que parecem piscar ao redor dele parece uma alma "normal" até onde você pode dizer. Na verdade algumas faíscas piscam ao redor da sua também,algo te diz que isso tem a ver com seu sonho e as coisas estranhas que você tem visto e feito desde que levantou. Algo te diz que ele também pode ver e fazer coisas.
 *{MIND>0}[mind_{path!=MASTIGOS:mana1_}Ler a aura dele]
     ~auraVision = ON
-    --Você consegue distinguir uma aura turva de luz colorida aoredor dele  {ondeEstava==0:enquanto ele se aproxima|mesmo contra a luz das chamas, ela se sobrepõe}. A aura é principalmente de um tom forte de violeta, com feixes vermelhos surgindo momentáriamente e se dissipando. Felicidade, euforia, é surpreendentemente óbvio o que as cores significam. Alguém está bastante animado em ver um acidente de carro.
+    --Você consegue distinguir uma aura turva de luz colorida ao redor dele  {ondeEstava==0:enquanto ele se aproxima|mesmo contra a luz das chamas, ela se sobrepõe}. A aura é principalmente de um tom forte de violeta, com feixes vermelhos surgindo momentáriamente e se dissipando. Felicidade, euforia, é surpreendentemente óbvio o que as cores significam. Alguém está bastante animado em ver um acidente de carro.
 *{MIND>0 and PRIME>0}[prime_mind_mana1_Ver ambos]
     ~auraVision = ON
     --Você vê percebe a alma dele como uma silhueta de luz, tingida pelas cores da aura ao redor e dentro do corpo, você não consegue distinguir nada de útil da alma em siexceto pelas pequenas faíscas de luz que parecem piscar ao redor dele, ela parece uma alma "normal" até onde você pode dizer. Na verdade algumas faíscas piscam ao redor da sua também, algo te diz que isso tem a ver com seu sonho e ascoisas estranhas que você tem visto e feito desde que levantou. Algo te diz que ele também pode ver e fazer coisas.
@@ -512,6 +583,7 @@ O incêndio parece estar de certa forma contido a parte da frente do carro, mas 
 
 Se arriscando um pouco mais de perto, você pode ver {PRIME>0:a origem do brilho.|o objeto que te atraiu até o carro.}
  Largado do lado do cinto de segurança, uma pedra arroxeada, do tamanho de uma bola de gude. Você precisaria pega-la para enxergar mais do que isso, a porta parece trancada, porém o vidro quebrou no acidente, de forma que talvez seja possível alcançar o interior, mas você corre o risco de se queimar.#roll
+ ~viuOOlho = ON
  
 *[roll{70-((dano+danoDox)*danoStep)}_Arriscar e pegar a pedra pela janela]->carro_pegar->
 *[Deixar a pedra como está]->carro_ignorar->
