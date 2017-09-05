@@ -1,5 +1,7 @@
 == ir_com_yoonir ==
 
+~amigos = YOONIR
+#roll
 "Ok, eu vou com você" Você responde Yoonir.
 
 "Depois de tudo que passamos juntos, você me troca pelo primeiro que aparece?" Ele brinca, surpreendentemente bem humorado. "Se você mudar de ideia sempre pode nos procurar, mas antes"
@@ -21,4 +23,173 @@ Ele pega a moeda de prata e consegue arremessa-la para cima, você sente que ele
 *Não se arriscar, deixar Janus dar o tiro
 
 
+= yoonir_aguia_mind
+A águia que Yoonir controlou, ainda está por aqui, perto. Você consegue sentir sua consciência, como um zumbido baixo que você ouve vindo de algum lugar próximo. Ali, em um galho alto, mas ainda perto o bastante.
+Você estende sua mente naquela direção, e rapidamente engloba a da águia, encontrando pouca resistência no cérebro simples do pássaro. Você então ordena, "Ataque Janus, distraia ele" A ave não reage, Janus está prestes a puxar o gatilho. O nome do mago não significa nada para águia, você rapidamente molda uma imagem da arma e do mago que a segura, associando com instintos básicos de atacar e afastar que você consegue expressar mentalmente.
+O pássaro levanta voo e investe sobre ele. Ele atira, mas erra, Yoonir foge por entre as árvores e chama você para segui-lo. Você vai atrás, enquanto Janus continua desesperadamente tentando se desvencilhar do pássaro.
+~terminouComAPedra = ON
+~yoonirAtingido = OFF
+->END
+
+= yoonir_aguia_life
+A águia que Yoonir controlou, ainda está por aqui, perto. Você consegue sentir sua energia vital, como um pulsar baixo que você sente vindo de algum lugar próximo. Ali, em um galho alto, mas ainda perto o bastante.
+Você tenta dominar a criatura, acessando seus instintos e suas funções corporais você consegue criar um tipo rudmentar de controle sobre ela. Você então ordena, "Ataque Janus, distraia ele" A ave não reage, Janus está prestes a puxar o gatilho. O nome do mago não significa nada para águia, você rapidamente dispara alguns instintos de caça na águia, fazendo ela ter a impressão que teve seu território invadido, que Janus é um predador perigoso porém fraco.
+O pássaro levanta voo e investe sobre ele. Ele atira, mas erra, Yoonir foge por entre as árvores e chama você para segui-lo. Você vai atrás., enquanto Janus continua desesperadamente tentando se desvencilhar do pássaro.
+~terminouComAPedra = ON
+~yoonirAtingido = OFF
 - ->END
+
+=yoonir_arma
+Você parte para cima de Janus, rapidamente agarrando a pistola e apontando-a para cima, o dedo dele ainda sobre o gatilho, mas Yoonir está fora de perigo. Você entretanto, luta para tentar tirar a arma das mãos dele
+
+{rollResult<= calcRoll(70):
+    <>, ele tenta alcançar algo no bolso da calça, provavelmente sua moeda , você aproveita a distração para empurra-lo, ele se desequilibra, vocêdá um puxão decidido na arma, e consegue arranca-la das mãos do mago.
+    ~armaRoubada=ON
+    -else:
+        <>, ele se recusa a soltar, em uma tentativa de golpea-lo você solta uma das mãos da arma, Janus tenta puxar a pistola na direção dele e puxa o gatilho.
+         A arma dispara, você sente uma dor quente e ardente na lateral doabdomem [-1 Saúde]. Ambos largam a arma, que cai no chão sem mais balas.
+        "Merda! Viu o que você fez?"
+        Você põe a mão sobre o ferimento, existe algum sangue, mas parece ter sido bastante superficial, o choque foi maior que a lesão em si. 
+        "Só vai atrás dele logo então, não se preocupe, ele pode te curar. E manda um abraço para minha irmã"
+        Janus recolhe sua arma e segue calmo, porém frustrado, para sua motocicleta. Você segue para encontrar com Yoonir.
+         ~dano++
+        
+
+}
+ ~terminouComAPedra = ON
+ ~yoonirAtingido = OFF
+ 
+ ->END
+ 
+ =yoonir_bala
+Você vê Janus se preparando para disparar, mas não se move, é arriscado de mais tentar tirar a arma das mãos dele, existe algo mais inteligente que você pode tentar. Cobrindo seus sentido com magia você se prepara para responder a primeira descarga de energia que perceber, calor, velocidade, energias, você deve ser capaz de responder imediatamente.
+
+Ele dispara, você consegue ver a onda de som surgindo ao redor da arma antes mesmo de ouvir o desparo, sua atenção acompanha a concentração de calor e energia estrondosa que surge da arma, a bala que seria diminuta e discreta para olhos normais é gigantesca quando observada pelas lentes de uma magia de Forças.
+
+{rollResult <= calcDox(30):
+    Você consegue perceber o calor, a energia cinética e o som da bala, mas também o calor do fogo ao seu redor, ouvir a eletricidade alimentandoos postes ao longo da estrada, sentir a luz da lua e das estrelas na sua pele. Você se perde em meio a todas as ondas, raios e correntes ao seu redor, todos os seus sentidos se sentem ofuscados, e você é obrigad{oa()} a reverter sua magia antes de conseguir parar o tiro.
+    Yoonir é atingido no braço, deixa o olho cair, mas continua seguindo em direção a flroesta. Você vai atrás, mas Janus não te impede.
+    ~terminouComAPedra = OFF
+    ~yoonirAtingido = ON
+    -else:Você agarra a energia cinética que impulsiona a bala e com um girar do seu pulso, você muda seu trajeto. Ela resiste a mudança de direção, mas você consegue que no último segundo ela vire e atinja uma árvore próxima ao invés do braço de Yoonir, ele some na parte mais fechada da mata e você segue atrás. Janus não faz nada para te impedir. 
+    ~terminouComAPedra = ON
+    ~yoonirAtingido = OFF
+}
+
+->DONE
+
+=yoonir_destroy
+Você não tenta tirar a arma das mãos de Janus, mas ainda sim tenta segura-la. Logo antes dele dar o tiro, você toca nela, com um rápido toque de um dedo próximo ao cano da arma você consegue acessar o padrão da arma, a matriz mágica que a define no mundo real. Com só um toque você desfaz a arma em sua essência, minando a estrutura do metal.
+
+Janus puxa o gatilho, nenhum tiro, ele tenta novamente. O gatilho cai, o pente da arma solta e uma única bala rola pelo chão, a arma desmonta peça por peça. Você pode tranquilamente seguir atrás de Yoonir enquanto Janus recolhe as peças de sua pistola.
+
+~terminouComAPedra = ON
+~yoonirAtingido = OFF
+
+->DONE
+
+=yoonir_nada
+Ele atira, Yoonir é atingido no braço, deixa o olho cair, mas continua seguindo em direção a flroesta. Você vai atrás, mas Janus não te impede.
+
+"Não se preocupe, a sua segurança é mais importante que o artefato." Ele comenta, sincero, com a mão sobre o ombro ferido.
+~terminouComAPedra = OFF
+~yoonirAtingido = ON
+
+->DONE
+
+=yoonir_sorte
+Você cria um pedido, um desejo, que Yoonir não seja atingido pela bala. Sua alma mágica consegue dar peso a sua vontade, mas depois de lança-la entre os fios do destino você só pode torcer pelo melhor.
+
+Uma gota de água escorre de uma folha de uma árvore próxima, ela despenca vários metros de altura, e sua trajetória é desviada alguns poucos centímetros por uma brisa repentina que passa. Janus acompanha o alvo em movimento com a mira, e lentamente espreme o gatilho, a gota o atinge no olho, no mesmo momento em que Yoonir por acaso abaixa para desviar de um morcego que passa voando baixo. A arma dispara, e o tiro erra.
+
+Você rapidamente segue atrás do mago, Janus não faz nada para lhe impedir.
+
+~yoonirAtingido = OFF
+~terminouComAPedra = ON
+->DONE
+
+=yoonir_teleporte
+Você se concentra em tirar a arma das mãos de Janus. Você estende a palma da mão aberta em frente ao corpo, com os olhos fixos na pistola você se lembra como descobriu que a distância é uma ilusão, que sua alma mágica pode dobrar o espaço entre dois pontos como uma folha de papel.
+
+Você visualiza o artefato em sua mão e começa a lentamente erodir a imagem de que ele está distante de você. Uma <>
+
+{
+-path==ACANTHUS:
+    nuvem de prata
+-path==MASTIGOS:
+    aura distorcida
+-path==MOROS:
+    sombra anormal
+-path==OBRIMOS:
+    aura radiante
+-path==THYRSUS:
+    névoa densa
+}
+
+<>se forma ao redor da sua mão, e uma idêntica ao redor da mão de Janus. O mago parece ignorar sua magia, se concentrando em tentar mirar no alvo móvel. Você estende a mão através do espaço<>
+
+{rollResult<=calcDox(30):
+    , pront{oa()} para agarrar a arma. Mas algo dá errado, você perde o controle por um segundo e vai longe de mais. Você sente uma pressão sobre sua mão, como um vácuo tentando suga-la, você consegue sentir ela ameaçando se desligar do seu pulso, e tem tempo apenas de interromper a magia antes de perder um membro. Mas mesmo assim, seus ossos doem dos dedos até o cotovelo, como se tivessem tentado puxa-los para fora do seu corpo.
+    ~danoDox++
+    ~terminouComAPedra=OFF
+    ~yoonirAtingido = ON
+    -else:
+        {
+        -path==ACANTHUS:
+            ,a nuvem de prata se transforma em um pequeno redemoinho brilhante, ele passeia por um momento sobre a sua palma, então começa a perder velocidade até se dissipar, a pistola surge dentro dele, e cai na sua mão.
+        -path==MASTIGOS:
+            , a aura ao redor da mão de Janus continua a se distorcer e criar uma miragem deformada, então, como um arquivo digital corrompidoa arma "trava" ficando por um segundo suspenso em pleno ar uma, como uma imagem falha e incompleta. Por um momento uma segunda pistola incompleta surge sobre sua mão, para em seguida se concretizar na forma perfeita da arma por inteiro.
+        -path==MOROS:
+            , a sombra vai se tornando cada vez mais escura,formando uma escuridão densa sobre a sua mão, a arma vai sendo igualmente consumida pela escuridão. Até que é impossível vê-la, no mesmo momento a escuridão concentrada se dissipa da sua palma, e você está segurando a pistola.
+        -path==OBRIMOS:
+            , a luz que irradia dos dois lados se torna mais intensa, os dois pontos começam a brilhar em cores diferentes, rapidamente alternando entre diversos tons, como se tentassem se aproximar de uma mesma cor. Sua mão e a de Janus brilham ao mesmo tempo em um profundo tom de azul, você sente um peso repentino, as luz desaparecem, e você está segurando a arma.
+        -path==THYRSUS:
+            , a névoa branca continua a se tornar mais e mais densa. Você já não consegue ver mais sua mão, até sentir um estranho peso surgir derrepente sobre ela, a névoa se dispersa em uma rajada de vento que você não sente, e quando você vê, está segurando a arma.
+    }
+    Sua magia se conclui no momento em que Janus puxava o gatilho, com as mãos vazias em posição de mira, seu indicador pressiona o ar.
+    ~terminouComAPedra = ON
+    ~armaRoubada = ON
+}
+->DONE
+
+= yoonir_tempo
+
+Você ignora por um segundo Yoonir fugindo e Janus ameaçando disparar contra ele, concentrando sua atenção somente no fluir do tempo ao seu redor. Sentindo o tempo passar delicadamente por entre seus dedos, você põe as duas mãos ao lado do corpo, os punhos apenas um pouco abertos. Respirando fundo você conjura sua magia e fecha as mãos, tudo para ao seu redor, congelado no tempo. Você se agarra as linhas do tempo que conseguiu segurar, e puxa, arrastando o tempo de volta.
+
+{rollResult<=calcDox(30):
+    As linhas escorregam, a palma das suas mãos queimam como se tentassem segurar uma corrente de ferro quente. Você é obrigad{oa()} a solta-las. O tempo tenta se corrigir fluindo na direção oposta a que você puxou, as linhas voltam como um elástico tencionado, chicoteando suas costas antes de retornarem ao estado natural. O tempo se normaliza no momento em que Janus está puxando o gatilho. Ele atinge Yoonir no braço, o cristal cai da sua mão, mas ele não retorna para pega-lo, apenas grita para que você vá com ele logo.
+    ~terminouComAPedra=OFF
+    ~yoonirAtingido = ON
+    -else:
+        Tudo se move como um borrão a sua volta, como se estivesse de pé no olho de um furacão, tudo se move em reverso ao seu redor e você não é afetado. O furacão vai perdendo força e tudo começa a se mover mais devagar até congelar mais uma vez, momentos antes de Janus sacar sua arma, você gentilmente solta as linhas e deixa elas voltarem a fluir.
+        Janus para por um segundo, com a mão já sobre a pistola, ele olha ao redor confuso, leva um segundo para ele perceber o que aconteceu, Yoonir parece completamente ignorante ao fato.
+         Você grita para que ele fuja, e salta sobre Janus, agarrando a arma de sua cintura antes mesmo que ele consiga saca-la.
+         ~terminouComAPedra = ON
+         ~yoonirAtingido = OFF
+         ~armaRoubada = ON
+}
+->DONE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

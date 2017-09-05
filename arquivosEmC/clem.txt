@@ -58,19 +58,19 @@
 1 = Yoonir
 
 
-9 - Quem está com o olho no final
+9 - Quem está com o olho no final (terminouComAPedra)
 
 0 = Não é você
 1 = É você
 
 
-10 - Shots fired
+10 - Shots fired (yoonirAtingido)
 
 0 = Not fired
 1 = shots fired (hit)
 
 
-11 - Armed
+11 - Armed (armaRoubada)
 
 0 = Nope
 1 = Yep

@@ -60,6 +60,9 @@ VAR viuOGato = 0
     
 VAR conversaSobre = 0
 VAR viuOOlho = 0
+VAR yoonirAtingido = 0
+VAR armaRoubada = 0
+VAR terminouComAPedra = 0
 
 VAR amigos = 0
 
