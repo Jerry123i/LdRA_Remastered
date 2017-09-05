@@ -1,0 +1,24 @@
+== ir_com_yoonir ==
+
+"Ok, eu vou com você" Você responde Yoonir.
+
+"Depois de tudo que passamos juntos, você me troca pelo primeiro que aparece?" Ele brinca, surpreendentemente bem humorado. "Se você mudar de ideia sempre pode nos procurar, mas antes"
+
+Ele pega a moeda de prata e consegue arremessa-la para cima, você sente que ele fez algum tipo de magia. As runas de Yoonir se apagam, e Janus recupera sua coordenação, pronto para atirar.
+
+{(LIFE>0 or MIND>0):
+    Você sente que a águia que Yoonir estava controlando ainda está por perto em algum lugar.
+}
+
+*[{rollTag(70)}Segurar a arma]
+*{DEATH>0}[{arcanaTag("death")}Destruir a arma]
+*{FATE>0}[{arcanaTag("fate")}Usar a sorte para protege-lo]
+*{FORCES>1}[{arcanaTag("forces")}{doxTag(30)}Desviar a bala]
+*{LIFE>0}[{arcanaTag("life")}Usar a águia]
+*{MIND>0}[{arcanaTag("mind")}Usar a águia]
+*{SPACE>0}[{arcanaTag("space")}{doxTag(30)}Teleportar a arma até você]
+*{TIME>1}[{arcanaTag("time")}{doxTag(30)}Voltar no tempo]
+*Não se arriscar, deixar Janus dar o tiro
+
+
+- ->END

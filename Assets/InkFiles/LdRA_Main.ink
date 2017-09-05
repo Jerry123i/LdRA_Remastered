@@ -3,6 +3,10 @@ INCLUDE acanthus
 INCLUDE mastigos
 INCLUDE obrimos
 INCLUDE moros
+INCLUDE go_yoonir
+INCLUDE go_janus
+
+
 
 VAR nomeCompleto = "nome"
 VAR nomeCurto = "nom"
@@ -50,6 +54,9 @@ VAR ondeEstava = 0
 VAR auraVision = 0
     CONST OFF = 0
     CONST ON = 1
+
+VAR viuOGato = 0
+    CONST TUDO = 2
     
 VAR conversaSobre = 0
 VAR viuOOlho = 0
@@ -229,7 +236,61 @@ Você tenta se lembrar do que ocorreu, sua memória está completamente perdida,
 
 
 
+==== pegando_o_olho_com_Janus ====
 
+->continue->
+
+Embora pareça um tanto difícil de alcançar, considerando que a porta não parece estar abrindo e o metal está quente de mais para se apoiar sobre.
+"Eu acho que tive uma ideia. Considere seu primeiro exemplo prático de magia."
+Ele esfrega as mãos e agita os braços como um ginasta prestes a se apresentar, depois de uma combinação de gestos exagerados que você imagina serem mais uma tentativa de te impressionar do que realmente relacionados a magia, você consegue realmente sentir algo acontecendo.
+Metade do corpo do mago começa a irradiar um suave brilho prateado, e a outra metade parece sutilmente descolorida, como uma foto saturada dada vida. Ondas brancas de energia luminosa fluem ao longo dos braços de Janus até se acumularem em uma nuvem reluzente entre suas mãos. Dos braços estendidos duas sombras emergem, uma prateada, outra opaca, as duas rapidamente dão forma a nuvem de mana e tudo imediatamente desaparece, deixando Janus segurando um par de longas pinças metálicas.
+Ele olha na sua direção com um olhar ansioso, esperando sua reação.
+
+*"Isso foi incrível! Eu também posso fazer isso?"
+    --"Talvez, isso na verdade é o que nós chamamos de taça, mana da da forma sólida, as vezes elas se formam naturalmente como frutas ou pedras em lugares especiais. Mas criar um dessa forma é uma magia de Primórdio um pouco avançada."
+*"Uau... Pinças, os pobres mortais devem tremer sob seus pés
+    --"Ei! Não desmereça minha magia, é bem difícil modelar mana em coisas desse tipo. Pedras, caixas, vasos, fácil. Mas coisas com partes móveis?"
+    Ele abre e fecha os pegadores para ilustrar ocomentário.
+    "Outro nível, requer muito mais habilidade"
+*"Eu acho que aprendi nada. O que foi tudo isso? Exatamente?"
+    --"Bem, eu canalizei mana para fora do meu corpo e dei a ela for ma física. É o que nós chamamos de taça, elas se formam natura lmente em alguns lugares especiais. Mas o que eu acabei de fazer é uma magia de Primódio."
+
+"De qualquer forma as pinças são mais uma ilusão do que reais, elas se desfazem em alguns minutos, e não são tão resistentes quanto metal de verdade. Então se me dá licença"
+
+Se colocando ao lado da porta do carro ele consegue facilmente pescar o cristal.
+~donoDaPedra = JANUS
+->continue->
+
+"Geralmente o melhor a fazer é absorver essa mana de novo antes que ela se dissipe no ar.
+ 
+ ~mana=3
+  
+{(PRIME>0 and mana<5):
+    <> Mas aqui, por que não fica pra você?"
+    *[prime_Aceitar]
+        Segurando a pinça você consegue facilmente sentir como é falsa, feita de mana, não metal. Como alguém que desfia um suéter puxando um fio solto você rapidamente retona ela a sua matéria prima, armazenando a mana dentro de você.
+        ~mana++
+    *[Recusar]
+        "Quanta educação!"
+        Ele franze o queixo em uma expressão debochada "Mas mana pode ser mais difícil de conseguir por aí do que parece"
+        Ele dobra os pegadores como se fosse quebra-los ao meio, o falso metal se desfaz na mesma energia branca que você viu antes, que é canalizada para o peito de Janus.
+    -else:
+         Ele dobra os pegadores como se fosse quebra-los ao meio, o falso metal se desfaz na mesma energia branca que você viu antes, que é canalizada para o peito de Janus.
+}
+
+-- 
+
+{viuOOlho==OFF:
+    ->continue->
+    Você pede para ver a pedra, já que ainda não teve a chance de vê-la de perto, Janus abre a palma da mão para você examina-la, mas não te entrega.
+    Ela parece ser feita de três "camadas", a mais externa completamente transparente como vidro, dentro dela, uma esfera menor,também transparente, mas tingida de púrpura, e no centro uma pedra ainda menor, opaca e brilhante, e completamente negra.
+    Ela parece ter sido feita com a intenção de se assemelhar a um olho.
+}
+
+->continue->
+->you_are_the_chosen_one
+
+->DONE
 
 
 
@@ -303,7 +364,7 @@ Ele tem olhos grandes e sorridentes, estatura mediana, e mãos que não parecem 
 
 -"Ah! Eu sempre quis ser o primeiro a contar pra alguém" Ele dá um passo para trás e abre os braços como se jatos de confete e efeitos pirotécnicos fossem surgir atrás dele.
 
--"Você é um{gen==1:a} mago{oa()}!!!"
+-"Você é um{gen==1:a} mag{oa()}!!!"
 
 *"Tipo com varinhas e chapéis pontudos e caldeirões?"
     --"Não! Claro que não!"
@@ -331,13 +392,30 @@ Ele tem olhos grandes e sorridentes, estatura mediana, e mãos que não parecem 
      { viuOOlho == ON:
         O mesmo cristal que você tinha avistado antes.
      }
-     
+     ->pegando_o_olho_com_Janus
     -else:
     Tipo um cristal, parece um olho. Ele é um artefato mágico, então talvez você tenha percebido ele.
-
+    { donoDaPedra ==EU:
+    *"Esse aqui?" [Mostrar o cristal]
+        ->you_are_the_chosen_one
+    
+    -else:
+        {   
+            -viuOOlho==ON:
+                Você reconhece como provavelmente sendo o que você viu mais cedo no banco de trás do seu carro. O pequeno cristal arredondado ainda está ali.
+            - (PRIME>0 or FATE>0) :
+                Isso provavelmente explica a {PRIME>0:aura que você viu vinda da direção do carro|atração que você estava sentindo por alguma coisa na direção do carro}. Uma observação rápida do banco de trás encontra uma pequena pedra arredondada, mas lapidada em várias faces.
+            -else:
+                Você explica que não percebeu nada desse gênero.
+                "Eu me lembro de ter jogado pela janela, ainda deve estar aqui atrás" Ele vai na direção do carro e olha por dentro da janela quebrada.
+                "Ali! no banco de trás"
+                Largado ao lado do cinto você vê uma pequena pedra arredondada, mas lapidada em várias faces.
+        }
+        ->pegando_o_olho_com_Janus
+    }
 }
 
-#ONDE EU PAREI
+
 
 
 ->DONE
@@ -644,6 +722,92 @@ A estrada se encontra completamente vazia, no escuro você não consegue ver nen
 ->encontra_Janus
 
 
+==== you_are_the_chosen_one ====
+Assim que {donoDaPedra==EU:você mostra o cristal|você vê o cristal} {FATE>0:a sensação de atração que você sentia se intensifica. Alguma força parece agir não só sobre você e o cristal, mas sobre Janus também, ele parece perceber a mesma coisa, pois começa a sorrir descontroladamente. |Janus começa a sorrir descontroladamente, olhando para você depois para o cristal, e para você de novo.}
+
+"Você é {gen==1:a terceira|o terceiro}!? Hahahaha! Esse dia só fica melhor"
+
+*"Como assim? Do que você está falando?"
+    --{gen==1:"Você é o cara que nós estávamos procurando! A mulher no caso..."|"De você! E desse olho!" {donoDaPedra==EU:Ele aponta pro cristal na sua mão.|Ele te mostra novamente o cristal, quase esfregando-o na sua cara.}}
+*{FATE>0}"Você quer dizer essa força que eu sinto...?"
+    --"Ah você sente também! ótimo, vai ser mais fácil de explciar"
+*{FATE==0}Acho que você está vendo alguma coisa que eu não estou
+    --"Você não sente? Talvez por que eu sou treinado em Destino, mas a aura parece tão forte em você quanto em mim, com certeza"
+*"Você está realmente me assustando agora..."
+    --"Desculpa! Desculpa! É que... longa história"
+
+- Ele para para respirar por um segundo, tentando se acalmar.{auraVision==ON: Você consegue ver as cores na aura dele se tornando mais amenas.}
+
+-"Eu tenho uma irmã, maga também. Quando despertamos nós descobrimos que tinhamos nascido sob uma profecia, mas ela também mencionava um "terceiro, de outro sangue". Alguém que não fosse da nossa família. Na verdade..." Ele olha ao redor apreensivo.
+
+- "Eu te conto no caminho, é melhor sairmos daqui. Mais ninguém te viu, certo?"
+
+*{viuOGato==ON or viuOGato == TUDO}"Eu vi um gato..."
+    --"Era uma gata meio estranha? Quatro olhos, dois rabos, na verdade um espírito?"
+    --Você confirma
+    --"Merda! Era a Fortuna, o familiar da minha irmã, ela já deve saber que o olho está aqui, mas talvez ainda não saiba quem é você"
+    -- {viuOGato==TUDO:
+        "Na verdade..." Você acrescenta "Sua irmã é loira? Olhos verdes como os seus?"
+        "Sim... como você sabe"
+        "Eu segui a gata, vi quando ela abriu um portal e pulou nos braços da sua irmã"
+        "Isso é pior ainda, quer dizer que ela..."
+        }
+*{viuOGato==OFF and MIND>0}"Eu achei ter sentido uma presença..."
+    --"Presença? Como uma consciência? Você sabe Mente então, certo? Pode ter sido só um animal ou algo assim, mas é melhor..."
+*{viuOGato==OFF and MIND==0}"Não você é a primeira pessoa que passa"
+    --"Ótimo, talvez ela ainda não..."
+    
+-Janus para de falar de repente. Você sente um calafrio na base da espinha{viuOGato==TUDO: a mesma sensação de quando viu o portal sendo aberto}.
+
+-{SPACE>0:
+Sua visão continua estendida, passando atrás de você, por entre as árvores você consegue ver um vulto, passando rápido de mais para identificar. 
+}
+-{MIND>0:
+    {SPACE>0:
+        Além disso v
+    -else:
+        V
+    }
+    <>ocê sente mais uma consciência além da sua e de Janus, mais duas na verdade, diferentes entre si e diferentes da que você sentiu quando acordou.
+}
+
+-Janus puxa do bolso uma moeda de prata, grande como o que você veria em um filme de piratas, mas marcada com um pentagrama em um dos lados, e dois rostos virados em direções opostas do outro. Ele começa a move-la entre os dedos, e você tem a impressão que ele se concentra para conjurar algum tipo de magia.
+
+->continue->
+
+Você ouve um farfalhar entre as folhas e um bater de asas, algo passa ao seu lado, rápido de mais para identificar
+
+{
+-donoDaPedra==EU:
+    Você sente uma dor aguda nas costas da mão, dois cortes profundos fazem você derrubar o cristal no chão. Em um segundo rasante, tão rápido quanto, o falcão que te atacou recolhe o artefato do chão e levanta voo. Janus se desconcentra, seja lá o que tentava fazer parece ter falhado.
+    ~dano++
+-donoDaPedra==JANUS:
+    A sombra vai na direção de Janus, ele sufoca um grito de dor, mas deixa cair o cristal, ele para qualquer magia que estivesse tentando para tentar estancar os dois cortes profundos nas costas da mão. Logo em seguida o falcão que o atacou dá um segundo rasante, recolhendo o artefato e levantando voo.
+}
+
+De trás de uma das árvores um homem aparece, ele chama o animal, que pousa diligentemente sobre seu braço e lhe entrega o olho de cristal.
+"Merda!" Janus xinga. "Parece que alguém te viu"
+O recém-chegado é um homem negro, aparentando ser um pouco mais velho que o outro mago, um palmo mais alto e de compleição forte. Ele usa um casaco de frio pesado e tem os cabelos em dreadlocks curtos e bem cuidados. Ele agita o braço e a ave voa para uma árvore próxima.
+"Janus! Sua irmã pediu que eu lhe avisasse que isso já foi longe de mais. Entregue os artefatos que você tem, e pare de procurar pelo rei. Não vale a pena o risco!"
+
+->continue->
+
+"Ah, claro Yoonir. Estávamos 2 a 1, eu finalmente ia conseguir empatar a pontuação com o olho. Você tem que adimitir que largar ele em um carro aleatório para despistar vocês foi genial. Nós temos uma profecia para cumprir, parar de competir agora simplesmente não é justo com o destino"
+Enquanto fala Janus casualmente coloca as mãos atrás do corpo, assim que termina a frase saca uma pistola que tinha escondida nas costas. Apontando-a para Yoonir. Antes que ele possa atirar, o outro mago age mais rápido, ele faz um movimento com as mãos, você sente uma onda de calor seca e intensa emanando dele, um conjunto de runas radiantes surge sobre os braços de Janus, que começam a subtamente se contrair em espasmos descordenados. Ele dispara uma vez, e erra.
+Yoonir então vira na sua direção.
+"Você! Você é {gen==1:a terceira|o terceiro}, de outro sangue não é?! Janus é um lunático, você precisa vir comigo!"
+"Lunático? Que exagero, nós dois sabemos que um tiro não ia te matar, eu só precisava te distrair enquanto você se cura"
+
+{auraVision==ON:
+    Você ainda consegue ver a aura de ambos, mas a magia parece estar se dissipando. A aura de Yoonir tem um tom fechado de azul e alguns tons ocilantes de verde, indicando desconfiança. A aura de Janus é tomada por tons escuros de verde e marrom, emoções negativas, inveja talvez, mas nada que indique agressividade, ou violência. O efeito acaba e sua visão volta ao normal.
+}
+
+*Ir com Yoonir
+    ->ir_com_yoonir
+*Ajudar Janus
+    ->ajudar_janus
+
+- ->DONE
 
 
 == tutorial_mana ==
@@ -683,12 +847,18 @@ Algumas situações arriscadas, difíceis ou perigosas vão ter uma chance de fa
 }
 
 == function rollTag(baseValue)
-{    ~return roll{baseValue-((dano+danoDox)*danoStep)}_}
+    ~temp a =baseValue-((dano+danoDox)*danoStep)
+    ~return "roll" + a + "_"
 
 == function calcRoll(baseValue)
     ~return (baseValue-((dano+danoDox)*danoStep))
 
+== function doxTag(baseValue)
+    ~temp a=baseValue + paradoxoAcumulado
+    ~ return "dox"+a+"_"
 
+== function calcDox(baseValue)
+    ~return (baseValue + paradoxoAcumulado)
 
 == function arcanaTag(arcana) ==
 { 
@@ -697,70 +867,70 @@ Algumas situações arriscadas, difíceis ou perigosas vão ter uma chance de fa
         -path == MOROS:
             ~return "death_"
         -else:
-            ~return "death_mana_1"
+            ~return "death_mana1_"
     }
 -arcana == "fate":
     {
         -path == ACANTHUS:
             ~return "fate_"
         -else:
-            ~return "fate_mana_1"
+            ~return "fate_mana1_"
     }
 -arcana == "forces":
     {
         -path == OBRIMOS:
             ~return "forces_"
         -else:
-            ~return "forces_mana_1"
+            ~return "forces_mana1_"
     }
 -arcana == "life":
     {
         -path == THYRSUS:
             ~return "life_"
         -else:
-            ~return "life_mana_1"
+            ~return "life_mana1_"
     }
 -arcana == "matter":
     {
         -path == MOROS:
             ~return "matter_"
         -else:
-            ~return "matter_mana_1"
+            ~return "matter_mana1_"
     }
 -arcana == "mind":
     {
         -path == MASTIGOS:
             ~return "mind_"
         -else:
-            ~return "mind_mana_1"
+            ~return "mind_mana1_"
     }
 -arcana == "prime":
     {
         -path == OBRIMOS:
             ~return "prime_"
         -else:
-            ~return "prime_mana_1"
+            ~return "prime_mana1_"
     }
 -arcana == "space":
     {
         -path == MASTIGOS:
             ~return "space_"
         -else:
-            ~return "space_mana_1"
+            ~return "space_mana1_"
     }
 -arcana == "spirit":
     {
         -path == THYRSUS:
             ~return "spirit_"
         -else:
-            ~return "spirit_mana_1"
+            ~return "spirit_mana1_"
     }
 -arcana == "time":
     {
         -path == ACANTHUS:
             ~return "time_"
         -else:
-            ~return "time_mana_1"
+            ~return "time_mana1_"
     }
 
  -else:
