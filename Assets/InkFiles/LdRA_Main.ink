@@ -595,6 +595,7 @@ Além da escuridão da noite e da fumaça você tem a impressão de ter sua vis�
 ->->
 
 == ve_o_gato
+~viuOGato = ON
 Qualquer outro o chamaria de um monstro, mas algo dentro de você sabe que se trata de um espírito. Idêntico a um gato doméstico comum, porém com duas caudas, duas bocas e quatro olhos, de pelo todo branco execeto por uma das caudas e uma das patas, pretos. Os dois pares de olhos estão fixos em você, sem iris ou pupila, quatro orbes negros te observam com atenção. O gato não parece notar que foi descoberto, só agora você percebe que ele está atras de você e não parece ter se dado conta de como você expandiu seu dom da visão
 ->->
 
@@ -649,8 +650,8 @@ O gato corre e salta por entre as árvores, mas você consegue acompanha-lo de p
 
 Você se concentra no seu corpo, nos seus ferimentos, nas suas células, cada corte e contusão é clara como um farol para você. Com a destreza de uma tecelã, você liga músculos e emenda pele, absorve hematomas e solda ossos. Você restaura seu corpo a imagem de saúde perfeita que é possível a um ser humano.{danoDox>0: Execeto pelo{cena_do_tronco.tronco_vida:s arranhões e mordidas nas suas pernas. Aquelas baratas de alguma forma feriram mais do que o seu corpo, rasgando e cortando partes do seu ser fundamental.| hematoma no seu ombro. A mancha escura é um ferimento bem alémdo seu corpo, tendo ferido seu ser fundamental.}}
 
-{danoDox>0:Você não consegue se curar pois a forma {cena_do_tronco.tronco_vida:das suas pernas saudáveis e intactas|do seu ombro saudável e intacto}} deixou de exisir. Temporáriamente claro... você tem quase certeza.
-
+{danoDox>0:Você não consegue se curar pois a forma {cena_do_tronco.tronco_vida:das suas pernas saudáveis e intactas|do seu ombro saudável e intacto} deixou de exisir. Temporáriamente claro... você tem quase certeza.}
+~dano--
 ~ondeEstava = ALI
 ->encontra_Janus
 
@@ -804,11 +805,13 @@ Yoonir então vira na sua direção.
 }
 
 *Ir com Yoonir
-    ->ir_com_yoonir
+    ->ir_com_yoonir->
 *Ajudar Janus
-    ->ajudar_janus
+    ->ajudar_janus->
 
-- ->DONE
+- voltou
+
+->DONE
 
 
 == tutorial_mana ==

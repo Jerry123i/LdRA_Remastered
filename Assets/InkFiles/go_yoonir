@@ -13,24 +13,25 @@ Ele pega a moeda de prata e consegue arremessa-la para cima, você sente que ele
 }
 
 *[{rollTag(70)}Segurar a arma]
-    -- ->yoonir_arma
+    -- ->yoonir_arma->
 *{DEATH>0}[{arcanaTag("death")}Destruir a arma]
-    -- ->yoonir_destroy
+    -- ->yoonir_destroy->
 *{FATE>0}[{arcanaTag("fate")}Usar a sorte para protege-lo]
-    -- ->yoonir_sorte
+    -- ->yoonir_sorte->
 *{FORCES>1}[{arcanaTag("forces")}{doxTag(30)}Desviar a bala]
-    -- ->yoonir_bala
+    -- ->yoonir_bala->
 *{LIFE>0}[{arcanaTag("life")}Usar a águia]
-    -- ->yoonir_aguia_life
+    -- ->yoonir_aguia_life->
 *{MIND>0}[{arcanaTag("mind")}Usar a águia]
-    -- ->yoonir_aguia_mind
+    -- ->yoonir_aguia_mind->
 *{SPACE>0}[{arcanaTag("space")}{doxTag(30)}Teleportar a arma até você]
-    -- ->yoonir_teleporte
+    -- ->yoonir_teleporte->
 *{TIME>1}[{arcanaTag("time")}{doxTag(30)}Voltar no tempo]
-    -- ->yoonir_tempo
+    -- ->yoonir_tempo->
 *Não se arriscar, deixar Janus dar o tiro
-    -- ->yoonir_nada
+    -- ->yoonir_nada->
 
+- ->->
 
 = yoonir_aguia_mind
 A águia que Yoonir controlou, ainda está por aqui, perto. Você consegue sentir sua consciência, como um zumbido baixo que você ouve vindo de algum lugar próximo. Ali, em um galho alto, mas ainda perto o bastante.
@@ -38,7 +39,7 @@ Você estende sua mente naquela direção, e rapidamente engloba a da águia, en
 O pássaro levanta voo e investe sobre ele. Ele atira, mas erra, Yoonir foge por entre as árvores e chama você para segui-lo. Você vai atrás, enquanto Janus continua desesperadamente tentando se desvencilhar do pássaro.
 ~terminouComAPedra = ON
 ~yoonirAtingido = OFF
-->END
+->->
 
 = yoonir_aguia_life
 A águia que Yoonir controlou, ainda está por aqui, perto. Você consegue sentir sua energia vital, como um pulsar baixo que você sente vindo de algum lugar próximo. Ali, em um galho alto, mas ainda perto o bastante.
@@ -46,7 +47,7 @@ Você tenta dominar a criatura, acessando seus instintos e suas funções corpor
 O pássaro levanta voo e investe sobre ele. Ele atira, mas erra, Yoonir foge por entre as árvores e chama você para segui-lo. Você vai atrás., enquanto Janus continua desesperadamente tentando se desvencilhar do pássaro.
 ~terminouComAPedra = ON
 ~yoonirAtingido = OFF
-- ->END
+- ->->
 
 =yoonir_arma
 Você parte para cima de Janus, rapidamente agarrando a pistola e apontando-a para cima, o dedo dele ainda sobre o gatilho, mas Yoonir está fora de perigo. Você entretanto, luta para tentar tirar a arma das mãos dele
@@ -68,7 +69,7 @@ Você parte para cima de Janus, rapidamente agarrando a pistola e apontando-a pa
  ~terminouComAPedra = ON
  ~yoonirAtingido = OFF
  
- ->END
+ ->->
  
  =yoonir_bala
 Você vê Janus se preparando para disparar, mas não se move, é arriscado de mais tentar tirar a arma das mãos dele, existe algo mais inteligente que você pode tentar. Cobrindo seus sentido com magia você se prepara para responder a primeira descarga de energia que perceber, calor, velocidade, energias, você deve ser capaz de responder imediatamente.
@@ -85,7 +86,7 @@ Ele dispara, você consegue ver a onda de som surgindo ao redor da arma antes me
     ~yoonirAtingido = OFF
 }
 
-->DONE
+->->
 
 =yoonir_destroy
 Você não tenta tirar a arma das mãos de Janus, mas ainda sim tenta segura-la. Logo antes dele dar o tiro, você toca nela, com um rápido toque de um dedo próximo ao cano da arma você consegue acessar o padrão da arma, a matriz mágica que a define no mundo real. Com só um toque você desfaz a arma em sua essência, minando a estrutura do metal.
@@ -95,7 +96,7 @@ Janus puxa o gatilho, nenhum tiro, ele tenta novamente. O gatilho cai, o pente d
 ~terminouComAPedra = ON
 ~yoonirAtingido = OFF
 
-->DONE
+->->
 
 =yoonir_nada
 Ele atira, Yoonir é atingido no braço, deixa o olho cair, mas continua seguindo em direção a flroesta. Você vai atrás, mas Janus não te impede.
@@ -104,7 +105,7 @@ Ele atira, Yoonir é atingido no braço, deixa o olho cair, mas continua seguind
 ~terminouComAPedra = OFF
 ~yoonirAtingido = ON
 
-->DONE
+->->
 
 =yoonir_sorte
 Você cria um pedido, um desejo, que Yoonir não seja atingido pela bala. Sua alma mágica consegue dar peso a sua vontade, mas depois de lança-la entre os fios do destino você só pode torcer pelo melhor.
@@ -115,7 +116,7 @@ Você rapidamente segue atrás do mago, Janus não faz nada para lhe impedir.
 
 ~yoonirAtingido = OFF
 ~terminouComAPedra = ON
-->DONE
+->->
 
 =yoonir_teleporte
 Você se concentra em tirar a arma das mãos de Janus. Você estende a palma da mão aberta em frente ao corpo, com os olhos fixos na pistola você se lembra como descobriu que a distância é uma ilusão, que sua alma mágica pode dobrar o espaço entre dois pontos como uma folha de papel.
@@ -159,7 +160,7 @@ Você visualiza o artefato em sua mão e começa a lentamente erodir a imagem de
     ~terminouComAPedra = ON
     ~armaRoubada = ON
 }
-->DONE
+->->
 
 = yoonir_tempo
 
@@ -177,28 +178,6 @@ Você ignora por um segundo Yoonir fugindo e Janus ameaçando disparar contra el
          ~yoonirAtingido = OFF
          ~armaRoubada = ON
 }
-->DONE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+->->
 
 
