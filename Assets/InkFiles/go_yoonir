@@ -13,14 +13,23 @@ Ele pega a moeda de prata e consegue arremessa-la para cima, você sente que ele
 }
 
 *[{rollTag(70)}Segurar a arma]
+    -- ->yoonir_arma
 *{DEATH>0}[{arcanaTag("death")}Destruir a arma]
+    -- ->yoonir_destroy
 *{FATE>0}[{arcanaTag("fate")}Usar a sorte para protege-lo]
+    -- ->yoonir_sorte
 *{FORCES>1}[{arcanaTag("forces")}{doxTag(30)}Desviar a bala]
+    -- ->yoonir_bala
 *{LIFE>0}[{arcanaTag("life")}Usar a águia]
+    -- ->yoonir_aguia_life
 *{MIND>0}[{arcanaTag("mind")}Usar a águia]
+    -- ->yoonir_aguia_mind
 *{SPACE>0}[{arcanaTag("space")}{doxTag(30)}Teleportar a arma até você]
+    -- ->yoonir_teleporte
 *{TIME>1}[{arcanaTag("time")}{doxTag(30)}Voltar no tempo]
+    -- ->yoonir_tempo
 *Não se arriscar, deixar Janus dar o tiro
+    -- ->yoonir_nada
 
 
 = yoonir_aguia_mind
@@ -43,7 +52,7 @@ O pássaro levanta voo e investe sobre ele. Ele atira, mas erra, Yoonir foge por
 Você parte para cima de Janus, rapidamente agarrando a pistola e apontando-a para cima, o dedo dele ainda sobre o gatilho, mas Yoonir está fora de perigo. Você entretanto, luta para tentar tirar a arma das mãos dele
 
 {rollResult<= calcRoll(70):
-    <>, ele tenta alcançar algo no bolso da calça, provavelmente sua moeda , você aproveita a distração para empurra-lo, ele se desequilibra, vocêdá um puxão decidido na arma, e consegue arranca-la das mãos do mago.
+    <>, ele tenta alcançar algo no bolso da calça, provavelmente sua moeda , você aproveita a distração para empurra-lo, ele se desequilibra, você dá um puxão decidido na arma, e consegue arranca-la das mãos do mago.
     ~armaRoubada=ON
     -else:
         <>, ele se recusa a soltar, em uma tentativa de golpea-lo você solta uma das mãos da arma, Janus tenta puxar a pistola na direção dele e puxa o gatilho.
@@ -126,7 +135,7 @@ Você visualiza o artefato em sua mão e começa a lentamente erodir a imagem de
     névoa densa
 }
 
-<>se forma ao redor da sua mão, e uma idêntica ao redor da mão de Janus. O mago parece ignorar sua magia, se concentrando em tentar mirar no alvo móvel. Você estende a mão através do espaço<>
+<> se forma ao redor da sua mão, e uma idêntica ao redor da mão de Janus. O mago parece ignorar sua magia, se concentrando em tentar mirar no alvo móvel. Você estende a mão através do espaço<>
 
 {rollResult<=calcDox(30):
     , pront{oa()} para agarrar a arma. Mas algo dá errado, você perde o controle por um segundo e vai longe de mais. Você sente uma pressão sobre sua mão, como um vácuo tentando suga-la, você consegue sentir ela ameaçando se desligar do seu pulso, e tem tempo apenas de interromper a magia antes de perder um membro. Mas mesmo assim, seus ossos doem dos dedos até o cotovelo, como se tivessem tentado puxa-los para fora do seu corpo.
@@ -138,7 +147,7 @@ Você visualiza o artefato em sua mão e começa a lentamente erodir a imagem de
         -path==ACANTHUS:
             ,a nuvem de prata se transforma em um pequeno redemoinho brilhante, ele passeia por um momento sobre a sua palma, então começa a perder velocidade até se dissipar, a pistola surge dentro dele, e cai na sua mão.
         -path==MASTIGOS:
-            , a aura ao redor da mão de Janus continua a se distorcer e criar uma miragem deformada, então, como um arquivo digital corrompidoa arma "trava" ficando por um segundo suspenso em pleno ar uma, como uma imagem falha e incompleta. Por um momento uma segunda pistola incompleta surge sobre sua mão, para em seguida se concretizar na forma perfeita da arma por inteiro.
+            , a aura ao redor da mão de Janus continua a se distorcer e criar uma miragem deformada, então, como um arquivo digital corrompido a arma "trava" ficando por um segundo suspenso em pleno ar uma, como uma imagem falha e incompleta. Por um momento uma segunda pistola incompleta surge sobre sua mão, para em seguida se concretizar na forma perfeita da arma por inteiro.
         -path==MOROS:
             , a sombra vai se tornando cada vez mais escura,formando uma escuridão densa sobre a sua mão, a arma vai sendo igualmente consumida pela escuridão. Até que é impossível vê-la, no mesmo momento a escuridão concentrada se dissipa da sua palma, e você está segurando a pistola.
         -path==OBRIMOS:

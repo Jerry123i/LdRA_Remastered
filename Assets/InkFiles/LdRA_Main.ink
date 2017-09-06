@@ -20,7 +20,7 @@ VAR path = 0
     CONST OBRIMOS  = 3
     CONST THYRSUS  = 4
 
-VAR dano    = 0
+VAR dano    = 1
 VAR danoDox = 0
 VAR mana    = 5
 VAR paradoxoAcumulado = 0
@@ -176,7 +176,7 @@ Você lentamente abre os olhos, tudo está um pouco embaçado ainda, {TIME==0:é
 
 {MIND>0 or SPACE>0 or SPIRIT>0:->ve_algo->}
 
-Se adaptando melhor a escuridão e a fumaça você consegue observar seus arredores com mais calma. Aparentemente você estave em um acidente de carro, o automóvel batido e em chamas a alguns metros deixa pouca dúvida. Na verdade, você provavelmente teve muita sorte de sair viv{oa()}
+Se adaptando melhor a escuridão e a fumaça você consegue observar seus arredores com mais calma. Aparentemente você estave em um acidente de carro, o automóvel batido e em chamas a alguns metros deixa pouca dúvida. Na verdade, você provavelmente teve muita sorte de de sair viv{oa()}.
 
 {PRIME>0 and FATE>0:
 Vindo do carro, além das chamas, outra coisa chama sua atenção. Uma luz, uma aura iradiando de algo no banco de trás. Você sente uma estranha conexão com essa energia, ela te atrai sutilmente naquela direção, como um elástico levemente tensionado entre você e a fonte dessa aura.
@@ -258,16 +258,14 @@ Ele olha na sua direção com um olhar ansioso, esperando sua reação.
 *"Eu acho que aprendi nada. O que foi tudo isso? Exatamente?"
     --"Bem, eu canalizei mana para fora do meu corpo e dei a ela for ma física. É o que nós chamamos de taça, elas se formam natura lmente em alguns lugares especiais. Mas o que eu acabei de fazer é uma magia de Primódio."
 
-"De qualquer forma as pinças são mais uma ilusão do que reais, elas se desfazem em alguns minutos, e não são tão resistentes quanto metal de verdade. Então se me dá licença"
+-"De qualquer forma as pinças são mais uma ilusão do que reais, elas se desfazem em alguns minutos, e não são tão resistentes quanto metal de verdade. Então se me dá licença"
 
-Se colocando ao lado da porta do carro ele consegue facilmente pescar o cristal.
-~donoDaPedra = JANUS
-->continue->
+-Se colocando ao lado da porta do carro ele consegue facilmente pescar o cristal.
+-~donoDaPedra = JANUS
+-->continue->
 
 "Geralmente o melhor a fazer é absorver essa mana de novo antes que ela se dissipe no ar.
- 
- ~mana=3
-  
+
 {(PRIME>0 and mana<5):
     <> Mas aqui, por que não fica pra você?"
     *[prime_Aceitar]
@@ -496,7 +494,7 @@ Antes mesmo de conseguir enxerga-lo direito você tem a impressão de que pode v
 - ->->
 
 ==cena_do_tronco
-O peso que você sentia sobre as pernas é na verdade um tronco de á rvore que tombou sobre você.
+O peso que você sentia sobre as pernas é na verdade um tronco de árvore que tombou sobre você.
 
 {LIFE>0:
     De alguma forma você sabe que a madeira ainda está viva, morrendo, porém viva. Existe potencial nessa energia vital, você acha que pode se livrar da árvore dessa foma.
@@ -506,7 +504,7 @@ O peso que você sentia sobre as pernas é na verdade um tronco de á rvore que 
 }
     
 {DEATH>0:
- Talvez você consiga simplesmente quebrar a madeira, se houvesseuma forma de deixa-la mais frágil.
+ Talvez você consiga simplesmente quebrar a madeira, se houvesse uma forma de deixa-la mais frágil.
 }
  
 {MATTER>1:
@@ -539,7 +537,7 @@ O peso que você sentia sobre as pernas é na verdade um tronco de á rvore que 
     
     -- ->continue->
 
-    --Ignorando por ummomento as consequências morais de ter matado um vegetal você foca sua atenção no cadáver sobre você. Qual era mesmo seu objetivo? Que a madeira apodrecesse e inchasse, depois se tornass e ressacada e esbranquiçada, oca e frágil, um esqueleto da árvore que foi. Privado da proteção da vida o vácuo da morte corroendo-o até que se tornasse nada.
+    --Ignorando por um momento as consequências morais de ter matado uma planta você foca sua atenção no cadáver sobre você. Qual era mesmo seu objetivo? Que a madeira apodrecesse e inchasse, depois se tornass e ressacada e esbranquiçada, oca e frágil, um esqueleto da árvore que foi. Privado da proteção da vida o vácuo da morte corroendo-o até que se tornasse nada.
 
     --Tudo isso está acontecendo, você sente. Porém muito mais devagar do que precisaria ser, impaciente você toma a morte nas próprias mãos,você lixa e maretela o tronco, esculpindo em madeira e decadência a perfeita imagem da árvore morta que você imaginou.
 
@@ -739,7 +737,7 @@ Assim que {donoDaPedra==EU:você mostra o cristal|você vê o cristal} {FATE>0:a
 *"Você está realmente me assustando agora..."
     --"Desculpa! Desculpa! É que... longa história"
 
-- Ele para para respirar por um segundo, tentando se acalmar.{auraVision==ON: Você consegue ver as cores na aura dele se tornando mais amenas.}
+- Ele para para respirar por um segundo, tentando se acalmar. {auraVision==ON:Você consegue ver as cores na aura dele se tornando mais amenas.}
 
 -"Eu tenho uma irmã, maga também. Quando despertamos nós descobrimos que tinhamos nascido sob uma profecia, mas ela também mencionava um "terceiro, de outro sangue". Alguém que não fosse da nossa família. Na verdade..." Ele olha ao redor apreensivo.
 
