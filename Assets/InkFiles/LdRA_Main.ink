@@ -85,7 +85,6 @@ VAR amigo = 0
 ->intro_Genero
 
 ==== intro_Genero ====
-
 Qual gênero você prefere que seja usado para se referir ao seu personagem?
 
 * [Masculino]
@@ -246,11 +245,16 @@ Você tenta se lembrar do que ocorreu, sua memória está completamente perdida,
 
 {LIFE>0:<> Mas depois desse sonho, você acredita que pode fazer algo quanto a isso.}
 
-*{SPIRIT>0 and SPACE>0}[Ir na direção do espírito]->persegue_o_gato
-*{SPIRIT>0 and !SPACE>0}[roll{((SPIRIT-1)*10)+60-(dano+danoDox)*danoStep}_Perseguir o espírito]->persegue_o_gato
-*{PRIME>0 or FATE>0}[Investigar o carro] ->investiga_o_carro
-*{LIFE>0}[life_mana{path!=THYRSUS:2|1}_Cuidar dos seus ferimentos]->cura->
-*[Procurar ajuda]->procura_ajuda->
+*{SPIRIT>0 and SPACE>0}[Ir na direção do espírito]
+    -- ->persegue_o_gato
+*{SPIRIT>0 and !SPACE>0}[roll{((SPIRIT-1)*10)+60-(dano+danoDox)*danoStep}_Perseguir o espírito]
+    -- ->persegue_o_gato
+*{PRIME>0 or FATE>0}[Investigar o carro]
+    -- ->investiga_o_carro
+*{LIFE>0}[life_mana{path!=THYRSUS:2|1}_Cuidar dos seus ferimentos]
+    -- ->cura
+*[Procurar ajuda]
+    --->procura_ajuda
 
 
 
@@ -330,14 +334,14 @@ Ele olha na sua direção com um olhar ansioso, esperando sua reação.
 {(ondeEstava==CHEGANDO):
         ->interacao_janus_longe->
     -else:
-        Assim que te vê próximo ao carro, em meio a cena do acidente, ele guarda o capacete na moto e acena, indo na sua direção. Ele é jovem, tem os cabelos loiros despenteados e olhos claros, usa uma jaqueta escura e uma calça jeans bastante desbotada.{auraVision==ON: As cores vibrantes ao redor dele esmaecem e dão espaço a um tom fechado de azul que sugere desconfiança.} 
+        Assim que te vê próximo ao carro, em meio a cena do acidente, ele guarda o capacete na moto e acena, indo na sua direção. Ele é jovem, tem os cabelos loiros despenteados e olhos claros, usa uma jaqueta escura e uma calça jeans bastante desbotada. {auraVision==ON:As cores vibrantes ao redor dele esmaecem e dão espaço a um tom fechado de azul que sugere desconfiança.} 
 }
 
 ->continue->
 
 "Ei! Tudo bem com você?"
 
-Ele tem olhos grandes e sorridentes, estatura mediana, e mãos que não parecem acostumadas a trabalho físico, emboraele não aparente estar fora de forma, ou ao menos não parece especialmente gordo ou franzino.
+Ele tem olhos grandes e sorridentes, estatura mediana, e mãos que não parecem acostumadas a trabalho físico, embora ele não aparente estar fora de forma, ou ao menos não parece especialmente gordo ou franzino.
 
 "... é o seu carro? Você se machucou?"
 
@@ -387,7 +391,7 @@ Ele tem olhos grandes e sorridentes, estatura mediana, e mãos que não parecem 
     --"Quer dizer... as varinhas sim, mas são opcionais. Na verdade eu já ouvi falar de algumas pessoas que usam caldeirões... Mas definitivamente sem chapéis pontudos!"
 *"E é por isso que eu não me lembro de nada?"
     --"Você perdeu a memória? Não, eu acho que você só bateu a cabeça mesmo. Mas eu tenho uma amiga que talvez possa te ajudar com isso."
-*"Ok, mas falando sério agora sério agora..."
+*"Ok, mas falando sério agora..."
     --"Sempre tem um cético não é mesmo?" Ele rola os olhos, sarcástico. 
     --Você não está vendo o mundo de forma diferente? Não fez nada que não consiga explicar desde que acordou? Sua alma não se sente livre deuma âncora que te acompanhava a vida toda?! Eu estou literalmente olhando pra ela nesse momento. {gen==1:Moça, você é uma maga|Cara, você é um mago}."
     
@@ -535,9 +539,8 @@ O peso que você sentia sobre as pernas é na verdade um tronco de árvore que t
     
     -- ->continue->
     
-    --{rollResult<=30+paradoxoAcumulado:
-        -A imagem que você criara se deforma na sua frente, as asas da borboleta encolhem e endurecem, ficam escuras e grudam no corpo como uma carapaça. A transformação começa e o tronco começa a tomar forma. Em pequenas lascas, partes do tronco criam pernas e se desgrudam, a madeira então cria cabeça, antenas e a carapaça brilhante, e as baratas correm ou voam para longe, algumas passando sobre suas pernas ou voando rente ao seu rosto. Cada vez mais delas rastejando sobre você, até um grande enxame ter se formado sobre todo seu corpo, te arranhando e mordendo antes de desaparecerem na escuridão [-1 Saúde]. Todas finalmente saem, e você pode se levantar.
-    
+    --{rollResult<=(calcDox(30)):
+        -A imagem que você criara se deforma na sua frente, as asas da borboleta encolhem e endurecem, ficam escuras e grudam no corpo como uma carapaça. A transformação começa e o tronco começa a tomar forma. Em pequenas lascas, partes do tronco criam pernas e se desgrudam, a madeira então cria cabeça, antenas e a carapaça brilhante, e as baratas correm ou voam para longe, algumas passando sobre suas pernas ou voando rente ao seu rosto. Cada vez mais delas rastejando sobre você, até um grande enxame ter se formado sobre todo seu corpo, te arranhando e mordendo antes de desaparecerem na escuridão [-1 Saúde]. Todas finalmente saem, e você pode se levantar. ~danoDox++
     -else:
         Em peque nas lascas, partes do tronco criam pernas e se desgrudam. Em seguida criam grandes asas coloridas, e voam para longe, inicialmente uma por uma, logo mais e mais, até que estão saindo as dezenas de cima de você. Em um pequeno turbilhão de cores e centenas de asas batendo as últimas borboletas levantam voo, levando o que restava do tronco com elas.
     }
@@ -681,11 +684,16 @@ Se arriscando um pouco mais de perto, você pode ver {PRIME>0:a origem do brilho
  Largado do lado do cinto de segurança, uma pedra arroxeada, do tamanho de uma bola de gude. Você precisaria pega-la para enxergar mais do que isso, a porta parece trancada, porém o vidro quebrou no acidente, de forma que talvez seja possível alcançar o interior, mas você corre o risco de se queimar.#roll
  ~viuOOlho = ON
  
-*[roll{70-((dano+danoDox)*danoStep)}_Arriscar e pegar a pedra pela janela]->carro_pegar->
-*[Deixar a pedra como está]->carro_ignorar->
-*{FORCES>0}[forces_{path!=OBRIMOS:mana1_}Reduzir as chamas]->carro_forces->
-*{DEATH>0}[death_{path!=MOROS:mana1_}Sufocar as chamas]->carro_death->
-*{MATTER>0}[matter_{path!=MOROS:mana1_}Destrancar a porta]->carro_matter->
+*[{rollTag(70)}_Arriscar e pegar a pedra pela janela]
+    --->carro_pegar->
+*[Deixar a pedra como está]
+    --->carro_ignorar->
+*{FORCES>0}[forces_{path!=OBRIMOS:mana1_}Reduzir as chamas]
+    --->carro_forces->
+*{DEATH>0}[death_{path!=MOROS:mana1_}Sufocar as chamas]
+    --->carro_death->
+*{MATTER>0}[matter_{path!=MOROS:mana1_}Destrancar a porta]
+    --->carro_matter->
 
 - ->final
 
@@ -829,7 +837,7 @@ Yoonir então vira na sua direção.
     
 - ->continue->
 
-{(dano+danoDox>=5):morri}
+{(dano+danoDox>=5):{amigo==YOONIR:->ferido_yoonir|->ferido_janus}}
 {armaRoubada==ON:->shot_back->}
 {amigo==YOONIR:->pos_combate_yoonir}
 {amigo==JANUS:->pos_combate_janus}
@@ -844,7 +852,7 @@ Ele entra em um posto de gasolina na beira da estrada, estacionando ao lado da l
 A loja de conveniência não tem nada de extraordinário, provavelmente algo bom com tudo que tem acontecido. Uma pequena lanchonete, alguns biscoitos e doces com o típico preço inflacionado desse tipo de lugar. Já é de manhã, o sol começou a nascer a pouco tempo, a loja está vazia exceto por alguns poucos funcionários sonolentos.
 "Quer alguma coisa?" {amigo==YOONIR:Yoonir|Janus} pergunta.
 Você põe a mão no bolso, e se dá conta de que perdeu sua carteira no acidente.
-"Não se preocupe{amigo==YOONIR: eu pago|,você me paga depois}."
+"Não se preocupe {amigo==YOONIR: eu pago|<>,você me paga depois}."
 *[Uma água]
     --Você pega uma garrafa de água em uma das geladeiras ao lado do balcão.
     --~lanche=AGUA
@@ -857,8 +865,9 @@ Você põe a mão no bolso, e se dá conta de que perdeu sua carteira no acident
 *[Recusar]
     --Você educadamente recusa a oferta, esperando {amigo==YOONIR:Yoonir|Janus} se servir.
     
-Ele pega {amigo==YOONIR:uma água e um sanduíche natural|um café e um pacote de biscoitos recheados} e vocês vão se sentar em uma das mesas mais afastadas.
-->continue->
+- Ele pega {amigo==YOONIR:uma água e um sanduíche natural|um café e um pacote de biscoitos recheados} e vocês vão se sentar em uma das mesas mais afastadas.
+
+- ->continue->
 
 {CheckForEggs()}
 
@@ -877,11 +886,11 @@ Ele pega {amigo==YOONIR:uma água e um sanduíche natural|um café e um pacote d
         Você dá uma mordida na coxinha, é boa o bastante para alguém com fome,melhor do que você esperava de uma loja de conveniência.
 }
 
-"Só mais um detalhe, {amigo==YOONIR: antes de te explicar a situação da profecia. Eu gostaria de saber qualé sua torre.| só para matar uma curiosidade minha, eu já te explico toda asituação da minha irmã e da profecia. Mas antes eu queria saberqual a sua torre.}"
+"Só mais um detalhe, {amigo==YOONIR: antes de te explicar a situação da profecia. Eu gostaria de saber qual é sua torre.| só para matar uma curiosidade minha, eu já te explico toda a situação da minha irmã e da profecia. Mas antes eu queria saber qual a sua torre.}"
 Antes que você possa perguntar ele lembra que você é nov{oa()} nessa coisa de magia, e explica o que quis dizer.
 "Ser um mago quer dizer que você despertou, sua alma foi até os planos astrais e você assinou seu nome em uma das cinco torres. E agora você pode canalizar a influência da sua torre para alterar esse mundo. Cada torre favorece influências diferentes, que nós chamamos de Arcanas, mas com trinamento qualquer mago pode dominar todos eles.
 
-{amigo==YOONIR:Eu por exemplo sou um Thyrsus, eu naturalmente já domino os Arcanas de Espírito e Vida, mas também sou versado em Espaço.|Eu por exemplo sou um Acanthus, eu naturalmente já domino,Destino e Tempo, mas também sei Primórdio e um pouco de Espírito.}
+{amigo==YOONIR:Eu por exemplo sou um Thyrsus, eu naturalmente já domino os Arcanas de Espírito e Vida, mas também sou versado em Espaço.|Eu por exemplo sou um Acanthus, eu naturalmente já domino Destino e Tempo, mas também sei Primórdio e um pouco de Espírito.}
 ->continue->
 
 "Então? Como foi seu despertar?"
@@ -909,7 +918,7 @@ Antes que você possa perguntar ele lembra que você é nov{oa()} nessa coisa de
         *"Era uma floresta, tudo estava vivo e lutando para sobreviver"
 }
 
-{amigo==YOONIR:
+-{amigo==YOONIR:
 {
     -path==ACANTHUS:
          "Provavelmente um{gen==1:a} Acanthus, assim como o Janus e a irmã. Parece que além de controlar o destino vocês atraem ele"
@@ -922,14 +931,14 @@ Antes que você possa perguntar ele lembra que você é nov{oa()} nessa coisa de
     -path==OBRIMOS:
         "Isso soa como um Obrimos, torre dos taumaturgos. Eu vou te apresentar o Hélio, outro mago que está nos ajudando, ele também é um Obrimos, pode te aconcelhar até você ter um controle melhor da sua magia. Quando vocês não estão lançando fogo e trovões estão controlando mana, todo cuidado é pouco"
     -path==THYRSUS:
-        Xamã, com certeza. Tudo parecia tentar te matar, eao mesmo tempo você nunca se sentiu tão viv{gen==1:a? Você é uma|o? Você é um} Thyrsus, como eu. Talvez eu possa te ensinar alguma coisa quando tivermos mais tempo"
+        Xamã, com certeza. Tudo parecia tentar te matar, e ao mesmo tempo você nunca se sentiu tão viv{gen==1:a? Você é uma|o? Você é um} Thyrsus, como eu. Talvez eu possa te ensinar alguma coisa quando tivermos mais tempo"
 }
 }
 
-{amigo==JANUS:
+-{amigo==JANUS:
 {
     -path==ACANTHUS:
-    "Parece que temos mais um{gen==1:a} Acanthus nessa profecia, é a mesma torre que eu e minha irmã. Bom e velho reino astral de Arcadia. Deve ser essa ligação com o destino sabe, atrai profecias para a
+    "Parece que temos mais um{gen==1:a} Acanthus nessa profecia, é a mesma torre que eu e minha irmã. Bom e velho reino astral de Arcadia. Deve ser essa ligação com o destino sabe, atrai profecias para a gente.
     -path==MASTIGOS:
     "Se as leis da física não faziam sentido ou você achou que estava no inferno provavelmente você é um{gen==1:a bruxa, uma| bruxo, um} Mastigos. Eu vou te apresentar a Psiquê, outra maga da mesma torre que você que está me ajudando com toda essa coisa da profecia."
     -path==MOROS:"Parece que você visitou Stygia então. Muitos mortos, muito ouro e chumbo? Você é um{gen==1:a} Moros, ou necromante. Você vai se dar bem com a Magpie, é outra maga da mesma torre que você que está me ajudando com toda essa coisa da profecia."
@@ -980,15 +989,15 @@ Antes que você possa responder de qualquer forma, você sente uma dor aguda per
 
 "Wow! Você consegue ver isso?"
 
-*{FATE>0}[{arcanaTag("fate")}Usar a visão mágica]
---~ultimaVisao=VISAOF
-    --Você esfrega seus olhos, e se concentra em tentar enchergar os fios do destino ao seu redor 
-*{SPACE>0}[{arcanaTag("space")}Usar a visão mágica]
-    --~ultimaVisao = VISAOS
-    --Você abre os olhos, tentando enxergar as conexões ao redor de você além dos conceitos de proximidade e distância
-*{(FATE==0 and SPACE==0)}"Não"
-    --"Você não deve ter o arcana. Aqui!"
-    --Ele toca sua testa {amigo==JANUS:com a moeda }. Você sente a magia recaindo sobre a sua visão, {amigo==YOONIR:você enxerga as conexões além das distâncias entre entre as coisas. Como um mago hábil no arcana de Espaço faria|você enxerga os fios do destino ao seu redor}.
+**{FATE>0}[{arcanaTag("fate")}Usar a visão mágica]
+    ---~ultimaVisao=VISAOF
+    ---Você esfrega seus olhos, e se concentra em tentar enchergar os fios do destino ao seu redor 
+**{SPACE>0}[{arcanaTag("space")}Usar a visão mágica]
+    ---~ultimaVisao = VISAOS
+    ---Você abre os olhos, tentando enxergar as conexões ao redor de você além dos conceitos de proximidade e distância
+**{(FATE==0 and SPACE==0)}"Não"
+    ---"Você não deve ter o arcana. Aqui!"
+    ---Ele toca sua testa {amigo==JANUS:com a moeda }. Você sente a magia recaindo sobre a sua visão, {amigo==YOONIR:você enxerga as conexões além das distâncias entre entre as coisas. Como um mago hábil no arcana de Espaço faria|você enxerga os fios do destino ao seu redor}.
 
 -Ao redor da sua perna, você consegue ver um emaranhado de fios dourados, presos a matriz da sua alma mágica, mas também presos especificamente a sua perna. Os fios se estendem além do posto de gasolina, atravessando vários quilómetros em uma linha reta incorpórea que desaparece no horizonte.
 
@@ -1003,7 +1012,7 @@ Antes que você possa responder de qualquer forma, você sente uma dor aguda per
             "Desculpe, mas agora eu vou ter que insistir que você trabalhe conosco."
         -posicao == NAOQUERO:
             .
-            "Eu sei que você já fez bastante por mim, mas acho que vouprecisar da sua ajuda mais uma vez."
+            "Eu sei que você já fez bastante por mim, mas acho que vou precisar da sua ajuda mais uma vez."
     }
 }
 
@@ -1018,7 +1027,7 @@ Antes que você possa responder de qualquer forma, você sente uma dor aguda per
     "Mudança de planos. Você não precisa me ajudar, mas eu com certeza não vou te entregar para minha irmã tão fácil assim"
     -posicao == NAOQUERO:
     , sorrindo.
-    "O que foi que eu disse? Como você pretende fugir disso?Seu destino está literalmente amarrado a sua perna"
+    "O que foi que eu disse? Como você pretende fugir disso? Seu destino está literalmente amarrado a sua perna"
     }
 }
 
@@ -1026,6 +1035,7 @@ Antes que você possa responder de qualquer forma, você sente uma dor aguda per
 -->END
 
 =analisa_o_olho_yoonir
+~PRIME=1
 {amigo==YOONIR:Yoonir tira o cristal do bolso do casaco e começa a examina-lo sobre a mesa.}
 
 *"Mas... ele faz alguma coisa?"
@@ -1034,17 +1044,18 @@ Antes que você possa responder de qualquer forma, você sente uma dor aguda per
     --"Além de ser uma parte do tirano que pode destruir toda nossa civilização. Eles geralmente são artefatos poderosos por si só. Hélio vai saber dizer que habilidades ele tem
 
 -{(PRIME>0 and posicao!=MUDEIDEIDEIA):
-    , se você tiver habilidade com o Arcana de Primórdio talvez consiga, quer tentar?
+    <>, se você tiver habilidade com o Arcana de Primórdio talvez consiga, quer tentar?
     *[prime_Tentar]
         Ele te entrega o cristal, você segura ele e observa com muita atenção a aura mágica ao seu redor. A mesma que você conseguia ver no banco de trás do seu carro, porém vendo de perto e com calma você consegue ler a magia como um livro.
         Parecem dois encantamentos, ambos associados a visão, o que parece adequado, você pensa. Um é estruturado de tal forma que sugere ampliação, como se permitisse enchergar em várias direções ao mesmo tempo, você tem a impressão de que é uma magia de Espaço. O outro parece tratar de ver algo que geralmente é invisível, você tem a impressão de que é uma magia do arcana Morte, mas é sóo que você consegue descobrir.
         Você devolve o olho e conta o que conseguiu entender para Yoonir, ele te esclarece sobre a segunda magia.
-        "Provavelmente um encantamento para ver fantasmas. Ah, sim , fantasmas existem também, vá se acostumando a essetipo de surpresa, é saudável manter uma mente aberta a partir de agora"
+        "Provavelmente um encantamento para ver fantasmas. Ah, sim , fantasmas existem também, vá se acostumando a esse tipo de surpresa, é saudável manter uma mente aberta a partir de agora"
     *[Não tentar]
         "Ok então. Hélio sempre gosta de explicar os artefatos de qualquer forma."
+    -else:
+        ->->
 }
-
-->->
+- ->->
 
 =analisa_o_olho_janus
 
@@ -1093,7 +1104,7 @@ Janus então tira o olho de cristal do bolso e começa a estuda-lo contra a luz.
 *"Eu prefiro não me envolver sabe..."
     --~posicao=NAOQUERO
     --"Não se preocupe, não vamos te obrigar a escolher um lado nessa disputa. Eu aprecio toda a ajuda e confiança que você me ofereceu até agora."
-->->
+- ->->
 
 =papo_serio_janus
 
@@ -1125,7 +1136,7 @@ Janus então tira o olho de cristal do bolso e começa a estuda-lo contra a luz.
     --~posicao=NAOQUERO
     --"Hun? Sério?" Ele dá um sorriso debochado "É seu destino, meio difícil de não se envolver com ele {path==ACANTHUS:um{gen==1:a} Acanthus deveria saber disso. Mas você é nov{oa()}, eu entendo.|{FATE>0:você também viu não foi? A força que te impulsiona na direção dos artefatos?}}.
     --É claro que eu não vou te obrigar a nada, mas eu duvido que você não vá encontrar mais artefatos 'surgindo' no seu carro"
-->->
+- ->->
 
 =yoonir_pergunta_seu_nome
 "Então... eu ainda não sei seu nome"
@@ -1143,7 +1154,10 @@ Ele abre a garrafa de água e toma um gole.
 #input
 #nomeDasSombras
 ->continue->
-{nomeDasSombras==nomeCurto:Seu nome das sombras deve ser diferente do seu nome real->nomeDasSombrasInY}
+{nomeDasSombras==nomeCurto:
+    Seu nome das sombras deve ser diferente do seu nome real.
+    ->nomeDasSombrasInY
+}
     
 {(CheckForShadowEggs()==ON):
     {(nomeEasterEgg==ON):
@@ -1158,7 +1172,7 @@ Ele abre a garrafa de água e toma um gole.
 
 =janus_pergunta_seu_nome
 {nomeEasterEgg==ON:
-    "Então, {nomeCurto}..." Ele dá um sorriso "Você tem o mesmo nome que {gen==1:uma heroína|um herói} do mundo mágico, sabia? Mais uma lenda pra falar a verdade,ninguém tem certeza se aconteceu mesmo..."
+    "Então, {nomeCurto}..." Ele dá um sorriso "Você tem o mesmo nome que {gen==1:uma heroína|um herói} do mundo mágico, sabia? Mais uma lenda pra falar a verdade, ninguém tem certeza se aconteceu mesmo..."
     ->continue->
 }
 -(nomeDasSombrasInJ)
@@ -1166,7 +1180,11 @@ Ele abre a garrafa de água e toma um gole.
 #input
 #nomeDasSombras
 ->continue->
-{nomeDasSombras==nomeCurto:Seu nome das sombras deve ser diferente do seu nome real->nomeDasSombrasInJ}
+
+{nomeDasSombras==nomeCurto:
+    Seu nome das sombras deve ser diferente do seu nome real
+    ->nomeDasSombrasInJ
+}
     
 {(CheckForShadowEggs()==ON):
     {(nomeEasterEgg==ON):
@@ -1175,7 +1193,7 @@ Ele abre a garrafa de água e toma um gole.
         "{nomeDasSombras}? Bom nome, engraçado que também é o nome de {gen==1:uma heroína|um herói} de uma lenda entre Magos"
     }
     -else:
-    "{nomeDasSombras}? Legal. Já posso me fala com você como {gen==1:uma maga|um mago} de verdade agora"
+    "{nomeDasSombras}? Legal. Já posso falar com você como {gen==1:uma maga|um mago} de verdade agora"
 }
 
 ->->
@@ -1351,6 +1369,8 @@ Algumas situações arriscadas, difíceis ou perigosas vão ter uma chance de fa
 
 == function CheckForShadowEggs() ==
 {(nomeDasSombras == "Farinha" or nomeDasSombras == "Tupucã" or nomeDasSombras == "Tupuca" or nomeDasSombras == "Pierre" or nomeDasSombras == "Ares" or nomeDasSombras == "Jacob" or nomeDasSombras == "Corvo" or nomeDasSombras == "Pandora" or nomeDasSombras == "Elizabeth" or nomeDasSombras == "Mano"):
-    ~return ON
+        ~return ON
+    -else:
+        ~return OFF
 }
 

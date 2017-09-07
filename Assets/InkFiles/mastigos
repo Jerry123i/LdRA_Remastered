@@ -94,22 +94,22 @@ A porta da frente se encontra entreaberta, uma leve luz irradia de dentro, um ch
 
 -{tomou_o_pesadelo:As sombras e sensações vão rapidamente se organizando em uma forma específica. Em que tipo de pesadelo você está pensando?|Você cuidadosamente encosta o dedo sobre a testa da mulher, evitando o ponto com saliva. Que tipo de pesadelo você cria para ela? }
 
-*["No meio do mar, sozinh{tomou_o_pesadelo:{oa()}|a}, algo passa ao seu lado..."(Vida)]
+*[life_"No meio do mar, sozinh{tomou_o_pesadelo:{oa()}|a}, algo passa ao seu lado..."(Vida)]
 ->pesadelo_vida->continue->
-*["Sobre a mesa de veludo preto a cartomante puxa mais uma carta..."(Destino)]
+*[fate_"Sobre a mesa de veludo preto a cartomante puxa mais uma carta..."(Destino)]
     ->pesadelo_fate->continue->
 
-*["Tudo ao seu redor tem olhos, as paredes estão vivas..."(Espírito)]
+*[spirit_"Tudo ao seu redor tem olhos, as paredes estão vivas..."(Espírito)]
     ->pesadelo_espirito->continue->
-*["Você se prepara para um banquete, e os mortos entram na sala..."(Morte)]
+*[death_"Você se prepara para um banquete, e os mortos entram na sala..."(Morte)]
     ->pesadelo_morte->continue->
-*["A ampulheta se desfaz sobre você, nunca parando..."(Tempo)]
+*[time_"A ampulheta se desfaz sobre você, nunca parando..."(Tempo)]
     ->pesadelo_tempo->continue->
-*["Runas, selando um poder que você não consegue conter..."(Primórdio)]
+*[prime_"Runas, selando um poder que você não consegue conter..."(Primórdio)]
     ->pesadelo_prime->continue->
-*["Os fogos do inferno, chamas escuras que não iluminam..."(Forças)]
+*[forces_"Os fogos do inferno, chamas escuras que não iluminam..."(Forças)]
     ->pesadelo_forces->continue->
-*["Em um poço de piche, seus pés presos e afundando..."(Matéria)]
+*[matter_"Em um poço de piche, seus pés presos e afundando..."(Matéria)]
     ->pesadelo_materia->continue->
 
 - A criatura que te acompanhou até ali surge novamente, ele havia desaparecido durante o pesadelo enquanto você estava destraíd{oa()}.
@@ -153,9 +153,9 @@ Ele coloca o documento na sua frente, uma caneta bic preta surge sobre a mesa "A
 
 -"Eu gostei de você {gen==1:garota|rapaz}, não sei bem o que é, acho que só fui com a sua cara. Que fique entre nós, mas eu consigo um negócio melhor para você aqui. Vamos chamar de um adiantamento, livre de juros. O que você prefere? Facilitações de permutação e mobilidade espacial no plano físico ou concessão de acesso ampliado as faculdades mentais próprias e/ou de outrem?"
 
-*"Ahn... o primeiro... eu acho"(Espaço+)
+*space_"Ahn... o primeiro... eu acho"(Espaço+)
     --~SPACE++
-*"As concessões de... outrem?"(Mente+)
+*mind_"As concessões de... outrem?"(Mente+)
     --~MIND++
 -Ele faz mais alguns ajustes no documento e coloca de novo na sua frente.
 

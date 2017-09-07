@@ -38,21 +38,21 @@ Todos os convidados de quem você tenta se aproximar te ignoram completamente. V
 
 Uma variedade de máscaras se encontra disposta sobre a mesa, provavelmente postas ali para os convidados que não conseguiram uma fantasia, ou assim você espera. Provavelmente ningém notaria se você pegasse uma.
 
-*[A máscara do político (Mente)]
+*[mind_A máscara do político (Mente)]
     -> mask_on -> mente
-*[A máscara do viajante (Espaço)]
+*[space_A máscara do viajante (Espaço)]
     -> mask_on -> espaco
-*[A máscara do domador (Vida)]
+*[life_A máscara do domador (Vida)]
     -> mask_on -> vida
-*[A máscara do filósofo (Primórdio)]
+*[prime_A máscara do filósofo (Primórdio)]
     -> mask_on -> primordio
-*[A máscara do alquimista (Matéria)]
+*[matter_A máscara do alquimista (Matéria)]
     -> mask_on -> materia
-*[A máscara fúnebre (Morte)]
+*[death_A máscara fúnebre (Morte)]
     -> mask_on -> morte
-*[A máscara do xamã (Espírito)]
+*[spirit_A máscara do xamã (Espírito)]
     -> mask_on -> espirito
-*[A máscara do músico (Forças)]
+*[forces_A máscara do músico (Forças)]
     -> mask_on -> forcas
 
 =mask_on
@@ -151,7 +151,7 @@ O céu se torna alaranjado conforme o sol se põe, alguns dos convidados começa
     
 "Nós poderíamos ir até o telhado, ver as estrelas, fazer um pedido, ou ver o jardim através do vidro do relógio. O que você prefere?
 
-*(estrelas)[Ver as estrelas (Destino+)]
+*(estrelas)[fate_Ver as estrelas (Destino+)]
 -- ~FATE++
 -- {conv_gen=="f":Ela dá um sorriso largo e inocente, do tipo que faz seus olhos parecerem pequenos atrás da máscara.|Ele dá um sorriso largo e sincero, com todos os seus dentes perfeitamente brancos.}
 
@@ -166,7 +166,7 @@ O céu se torna alaranjado conforme o sol se põe, alguns dos convidados começa
 
 --{conv_gen=="f":A moça|O rapaz} abre os olhos e larga seu braço, segurando suas mãos e olhando nos seus olhos. "Eu sei que não deveria contar. Mas eu desejei, poder ver você de novo. Mesmo que não se realize, eu ficaria satisfeit{conv_gen=="f":a|o} de pelo menos saber seu nome"
 
-*(relogio)[Ir até o relógio (Tempo+)]
+*(relogio)[time_Ir até o relógio (Tempo+)]
 -- ~TIME++
 --{conv_gen=="f":Ela dá um sorriso largo e inocente, do tipo que faz seus olhos parecerem pequenos atrás da máscara.|Ele dá um sorriso largo e sincero, com todos os seus dentes perfeitamente brancos.}
 

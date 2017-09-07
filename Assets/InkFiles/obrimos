@@ -10,14 +10,14 @@ A rainha se senta ao seu lado, sua postura não menosimponente, seu trono de cri
 
 Ambos aguardam uma devida saudação.
 
-*(rei)[Ajoelhar-se em frente ao rei(Forças+)]
+*(rei)[forces_Ajoelhar-se em frente ao rei(Forças+)]
     --~FORCES++
     --Você se aproxima do trono do Rei, e se ajoelha, evitando olharnos seus olhos. Não apenas por respeito, mas a aura radianteliteralmente te ofusca quando vista de perto.
     
     --Ele se levanta, se aproxima de você e tocando seus ombros com raio e fogo lhe nomeia seu cavaleiro. Ele pede que você se erga enquanto volta ao seu trono.
 
 
-*(rainha)[Ajoelhar-se em frente a rainha(Primórdio+)]
+*(rainha)[prime_Ajoelhar-se em frente a rainha(Primórdio+)]
     --~PRIME++
     --Você se aproxima do trono da rainha, e se ajoelha. Ela se levanta em passos delicados, mas decididos e vai em sua direção.Você ergue a cabeça quando ela se aproxima, da sua posição de humilde serv{oa()}  a magia e resplendor da realeza impressionam ainda mais. Ela lhe oferece as costas da mão.
     
@@ -195,7 +195,7 @@ A besta se recupera do clarão de luz apenas para se chocar novamente com a imag
 =dragao_vida
 O cajado continua firme em suas mãos, você sente a presença de todos os animais ao redor do castelo e comanda que te auxiliem. O primeiro a chegar é uma águia, ela entra na sala pela janela, atacando os olhos da besta, distraindo-a o bastante para você encontrar abrigo atrás de uma estante virada. Em seguida mais pássaros chegam, mais duas águias e toda uma revoada de pardais e pombos, voando ao redor do dragão, tentando atingir seus olhos ou simplesmente distraí-lo por estarem em tamanho número. Muitos dos passáros menores são devorados ou feridos, mas logo surgem, das janelas um trio de serpentes que escalou porentre as pedras da muralha para lhe alcançar.
 
-O dragão grita, morde e arranha a esmo. Sempre que abre os olhos as águiasameçam arranca-los, então os pássaros que mata são os que atinge por acaso, cego e distraído não percebe as cobras se aproximando, se enroscando em suas patas e cauda. Em sincronia elas agarram as patas dianteiras e traseiras ao mesmo tempo, o dragão cai imobilizado, e a terceira se fixa ao redor do seu pescoço.
+O dragão grita, morde e arranha a esmo. Sempre que abre os olhos as águias ameçam arranca-los, então os pássaros que mata são os que atinge por acaso, cego e distraído não percebe as cobras se aproximando, se enroscando em suas patas e cauda. Em sincronia elas agarram as patas dianteiras e traseiras ao mesmo tempo, o dragão cai imobilizado, e a terceira se fixa ao redor do seu pescoço.
 
 ->continue->
 

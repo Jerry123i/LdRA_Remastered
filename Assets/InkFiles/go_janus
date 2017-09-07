@@ -12,16 +12,25 @@ Você continua ao lado de Janus. Yoonir sacode a cabeça desapontado.
 {(LIFE>0 or MIND>0):Você consegue ver uma leve aura na arma de Janus, ela parece encantada de alguma maneira.}
 
 *[{rollTag(65)}Pegar a arma e atirar]
+    -- ->janus_tiro->
 *{SPACE>0}[{arcanaTag("space")}Teleportar o olho para a sua mão]
+    -- ->janus_teleport->
 *{FORCES>1}[{arcanaTag("forces")}Usar telecinesia]
+    -- ->janus_telecinesia->
 *{MIND>0}[{arcanaTag("mind")}Usar a águia]
-*{LIFE>0}[arcanaTag("life")Usar a águia]
-*{LIFE>0}[arcanaTag("life")Curar os braços de Janus]
-*{PRIME>0}[arcanaTag("prime")Desfazer a magia sobre os braços de Janus]
-*{TIME>1}[time_mana1_Voltar no tempo]
+    -- ->janus_aguia_mente->
+*{LIFE>0}[{arcanaTag("life")}Usar a águia]
+    -- ->janus_aguia_vida->
+*{LIFE>0}[{arcanaTag("life")}Curar os braços de Janus]
+    -- ->janus_cura->
+*{PRIME>0}[{arcanaTag("prime")}Desfazer a magia sobre os braços de Janus]
+    -- ->janus_counter->
+*{TIME>1}[{doxTag(30)}time_mana1_Voltar no tempo]
+    -- ->janus_tempo->
 *[Deixar Yoonir escapar com o artefato]
+    -- ->janus_escape->
 
-->->
+- ->->
 
 =janus_aguia_mente
 A águia que Yoonir usou para te atacar, ainda está por aqui, perto. Você consegue sentir sua consciência, como um zumbido baixo que você ouve vindo de algum lugar próximo. Ali, em um galho alto, mas ainda perto o bastante.

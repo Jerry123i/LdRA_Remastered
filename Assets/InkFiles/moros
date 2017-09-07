@@ -20,22 +20,22 @@ De pé ao lado da fechadura um homem feito de sombras aguarda. Como tudo que já
     --(howUdie)
     Como você morre?
     
-    **[Doença (Vida)]
+    **[life_Doença (Vida)]
         ->moros_life->dentro_do_cemiterio
-    **[Fogo (Forças)]
+    **[forces_Fogo (Forças)]
         ->moros_forces->dentro_do_cemiterio
-    **[Idade (Tempo)]
+    **[time_Idade (Tempo)]
         ->moros_time->dentro_do_cemiterio
-    **[Azar (Destino)]
+    **[fate_Azar (Destino)]
         ->moros_fate->dentro_do_cemiterio
     **{not pergunte_ao_porteiro}[Pergunte para o porteiro]->pergunte_ao_porteiro
-    **{pergunte_ao_porteiro}[Ir até a fonte (Primórdio)]
+    **{pergunte_ao_porteiro}[prime_Ir até a fonte (Primórdio)]
         ->moros_prime->dentro_do_cemiterio
-    **{pergunte_ao_porteiro}[Ir até a montanha (Espaço)]
+    **{pergunte_ao_porteiro}[space_Ir até a montanha (Espaço)]
         ->moros_space->dentro_do_cemiterio
-    **{pergunte_ao_porteiro}[Ir até o vale (Mente)]
+    **{pergunte_ao_porteiro}[mind_Ir até o vale (Mente)]
         ->moros_mind->dentro_do_cemiterio
-    **{pergunte_ao_porteiro}[Invocar o espírito (Espírito)]
+    **{pergunte_ao_porteiro}[spirit_Invocar o espírito (Espírito)]
         ->moros_spirit->dentro_do_cemiterio
 
 +{coins!=2}[Procurar uma forma de pagar sua entrada]->moros_opcoes_procurar
@@ -154,7 +154,7 @@ Tudo fica  escuro, você sente apenas sua cosnciência flutuando sem direção, 
 
 A sombra vira lentamente a cabeça na sua direção e abre um sorriso cínico através das grades.
 
-Não, mas você aparentemente  a impressionou.
+Não, mas você aparentemente a impressionou.
 ->->
 
 =moros_space

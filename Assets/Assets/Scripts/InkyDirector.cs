@@ -172,11 +172,14 @@ public class InkyDirector : MonoBehaviour {
                 //Procura rolagens
                 else if (splatText[i].Contains("roll"))
                 {
+                    string numbers;
+
                     button.GetComponent<ButtonScript>().objectRoll.SetActive(true);
-                    splatText[i].Replace("roll","");
-                    Debug.Log(splatText[i]);
-                    button.GetComponent<ButtonScript>().rollNumber.text = (splatText[i] + "%");
-                    button.GetComponent<ButtonScript>().clockRoll.fillAmount = int.Parse(splatText[i]) / 100.0f;
+                    Debug.Log("Antes do remove:"+splatText[i]);
+                    numbers = splatText[i].Replace("roll","");
+                    Debug.Log("Isso deveria ser apenas um numero:"+numbers);
+                    button.GetComponent<ButtonScript>().rollNumber.text = (numbers + "%");
+                    button.GetComponent<ButtonScript>().clockRoll.fillAmount = int.Parse(numbers) / 100.0f;
                 }
 
                 //Procura paradoxo
@@ -227,7 +230,7 @@ public class InkyDirector : MonoBehaviour {
             case "mind":
                 return runeList[5];
 
-            case "print":
+            case "prime":
                 return runeList[6];
 
             case "space":
