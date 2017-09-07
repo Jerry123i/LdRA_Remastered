@@ -1,10 +1,189 @@
 == ajudar_janus ==
+~amigo=JANUS
+#roll
 Você continua ao lado de Janus. Yoonir sacode a cabeça desapontado.
 
 "Quando você perceber o erro que cometeu sempre terá a chance de nos procurar" Ele se vira, e começa a correr na direção da floresta.
 
 "Obrigado, mas não deixe ele fugir com o olho! Se você não conseguir desfazer o que ele fez com meus braços vai ter que atirar por mim. Não se preocupe, você não vai matar ele, eu juro."
 
+{PRIME>0:Você consegue ver uma leve aura na arma de Janus, ela parece encantada de alguma maneira.}
 
+{(LIFE>0 or MIND>0):Você consegue ver uma leve aura na arma de Janus, ela parece encantada de alguma maneira.}
+
+*[{rollTag(65)}Pegar a arma e atirar]
+*{SPACE>0}[{arcanaTag("space")}Teleportar o olho para a sua mão]
+*{FORCES>1}[{arcanaTag("forces")}Usar telecinesia]
+*{MIND>0}[{arcanaTag("mind")}Usar a águia]
+*{LIFE>0}[arcanaTag("life")Usar a águia]
+*{LIFE>0}[arcanaTag("life")Curar os braços de Janus]
+*{PRIME>0}[arcanaTag("prime")Desfazer a magia sobre os braços de Janus]
+*{TIME>1}[time_mana1_Voltar no tempo]
+*[Deixar Yoonir escapar com o artefato]
 
 ->->
+
+=janus_aguia_mente
+A águia que Yoonir usou para te atacar, ainda está por aqui, perto. Você consegue sentir sua consciência, como um zumbido baixo que você ouve vindo de algum lugar próximo. Ali, em um galho alto, mas ainda perto o bastante.
+
+Você estende sua mente naquela direção, e rapidamente engloba a da águia, encontrando pouca resistência no cérebro simples do pássaro. Você então ordena, "Ataque Yoonir, pegue o cristal, traga-o para mim" A ave não reage, Yoonir já está escapando em meio as árvores. O nome do mago e a palara cristal não significam nada na mente da águia, você rapidamente molda uma imagem do artefato e do mago que escapou, associando com instintos básicos de atacar e recolher que você consegue expressar mentalmente.
+
+O pássaro levanta voo e desaparece entre as árvores. Você não consegue mais ver a águia nem o mago, por alguns segundos você não ouve nada. Então ela surge, do topo da copa das árvores, voando alto ela deixa o cristal cair e você agarra-o no ar.
+~terminouComAPedra = ON
+~yoonirAtingido = OFF
+->->
+
+= janus_aguia_vida
+A águia que Yoonir usou para te atacar, ainda está por aqui, perto. Você consegue sentir sua energia vital, como um pulsar baixo que você sente vindo de algum lugar próximo. Ali, em um galho alto, mas ainda perto o bastante.
+
+Você tenta dominar a criatura, acessando seus instintos e suas funções corporais você consegue criar um tipo rudmentar de controle sobre ela. Você então ordena, "Ataque Yoonir, pegue o cristal, traga-o para mim" A ave não reage, Yoonir já está escapando em meio as árvores. O nome do mago e a palara cristal não significam nada para águia, você rapidamente dispara alguns instintos de caça e proteção na águia, fazendo ela ter a impressão que teve seu território invadido, tratando o cristal como um filhote ou ovo, e o local em que você está como um ninho.
+
+O pássaro levanta voo e desaparece entre as árvores. Você não consegue mais ver a águia nem o mago, por alguns segundos você não ouve nada. Então ela surge, do topo da copa das árvores, com o cristal seguro em uma garra ela pousa e cuidadosamente baixa o artefato entre um punhado de folhagem ao seu lado.
+
+Com as condições cumpridas, a magia de dissipa e o águia volta a si. Confusa, ela bica o cristal uma vez, e logo em seguida levanta voo.
+~terminouComAPedra = ON
+~yoonirAtingido = OFF
+->->
+
+=janus_counter
+Você foca seu esforço em tentar desfazer o que Yoonir fez. Concentrando sua visão na aura mágica de Janus e do encantamento sobre ele, você consegue sentir o encantamento entranhado no corpo de Janus, uma magia de Vida provavelmente. Cuidadosamente, porém com agilidade, você impõe sua magia sobre a de Yoonir. Como agulhas de uma tecelã, sua aura desfia o encantamento parte por parte, separando a magia da matriz que define o corpo de Janus. Você rompe um último fio, deixando a magia se desfazer no ar, foi um processo cuidadoso, você teme que tenha demorado de mais, mas na verdade apenas segundos se passaram.
+
+As runas desaparecem dos braços de Janus e ele logo toma mira novamente. Ele atira, Yoonir é atingido no braço, deixa o olho cair, mas continua seguindo em direção a floresta.
+~terminouComAPedra = ON
+~yoonirAtingido = ON
+->->
+
+=janus_cura
+Você se concentra em tentar desfazer o que Yoonir fez. Você rapidamente analisa o padrão de Janus, a matriz mágica que define seu corpo, você encontra uma mancha no padrão. As partes responsáveis pela sua coordenação, seus nervos, diretamente danificados. Cuidadosamente impondo sua magia sobre a de Yoonir, você empunha sua aura como um bisturi, cortando as conexões entre a matriz de Janus e a magia nociva. Precis{oa()} e ágil você termina em segundos, as runas desaparecem dos braços de Janus e ele logo toma mira novamente.
+
+Ele atira, Yoonir é atingido no braço, deixa o olho cair, mas continua seguindo em direção a floresta.
+~terminouComAPedra = ON
+~yoonirAtingido = ON
+->->
+
+
+=janus_escape
+Você continua ao lado de Janus, mas não faz nada enquanto o outro mago escapa com o artefato. O encantamento sobre os braços de Janus logo se desfaz, mas Yoonir já desapareceu entre as árvores.
+"Droga! Ok, eu entendo você não querendo atirar nele nem nada assim, mas eu falei sério quando disse que não ia matar ele.
+~terminouComAPedra = OFF
+~yoonirAtingido = OFF
+->->
+
+=janus_tiro
+Você pega a arma das mãos dele, hesitante, sua memória ainda está confusa, mas mesmo assim você tem quase certeza de que nunca segurou uma arma de verdade antes, ela é pesada de mais, não se acomoda direito nas suas mãos, não é algo que você parece fazer naturalmente. Você tenta grosseiramente mirar, sem habilidade, mas não tem tempo, você puxa o gatilho e espera pelo melhor.
+
+Você fecha os olhos, o recuo da arma e a explosão do tiro são bem maiores do que você esperava.
+{(rollResult<=calcRoll(65)):
+    Mas você acerta, a bala atinge Yoonir no ombro, ele deixa o olho cair, mas continua seguindo em direção a floresta. A magia começa a se dissipar dos braços de Janus e ele pega a pistola de volta, guardando-a.
+    "Ótimo tiro, eu não achei que você ia conseguir"
+    ~terminouComAPedra = ON
+    ~yoonirAtingido = ON
+-else:
+    Yoonir continua a correr, ileso, um pequeno fio de fumaça sai doburaco de bala de uma árvore ao lado. A magia começa a se dissipar dos braços de Janus e elepega a pistola de volta, guardando-a.
+    "Não se preocupe, essa arma é péssima mesmo"
+    ~terminouComAPedra = OFF
+    ~yoonirAtingido = OFF 
+}
+->->
+
+=janus_telecinesia
+Yoonir foge com o artefato nas mãos, carregando o cristal no punho direito, você ainda consegue ve-lo daqui. Você precisa pega-lo de alguma forma antes que ele se afaste de mais. Basta pega-lo certo? Puxar o cristal até você. É muito simples, sua mente recém-desperta visualiza perfeitamente as forças envolvendo o cristal e puxando-o na sua direção, mas sua alma mágica ainda precisa de um certo apoio físico para superar a realidade.
+
+Você levanta um dos braços a frente do corpo, e estende a palma da mão aberta, dobrando seu dedão, indicador e dedo médio você cria um conjunto de forças ao redor do artefato, um leve brilho dourado escapa do punho fechado de Yoonir.
+
+{rollResult<=calcDox(30):
+    Você hesita por um segundo, o próximo movimento da magia não é tão claro, se sua alma estava seguindo instruções, uma sombra parece obscurecer o manual. As forças continuam a se concentrar,você não sabe como prosseguir, e o mago continua a se afastar,mas é tarde de mais para voltar atrás. Você perde o controle, a energia que você acumulava dispara a esmo, como um elástico estendido ela volta em sua direção. Algo te atinge como um soco, como se o próprio ar lhe golpeasse no meio do peito [-1 Saúde].
+     O brilho da sua magia se dissipa completamente do cristal que você tentava pegare Yoonir escapa com ele.
+    ~danoDox++
+    ~terminouComAPedra = OFF
+    ~yoonirAtingido=OFF
+    -else:
+        Você fecha sua mão em um punho, as forças que você criou se tencionam. O cristal é puxado na sua direção, o mago é quase carregado junto,mas larga o artefato antes de ser arrastado pela areia. Envolto em uma esfera etéria o olho segue como uma bala em uma perfeita linha reta até suas mãos.
+        Yoonir retoma o equilíbrio, mas não contesta sua posse do cristal, voltando a seguir na mesma direção de antes.
+        ~terminouComAPedra = ON
+        ~yoonirAtingido=OFF
+}
+->->
+
+=janus_teleport
+Você esquece do mago se afastando de você e se concentra no artefato, o olho de cristal nas mãos dele. Você estende a palma da mão aberta em frente ao corpo, com os olhos fixos no cristal você se lembra como descobriu que a distância é uma ilusão, que sua alma mágica pode dobrar o espaço entre dois pontos como uma folha de papel.
+
+Você visualiza o artefato em sua mão e começa a lentamente erodir a imagem de que ele está distante de você. Uma <>
+
+{
+-path==ACANTHUS:
+    nuvem de prata
+-path==MASTIGOS:
+    aura distorcida
+-path==MOROS:
+    sombra anormal
+-path==OBRIMOS:
+    aura radiante
+-path==THYRSUS:
+    névoa densa
+}
+
+<> se forma ao redor da sua mão, e uma idêntica ao redor da mão de Yoonir. Você estende a mão através do espaço<>
+
+{rollResult<=calcDox(30):
+    , pront{oa()} para agarrar o cristal. Mas algo dá errado, você perde o controle por um segundo e vai longe de mais. Você sente uma pressão sobre sua mão, como um vácuo tentando suga-la, você consegue sentir ela ameaçando se desligar do seu pulso, e tem tempo apenas de interromper a magia antes de perder um membro. Mas mesmo assim, seus ossos doem dos dedos até o cotovelo, como se tivessem tentado puxa-los para fora do seu corpo.
+    ~danoDox++
+    ~terminouComAPedra=OFF
+    ~yoonirAtingido = OFF
+    -else:
+        {
+        -path==ACANTHUS:
+            ,a nuvem de prata se transforma em um pequeno redemoinho brilhante, ele passeia por um momento sobre a sua palma, então começa a perder velocidade até se dissipar, o olho surge dentro dele, e cai na sua mão.
+        -path==MASTIGOS:
+            , a aura ao redor da mão de Yoonir continua a se distorcer e criar uma miragem deformada, então, como um arquivo digital corrompido o cristal "trava" ficando por um segundo suspenso em pleno ar uma, como uma imagem falha e incompleta. Por um momento um segundo cristal incompleto surge sobre sua mão, para em seguida se concretizar na forma perfeita do artefato completo.
+        -path==MOROS:
+            , a sombra vai se tornando cada vez mais escura,formando uma escuridão densa sobre a sua mão, o cristal vai sendo igualmente consumido pela escuridão. Até que é impossível vê-lo, no mesmo momento a escuridão concentrada se dissipa da sua palma, e o artefato esta lá..
+        -path==OBRIMOS:
+            , a luz que irradia dos dois lados se torna mais intensa, os dois pontos começam a brilhar em cores diferentes, rapidamente alternando entre diversos tons, como se tentassem se aproximar de uma mesma cor. Sua mão e a de Yoonir brilham ao mesmo tempo em um profundo tom de azul, você sente um peso repentino, as luzes desaparecem, e você tem o cristal.
+        -path==THYRSUS:
+            , a névoa branca continua a se tornar mais e mais densa, acompa nhando Yoonir como uma nuvem ao redor de seu punho. Você já não consegue ver mais sua mão, até sentir um estranho peso surgir derrepente sobre ela, a névoa se dispersa em uma rajada de vento que você não sente, e deixa o olho em sua mão.
+    }
+    Yoonir parece ter percebido que perdeu o artefato, mas mesmo assim continua a fugir.
+    ~yoonirAtingido = OFF
+    ~terminouComAPedra = ON
+}
+->->
+
+=janus_tempo
+Você ignora por um segundo Janus gritando ao seu lado e o Yoonir escapando com o artefato, concentrando sua atenção somente no fluir do tempo ao seu redor. Sentindo o tempo passar delicadamente por entre seus dedos, você põe as duas mãos ao lado do corpo, os punhos apenas um pouco abertos. Respirando fundo você conjura sua magia e fecha as mãos, tudo para ao seu redor, congelado no tempo. Você se agarra as linhas do tempo que conseguiu segurar, e puxa, arrastando o tempo de volta.
+
+{rollResult<calcDox(30):
+    As linhas escorregam, a palma das suas mãos queimam como setentassem segurar uma corrente de ferro quente. Você é obrigad{oa()} a solta-las. O tempo tenta se corrigir fluindo na direção oposta a que você puxou, as linhas voltam como um elástico tencionado,chicoteando suas costas antes de retornarem ao estado natural [-1 Saúde]. O tempo se normaliza com Yoonir desaparecendo entre as árvores. 
+    Janus vira para você, o encantamento em seus braços já se desfazendo.
+    Janus vira para você, o encantamento em seus braços já se desfa zendo.
+    ~yoonirAtingido=OFF
+    ~terminouComAPedra = OFF
+    -else:
+        Tudo se move como um borrão a sua volta, como se estivesse depé no olho de um furacão, tudo se move em reverso ao seu redor e você não é afetad{oa()}. O furacão vai perdendo força e tudo começa a se mover mais devagar até congelar mais uma vez, momentos antes de Janus sacar sua arma, você gentilmente solta as linhas e deixa elas voltarem a fluir.
+         Janus para por um segundo, com a mão já sobre a pistola, ele pisca para você, como se soubesse o que aconteceu, o outro mago aparentemente não. Com a mão direita Janus pega sua moeda, e saca a arma com a esquerda. Quando Yoonir tenta conjurar a mesma magia que antes, Janus arremessa a moeda para cima e fala alguma coisa em um idioma que você não entende, mas parece familiar. A moeda brilha por um segundo, dissipando o encantamento antes de chegar até seu alvo, Janus atira, Yoonir leva a mão ao ombro atingido, o olho cai no chão e rola pela terra até seus pés, a moeda cai sobre a palma estendida de Janus. Cara.
+         ~yoonirAtingido=ON
+         ~terminouComAPedra = ON
+}
+->->
+
+==pos_combate_janus
+Yoonir escapa {terminouComAPedra==ON:mas você consegue recuperar o olho de cristal|com o artefato}.
+{terminouComAPedra==ON:
+    "Olha pra isso! Novo artefato e eu ainda encontro parte da profecia perdid{oa()} no meio da estrada. Eu geralmente não tenho tanta sorte no mesmo dia nem com magia!"
+    -else:
+    Janus encara o trecho de floresta por algum tempo, então guarda novamente a pistola, frustrado.
+    "Ei, obrigado por ficar ao meu lado. Foi uma pena termos perdido o olho, mas não é sua culpa. Tudo ficou muito tenso muito rápido, você acabou de despertar, relaxa"
+
+}
+
+"De qualquer forma, acho que você vai precisar de uma carona" Ele inclina a cabeça na direção do esqueleto {fogoNoCarro==ON:flamejante|destruído} que era seu carro.
+"Nós podemos parar em algum lugar no caminho para eu te explicar toda essa questão da profecia, mas não é uma boa ficarmos parados no meio da estrada do lado de um acidente."
+Ele pega um capacete extra na moto e te entrega. Vocês dois sobem na moto, e ele dá partida.
+->continue->
+->posto_de_gasolina
+
+==ferido_janus
+Quando acorda você sente alguma coisa pesada ao redor da sua cabeça, você está em movimento, apoiad{oa()} contra alguma coisa. Você abre os olhos, você está na moto de Janus, ele colocou um capacete em você e equilibrou seu corpo sobre a moto, apoiado contra o dele. Dirigindo bem lentamente até perceber que você acordou e acelerar.
+"Ei, finalmente! Desculpa te acordar assim, mas eu não podia ficar lá esperando você. Aqui, vamos parar ali em frente."
+->posto_de_gasolina
+

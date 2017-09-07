@@ -1,6 +1,6 @@
 == ir_com_yoonir ==
 
-~amigos = YOONIR
+~amigo = YOONIR
 #roll
 "Ok, eu vou com você" Você responde Yoonir.
 
@@ -121,7 +121,7 @@ Você rapidamente segue atrás do mago, Janus não faz nada para lhe impedir.
 =yoonir_teleporte
 Você se concentra em tirar a arma das mãos de Janus. Você estende a palma da mão aberta em frente ao corpo, com os olhos fixos na pistola você se lembra como descobriu que a distância é uma ilusão, que sua alma mágica pode dobrar o espaço entre dois pontos como uma folha de papel.
 
-Você visualiza o artefato em sua mão e começa a lentamente erodir a imagem de que ele está distante de você. Uma <>
+Você visualiza a arma em sua mão e começa a lentamente erodir a imagem de que ele está distante de você. Uma <>
 
 {
 -path==ACANTHUS:
@@ -171,7 +171,7 @@ Você ignora por um segundo Yoonir fugindo e Janus ameaçando disparar contra el
     ~terminouComAPedra=OFF
     ~yoonirAtingido = ON
     -else:
-        Tudo se move como um borrão a sua volta, como se estivesse de pé no olho de um furacão, tudo se move em reverso ao seu redor e você não é afetado. O furacão vai perdendo força e tudo começa a se mover mais devagar até congelar mais uma vez, momentos antes de Janus sacar sua arma, você gentilmente solta as linhas e deixa elas voltarem a fluir.
+        Tudo se move como um borrão a sua volta, como se estivesse de pé no olho de um furacão, tudo se move em reverso ao seu redor e você não é afetad{oa()}. O furacão vai perdendo força e tudo começa a se mover mais devagar até congelar mais uma vez, momentos antes de Janus sacar sua arma, você gentilmente solta as linhas e deixa elas voltarem a fluir.
         Janus para por um segundo, com a mão já sobre a pistola, ele olha ao redor confuso, leva um segundo para ele perceber o que aconteceu, Yoonir parece completamente ignorante ao fato.
          Você grita para que ele fuja, e salta sobre Janus, agarrando a arma de sua cintura antes mesmo que ele consiga saca-la.
          ~terminouComAPedra = ON
@@ -180,4 +180,49 @@ Você ignora por um segundo Yoonir fugindo e Janus ameaçando disparar contra el
 }
 ->->
 
+==pos_combate_yoonir
+Você logo alcança Yoonir entre as árvores, ele pede que você continue a correr mais ou pouco. Vocês logo cruzam o curto trecho de mata e encontram uma segunda estrada do outro lado, parado no acostamento o carro de Yoonir. Você para para recuperar o fólego.
+{yoonirAtingido==ON: 
+    Enquanto isso, ele põe uma das mãos sobre o ferimento no braço, imediatamente curando-o, o rasgo no casaco e a mancha de sangue ao redor de repente parecendo um tanto incoerentes.
+}
 
+{(dano+danoDox)>1:
+    "Ei! Precisa de ajuda? Eu posso te curar se você precisar{(dano+danoDox)>2:, você não me parece muito bem}"
+    *[Aceitar cura]
+        "Aqui, só fique parad{oa()} um segundo por favor"
+        Ele põe as mãos estendidas em frente ao seu corpo, você sente uma onda de calor passar pelo seu corpo, parecida com quando ele encantou os braços de Janus, mas menos seca, um calor mais confortável, como um dia ensolarado.
+        {
+            -(dano==0 and danoDox>0):
+                 Mas você ainda se sente tão mal quanto.
+                "Hum, parece que seus ferimentos foram causados por paradoxo, desculpe, mas eu não posso curar isso com magia, só o tempo recupera sua matriz vital nesses casos"
+            -(dano>0 and danoDox>0):
+                 Você se sente um pouco melhor, mas ainda umpouco machucad{oa()}
+                 "Eu fiz o que pude, mas parte dos seus ferimentos foram causados por paradoxo, só o tempo recupera o sua matriz vital nesses casos"
+            -(danoDox==0):
+                 Você se sente perfeitamente curad{oa()}, todo mínimo arranhão ou pequeno ferimento completamente reparado
+                 "Acho que eu consegui cuidar de tudo, se sente melhor?"
+        }
+        ->sem_cura
+    *[Recusar]
+        "Você é quem sabe, mas não tenha medo de pedir seprecisar."
+        ->sem_cura
+    *{LIFE>0}[life_{(path==THYRSUS):mana1_|mana2_}Recusar e curar a si mesm{oa()}]
+        Você olha para dentro do seu próprio corpo, escaneando cada célula danificada e orientando seu corpo para imediatamente repara-los.
+        {danoDox>0: 
+             Você repara tudo que pode, mas alguns dos ferimentos parecem simplesmente impossíveis. Yoonir nota sua preocupação.
+            "Você se machucou tentando fazer alguma magia mais complexa depois do despertar? Parece que você tem alguns ferimentos causados por paraoxo. É impossível cura-los com magia, só o tempo recupera o sua matriz vital nesses casos"
+        }
+        ->sem_cura
+        -else:
+            ->sem_cura
+}
+
+=sem_cura
+->continue->
+Vocês entram no carro e Yoonir começa a dirigir. Passam-sealguns momentos um tanto tensos de silêncio em que ele parece concentrado em alguma outra coisa além da estrada, de vez em quando olhando na sua direção e abrindo a boca antes de simplesmente desistir de falar.
+->posto_de_gasolina
+
+==ferido_yoonir
+Você sente que está em movimento, e se sentindo bem melhor você acorda, sentad{oa()} no banco do carona de um carro, Yoonir dirigindo ao seu lado.
+"Ei que bom que você está bem, eu cuidei dos seus ferimentos como pude, mas você tem algumas marcas de paradoxo,elas devem melhorar daqui a algum tempo. Eu sei que você é nov{oa()} nisso, mas precisa tomar mais cudiado"
+->posto_de_gasolina

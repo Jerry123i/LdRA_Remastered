@@ -2346,7 +2346,7 @@ clear();
             tutorial_dox();
             tut_dox=1;
         }        
-        go_yoonir();
+        ayoonir();
     }
     else if(a==2){
         clem[8]=0;        

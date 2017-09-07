@@ -1876,7 +1876,7 @@ o}
 
 Janus vira para você, o encantamento em seus braços já se desfa zendo.
 
- "Não se preocupe, eu vi que você tentou. Acontece..." clem[9]=0; clem[10]=0; }else{
+Janus vira para você, o encantamento em seus braços já se desfa zendo.
 
 
 Tudo se move como um borrão a sua volta, como se estivesse depé no olho de um furacão, tudo se move em reverso ao seu redor e você não éafetado. O furacão vai perdendo força e tudo começa a se mover maisdevagar até congelar mais uma vez, momentos antes de Janus sacar suaarma, você gentilmente solta as linhas e deixa elas voltarem a fluir.
