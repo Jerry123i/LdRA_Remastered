@@ -153,9 +153,9 @@ Ele coloca o documento na sua frente, uma caneta bic preta surge sobre a mesa "A
 
 -"Eu gostei de você {gen==1:garota|rapaz}, não sei bem o que é, acho que só fui com a sua cara. Que fique entre nós, mas eu consigo um negócio melhor para você aqui. Vamos chamar de um adiantamento, livre de juros. O que você prefere? Facilitações de permutação e mobilidade espacial no plano físico ou concessão de acesso ampliado as faculdades mentais próprias e/ou de outrem?"
 
-*space_"Ahn... o primeiro... eu acho"(Espaço+)
+*[space_"Ahn... o primeiro... eu acho"(Espaço+)]"Ahn... o primeiro... eu acho"
     --~SPACE++
-*mind_"As concessões de... outrem?"(Mente+)
+*[mind_"As concessões de... outrem?"(Mente+)]"As concessões de... outrem?"
     --~MIND++
 -Ele faz mais alguns ajustes no documento e coloca de novo na sua frente.
 

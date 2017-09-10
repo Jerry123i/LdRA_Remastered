@@ -229,7 +229,11 @@ Você tenta se lembrar do que ocorreu, sua memória está completamente perdida,
 }
 
 {SPIRIT>0 and SPACE>0:
-    {!persegue_o_gato:O espírito que você tinha visto antes ainda está atrás de você,ele te observa com atenção, e parece não ter percebido que você sabe que ele está ali.|O espírito que você viu antes já desapareceu entre as árvores.}
+    {persegue_o_gato==0:
+    O espírito que você tinha visto antes ainda está atrás de você,ele te observa com atenção, e parece não ter percebido que você sabe que ele está ali.
+    -else:
+        O espírito que você viu antes já desapareceu entre as árvores.
+    }
 }
 
 -{PRIME>0 or FATE>0:
@@ -539,8 +543,12 @@ O peso que você sentia sobre as pernas é na verdade um tronco de árvore que t
     
     -- ->continue->
     
+    --{rollResult<=(calcDox(30)): 
+        ~danoDox++
+        }
+    
     --{rollResult<=(calcDox(30)):
-        -A imagem que você criara se deforma na sua frente, as asas da borboleta encolhem e endurecem, ficam escuras e grudam no corpo como uma carapaça. A transformação começa e o tronco começa a tomar forma. Em pequenas lascas, partes do tronco criam pernas e se desgrudam, a madeira então cria cabeça, antenas e a carapaça brilhante, e as baratas correm ou voam para longe, algumas passando sobre suas pernas ou voando rente ao seu rosto. Cada vez mais delas rastejando sobre você, até um grande enxame ter se formado sobre todo seu corpo, te arranhando e mordendo antes de desaparecerem na escuridão [-1 Saúde]. Todas finalmente saem, e você pode se levantar. ~danoDox++
+        -A imagem que você criara se deforma na sua frente, as asas da borboleta encolhem e endurecem, ficam escuras e grudam no corpo como uma carapaça. A transformação começa e o tronco começa a tomar forma. Em pequenas lascas, partes do tronco criam pernas e se desgrudam, a madeira então cria cabeça, antenas e a carapaça brilhante, e as baratas correm ou voam para longe, algumas passando sobre suas pernas ou voando rente ao seu rosto. Cada vez mais delas rastejando sobre você, até um grande enxame ter se formado sobre todo seu corpo, te arranhando e mordendo antes de desaparecerem na escuridão [-1 Saúde]. Todas finalmente saem, e você pode se levantar.
     -else:
         Em peque nas lascas, partes do tronco criam pernas e se desgrudam. Em seguida criam grandes asas coloridas, e voam para longe, inicialmente uma por uma, logo mais e mais, até que estão saindo as dezenas de cima de você. Em um pequeno turbilhão de cores e centenas de asas batendo as últimas borboletas levantam voo, levando o que restava do tronco com elas.
     }

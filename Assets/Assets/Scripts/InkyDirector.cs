@@ -106,6 +106,7 @@ public class InkyDirector : MonoBehaviour {
             //Ativa o botão
             currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].SetActive(true);
             //Desativa Addons
+            currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().objectMana.SetActive(false);
             currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().manaCost = 0;
             currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().runeImage.color = new Color(0, 0, 0, 0);
             currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().objectDox.SetActive(false);
