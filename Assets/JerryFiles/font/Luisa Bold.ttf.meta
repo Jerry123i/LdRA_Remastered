@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: db4b8efae04168f418008cd1c0dcd3d8
+timeCreated: 1506780512
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Luisa
+  fontNames:
+  - Luisa
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7231842113f9cae468296c5e894785d4, type: 3}
+  - {fileID: 12800000, guid: c26fe4c401d3f7446ab7098aa87df57c, type: 3}
+  - {fileID: 12800000, guid: 2e036afbd30473e4cb0c6cdc208e1d0a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

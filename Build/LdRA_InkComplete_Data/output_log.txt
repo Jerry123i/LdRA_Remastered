@@ -1,0 +1,42 @@
+Mono path[0] = 'C:/Users/Usuario/Documents/LdRA_Remaster/Build/LdRA_InkComplete_Data/Managed'
+Mono config path = 'C:/Users/Usuario/Documents/LdRA_Remaster/Build/LdRA_InkComplete_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Usuario/Documents/LdRA_Remaster/Build/LdRA_InkComplete_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55138
+Multi-casting "[IP] 192.168.0.5 [Port] 55138 [Flags] 2 [Guid] 1123428749 [EditorId] 3699676927 [Version] 1048832 [Id] WindowsPlayer(Usuario-PC) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55138]
+PlayerConnection already initialized - listening to [0.0.0.0:55138]
+Player data archive not found at `C:/Users/Usuario/Documents/LdRA_Remaster/Build/LdRA_InkComplete_Data/data.unity3d`, using local filesystem
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon R7 200 Series (ID=0x6610)
+    Vendor:   ATI
+    VRAM:     1008 MB
+    Driver:   15.300.1025.0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\TextMeshPro-1.0.55.2017.1.0b10.dll (this message is harmless)
+Loading C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\TextMeshPro-1.0.55.2017.1.0b10.dll into Unity Child Domain
+Platform assembly: C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Usuario\Documents\LdRA_Remaster\Build\LdRA_InkComplete_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.476 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 3.649201 ms
+WARNING: Version of ink used to build story doesn't match current version of engine. Non-critical, but recommend synchronising.
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 125c -> priority: 1 
+  Thread -> id: 174c -> priority: 1 
