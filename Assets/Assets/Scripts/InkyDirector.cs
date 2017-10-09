@@ -38,8 +38,7 @@ public class InkyDirector : MonoBehaviour {
         //Limpa o texto
         sizeFit.enabled = false;
         screenText.text = "";
-        //Sobe a tela
-        textScroll.value = 1;
+        textScroll.value = 1.0f;
 
         while (_inkStory.canContinue)
         {
@@ -56,6 +55,8 @@ public class InkyDirector : MonoBehaviour {
         }
 
         sizeFit.enabled = true;
+        textScroll.value = 1.0f;
+
 
         //Verifica se vai ter input de nome        
         if (CheckFirstTag("input"))
@@ -66,7 +67,10 @@ public class InkyDirector : MonoBehaviour {
         else
         {
             UpdateButtons();
-        }        
+        }
+
+        //Sobe a tela
+        textScroll.value = 1.0f;
 
     }
 
@@ -106,13 +110,13 @@ public class InkyDirector : MonoBehaviour {
             //Ativa o botão
             currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].SetActive(true);
             //Desativa Addons
-            currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().objectMana.SetActive(false);
+            currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().objectMana.gameObject.SetActive(false);
             currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().manaCost = 0;
-            currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().runeImage.color = new Color(0, 0, 0, 0);
+            currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().runeImages.ForEach(DeactivateThing);
             currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().objectDox.SetActive(false);
             currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i].GetComponent<ButtonScript>().objectRoll.SetActive(false);
             //Escreve texto e re-ativa Addons
-            writeButton(currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i], _inkStory.currentChoices[i].text);
+            WriteButton(currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[i], _inkStory.currentChoices[i].text);
         }
         
     }
@@ -146,11 +150,14 @@ public class InkyDirector : MonoBehaviour {
                 
     }
 
-    void writeButton(GameObject button, string optionText)
+    void WriteButton(GameObject button, string optionText)
     {
+
+        
+
         if (!optionText.Contains("_"))
         {
-            button.GetComponentInChildren<TextMeshPro>().text = optionText;
+            button.GetComponent<ButtonScript>().textoOpcao.text = optionText;
         }
 
         else
@@ -159,19 +166,15 @@ public class InkyDirector : MonoBehaviour {
 
             splatText = optionText.Split(new char[] { '_' });
             //Escreve texto
-            button.GetComponentInChildren<TextMeshPro>().text = splatText[splatText.Length-1];
+            button.GetComponent<ButtonScript>().textoOpcao.text = splatText[splatText.Length-1];
             
             for (int i = 0; i< splatText.Length-1; i++)
             {
                 //Procura runas
-                if (writeRune(splatText[i].ToLower()) != null)
-                {
-                    button.GetComponent<ButtonScript>().runeImage.color = new Color(1, 1, 1, 1);
-                    button.GetComponent<ButtonScript>().runeImage.sprite = writeRune(splatText[i].ToLower());
-                }
+                WriteRune(splatText[i].ToLower(), button);
 
                 //Procura rolagens
-                else if (splatText[i].Contains("roll"))
+                if (splatText[i].Contains("roll"))
                 {
                     string numbers;
 
@@ -200,8 +203,8 @@ public class InkyDirector : MonoBehaviour {
                     if (splatText[i] != "0")
                     {
                         button.GetComponent<ButtonScript>().manaCost = int.Parse(splatText[i]);
-                        button.GetComponent<ButtonScript>().objectMana.SetActive(true);
-                        button.GetComponent<ButtonScript>().manaText.text = (splatText[i] + " Mana");
+                        button.GetComponent<ButtonScript>().objectMana.gameObject.SetActive(true);
+                        button.GetComponent<ButtonScript>().objectMana.manaCost.text = splatText[i];
                     }
                 }
 
@@ -209,59 +212,91 @@ public class InkyDirector : MonoBehaviour {
         }
     }
 
-    Sprite writeRune(string runeString)
+    void WriteRune(string runeString, GameObject button)
     {
+        List<GameObject> runes;
+        runes = button.GetComponent<ButtonScript>().runeImages;
+
         switch (runeString)
         {
             case "death":
-                return runeList[0];
+                FindByNameInList(runes, "runeDeath").SetActive(true);
+                break;
 
             case "fate":
-                return runeList[1];
+                FindByNameInList(runes, "runeFate").SetActive(true);
+                break;
 
             case "forces":
-                return runeList[2];
+                FindByNameInList(runes, "runeForces").SetActive(true);
+                break;
 
             case "life":
-                return runeList[3];
+                FindByNameInList(runes, "runeLife").SetActive(true);
+                break;
 
             case "matter":
-                return runeList[4];
+                FindByNameInList(runes, "runeMatter").SetActive(true);
+                break;
 
             case "mind":
-                return runeList[5];
+                FindByNameInList(runes, "runeMind").SetActive(true);
+                break;
 
             case "prime":
-                return runeList[6];
+                FindByNameInList(runes, "runePrime").SetActive(true);
+                break;
 
             case "space":
-                return runeList[7];
+                FindByNameInList(runes, "runeSpace").SetActive(true);
+                break;
 
             case "spirit":
-                return runeList[8];
+                FindByNameInList(runes, "runeSpirit").SetActive(true);
+                break;
 
             case "time":
-                return runeList[9];
+                FindByNameInList(runes, "runeTime").SetActive(true);
+                break;
 
             case "acanthus":
-                return runeList[10];
+                FindByNameInList(runes, "runeAcanthus").SetActive(true);
+                break;
 
             case "mastigos":
-                return runeList[11];
+                FindByNameInList(runes, "runeMastigos").SetActive(true);
+                break;
 
             case "moros":
-                return runeList[12];
+                FindByNameInList(runes, "runeMoros").SetActive(true);
+                break;
 
             case "obrimos":
-                return runeList[13];
+                FindByNameInList(runes, "runeObrimos").SetActive(true);
+                break;
 
             case "thyrsus":
-                return runeList[14];
+                FindByNameInList(runes, "runeThyrsus").SetActive(true);
+                break;
 
             default:
                 Debug.Log("writeRune defaulted");
-                return null;
+                break;
         }
+    }
+
+    public GameObject FindByNameInList(List<GameObject> lista , string name)
+    {
+        for (int i = 0; i < lista.Count; i++)
+        {
+            if(lista[i].name == name)
+            {
+                return lista[i];
+            }
+        }
+
+        return null;
+
     }
 
     public void DeactivateThing(GameObject thing)

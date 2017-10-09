@@ -6,18 +6,20 @@ using TMPro;
 
 public class ButtonScript : MonoBehaviour {
 
-    public Image runeImage;
+    public List<GameObject> runeImages;
 
     public GameObject objectRoll;
     public GameObject objectDox;
-    public GameObject objectMana;
+    public ManaObjectScript objectMana;
+
+    public TextMeshProUGUI textoOpcao;
 
     public int manaCost;
 
     [HideInInspector]
     public Image clockRoll, clockDox;
     [HideInInspector]
-    public TextMeshProUGUI rollNumber, doxNumber, manaText;    
+    public TextMeshProUGUI rollNumber, doxNumber;    
 
     // Use this for initialization
     void Awake () {
@@ -27,8 +29,6 @@ public class ButtonScript : MonoBehaviour {
 
         clockDox = objectDox.GetComponent<Image>();
         doxNumber = objectDox.GetComponentInChildren<TextMeshProUGUI>();
-
-        manaText = objectMana.GetComponent<TextMeshProUGUI>();
 
 	}
 	
