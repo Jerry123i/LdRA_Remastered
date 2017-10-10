@@ -13,9 +13,9 @@ Você continua ao lado de Janus. Yoonir sacode a cabeça desapontado.
 
 *[{rollTag(65)}Pegar a arma e atirar]
     -- ->janus_tiro->
-*{SPACE>0}[{arcanaTag("space")}Teleportar o olho para a sua mão]
+*{SPACE>0}[{arcanaTag("space")}{doxTag(30)}Teleportar o olho para a sua mão]
     -- ->janus_teleport->
-*{FORCES>1}[{arcanaTag("forces")}Usar telecinesia]
+*{FORCES>1}[{arcanaTag("forces")}{doxTag(30)}Usar telecinesia]
     -- ->janus_telecinesia->
 *{MIND>0}[{arcanaTag("mind")}Usar a águia]
     -- ->janus_aguia_mente->
@@ -101,9 +101,9 @@ Yoonir foge com o artefato nas mãos, carregando o cristal no punho direito, voc
 Você levanta um dos braços a frente do corpo, e estende a palma da mão aberta, dobrando seu dedão, indicador e dedo médio você cria um conjunto de forças ao redor do artefato, um leve brilho dourado escapa do punho fechado de Yoonir.
 
 {rollResult<=calcDox(30):
+    ~danoDox++
     Você hesita por um segundo, o próximo movimento da magia não é tão claro, se sua alma estava seguindo instruções, uma sombra parece obscurecer o manual. As forças continuam a se concentrar,você não sabe como prosseguir, e o mago continua a se afastar,mas é tarde de mais para voltar atrás. Você perde o controle, a energia que você acumulava dispara a esmo, como um elástico estendido ela volta em sua direção. Algo te atinge como um soco, como se o próprio ar lhe golpeasse no meio do peito [-1 Saúde].
      O brilho da sua magia se dissipa completamente do cristal que você tentava pegare Yoonir escapa com ele.
-    ~danoDox++
     ~terminouComAPedra = OFF
     ~yoonirAtingido=OFF
     -else:
@@ -162,9 +162,9 @@ Você visualiza o artefato em sua mão e começa a lentamente erodir a imagem de
 Você ignora por um segundo Janus gritando ao seu lado e o Yoonir escapando com o artefato, concentrando sua atenção somente no fluir do tempo ao seu redor. Sentindo o tempo passar delicadamente por entre seus dedos, você põe as duas mãos ao lado do corpo, os punhos apenas um pouco abertos. Respirando fundo você conjura sua magia e fecha as mãos, tudo para ao seu redor, congelado no tempo. Você se agarra as linhas do tempo que conseguiu segurar, e puxa, arrastando o tempo de volta.
 
 {rollResult<calcDox(30):
-    As linhas escorregam, a palma das suas mãos queimam como setentassem segurar uma corrente de ferro quente. Você é obrigad{oa()} a solta-las. O tempo tenta se corrigir fluindo na direção oposta a que você puxou, as linhas voltam como um elástico tencionado,chicoteando suas costas antes de retornarem ao estado natural [-1 Saúde]. O tempo se normaliza com Yoonir desaparecendo entre as árvores. 
+    ~danoDox++
+    As linhas escorregam, a palma das suas mãos queimam como setentassem segurar uma corrente de ferro quente. Você é obrigad{oa()} a solta-las. O tempo tenta se corrigir fluindo na direção oposta a que você puxou, as linhas voltam como um elástico tencionado,chicoteando suas costas antes de retornarem ao estado natural. O tempo se normaliza com Yoonir desaparecendo entre as árvores. 
     Janus vira para você, o encantamento em seus braços já se desfazendo.
-    Janus vira para você, o encantamento em seus braços já se desfa zendo.
     ~yoonirAtingido=OFF
     ~terminouComAPedra = OFF
     -else:

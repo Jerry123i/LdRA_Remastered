@@ -8,20 +8,20 @@ INCLUDE go_janus
 
 
 
-VAR nomeCompleto = "nome"
-VAR nomeCurto = "nom"
+VAR nomeCompleto = " "
+VAR nomeCurto = " "
 VAR nomeDasSombras = "shadow"
 
 VAR gen  = 2
 
-VAR path = 0
+VAR path = -1
     CONST ACANTHUS = 0
     CONST MASTIGOS = 1
     CONST MOROS    = 2
     CONST OBRIMOS  = 3
     CONST THYRSUS  = 4
 
-VAR dano    = 1
+VAR dano    = 0
 VAR danoDox = 0
 VAR mana    = 5
 VAR paradoxoAcumulado = 0
@@ -178,7 +178,7 @@ Qual caminho sua alma segue?
 
 - ->continue->
 
-
+~dano=1
 
 Você desperta, porém não abre os olhos ainda, você não se lembra de nada que aconteceu. Lembra apenas do sonho incrívelmente real que acabou de ter. Seu corpo e sua cabeça doem{LIFE>0:, você fraturou uma costela e a tíbia esquerda, e teve cortes e contusões leves no torso e nos braços}{TIME>0:, é de noite, exatamente 1:53, embora você não faça ideia de como tem certeza disso sem nem conseguir enxergar nada}.
 
@@ -209,7 +209,7 @@ Vindo do carro, além das chamas, outra coisa chama sua atenção. Uma luz, uma 
 }
 
 {TIME>0:
-Você tenta se lembrar do que ocorreu, sua memória está completamente perdida, mas você consegue abrir os olhos e encarar diretamente o passado. Você se vê dirigindo, a estrada vazia eescura, é difícil se concentrar na visão e elaparece turva em vários pedaços, como uma janela embaçada. Algo te distrai na estrada, parece haver algum tipo de falha mecânica, você bate o veículo e a visão desaparece. 
+Você tenta se lembrar do que ocorreu, sua memória está completamente perdida, mas você consegue abrir os olhos e encarar diretamente o passado. Você se vê dirigindo, a estrada vazia e escura, é difícil se concentrar na visão e elaparece turva em vários pedaços, como uma janela embaçada. Algo te distrai na estrada, parece haver algum tipo de falha mecânica, você bate o veículo e a visão desaparece. 
 ->continue->
 }
 
@@ -579,13 +579,14 @@ O peso que você sentia sobre as pernas é na verdade um tronco de árvore que t
     -- ->continue->
     
     --{rollResult<=30+paradoxoAcumulado:
+        ~danoDox++
         Porém algo dá errado, você sente algo tentar interferir nos planos que você escreveu, como se uma mão fria, muito fria tocasse seu ombro antes que você possa terminar de transformar o tronco. Como se ele quisesse os planos que você escreveu para ele.
 
         O porteiro! Do seu sonho, ele te seguiu até aqui, você deveria estar morto certo? E aqui você, está tentando fazer... O que exatamente é isso?
 
         Você se move assustado, alguma coisa dentro de você doi. Dor de mais para alguém que deveria estar morto, mortos não sentem dor, você se lembra muito bem. Foi apenas uma dose de paranóia, respirando fundo e se concentrando você não tem problemas em transformar o tronco em um grande cilindro de isopor que é empurrado para o lado com facilidade.
 
-        Embora você não tenha certeza se o hematoma no seu ombro estava ali quando você acordou. [-1 Saúde]
+        Embora você não tenha certeza se o hematoma no seu ombro estava ali quando você acordou.
         
         -else:
         Respirando fundo e se concentrando você não tem problemas em transformar o tronco em um grande cilindro de isopor que é empurrado para o lado com facilidade.

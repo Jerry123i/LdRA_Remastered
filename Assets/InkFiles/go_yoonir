@@ -168,6 +168,7 @@ Você ignora por um segundo Yoonir fugindo e Janus ameaçando disparar contra el
 
 {rollResult<=calcDox(30):
     As linhas escorregam, a palma das suas mãos queimam como se tentassem segurar uma corrente de ferro quente. Você é obrigad{oa()} a solta-las. O tempo tenta se corrigir fluindo na direção oposta a que você puxou, as linhas voltam como um elástico tencionado, chicoteando suas costas antes de retornarem ao estado natural. O tempo se normaliza no momento em que Janus está puxando o gatilho. Ele atinge Yoonir no braço, o cristal cai da sua mão, mas ele não retorna para pega-lo, apenas grita para que você vá com ele logo.
+    ~danoDox++
     ~terminouComAPedra=OFF
     ~yoonirAtingido = ON
     -else:
@@ -193,12 +194,15 @@ Você logo alcança Yoonir entre as árvores, ele pede que você continue a corr
         Ele põe as mãos estendidas em frente ao seu corpo, você sente uma onda de calor passar pelo seu corpo, parecida com quando ele encantou os braços de Janus, mas menos seca, um calor mais confortável, como um dia ensolarado.
         {
             -(dano==0 and danoDox>0):
+                ~dano=0
                  Mas você ainda se sente tão mal quanto.
                 "Hum, parece que seus ferimentos foram causados por paradoxo, desculpe, mas eu não posso curar isso com magia, só o tempo recupera sua matriz vital nesses casos"
             -(dano>0 and danoDox>0):
+                ~dano=0
                  Você se sente um pouco melhor, mas ainda umpouco machucad{oa()}
                  "Eu fiz o que pude, mas parte dos seus ferimentos foram causados por paradoxo, só o tempo recupera o sua matriz vital nesses casos"
             -(danoDox==0):
+                ~dano=0
                  Você se sente perfeitamente curad{oa()}, todo mínimo arranhão ou pequeno ferimento completamente reparado
                  "Acho que eu consegui cuidar de tudo, se sente melhor?"
         }
@@ -208,6 +212,7 @@ Você logo alcança Yoonir entre as árvores, ele pede que você continue a corr
         ->sem_cura
     *{LIFE>0}[life_{(path==THYRSUS):mana1_|mana2_}Recusar e curar a si mesm{oa()}]
         Você olha para dentro do seu próprio corpo, escaneando cada célula danificada e orientando seu corpo para imediatamente repara-los.
+        ~dano=0
         {danoDox>0: 
              Você repara tudo que pode, mas alguns dos ferimentos parecem simplesmente impossíveis. Yoonir nota sua preocupação.
             "Você se machucou tentando fazer alguma magia mais complexa depois do despertar? Parece que você tem alguns ferimentos causados por paraoxo. É impossível cura-los com magia, só o tempo recupera o sua matriz vital nesses casos"

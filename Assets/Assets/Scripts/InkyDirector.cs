@@ -17,6 +17,8 @@ public class InkyDirector : MonoBehaviour {
 
     public Scrollbar textScroll;
     public ContentSizeFitter sizeFit;
+
+    public CharInfoScript displayInfo;
     
     void Awake()
     {
@@ -82,6 +84,9 @@ public class InkyDirector : MonoBehaviour {
         allButtonSets.ForEach(DeactivateThing);
         inputField.SetActive(false);
 
+        DisplayLifeAndMana();
+        DisplayPlayerRune();
+
         //Define qual conjunto de botões usar baseado no numero de opções        
         if (_inkStory.currentChoices.Count == 1)
         {
@@ -137,7 +142,9 @@ public class InkyDirector : MonoBehaviour {
                 CleanNames(_inkStory.variablesState[_inkStory.currentTags[1]].ToString());
             }
 
-        }        
+        }
+
+        DisplayName();
     }
 
     void CleanNames(string inputName)
@@ -152,8 +159,7 @@ public class InkyDirector : MonoBehaviour {
 
     void WriteButton(GameObject button, string optionText)
     {
-
-        
+        button.GetComponent<ButtonScript>().textoOpcao.text = "";
 
         if (!optionText.Contains("_"))
         {
@@ -165,8 +171,6 @@ public class InkyDirector : MonoBehaviour {
             string[] splatText;
 
             splatText = optionText.Split(new char[] { '_' });
-            //Escreve texto
-            button.GetComponent<ButtonScript>().textoOpcao.text = splatText[splatText.Length-1];
             
             for (int i = 0; i< splatText.Length-1; i++)
             {
@@ -177,23 +181,17 @@ public class InkyDirector : MonoBehaviour {
                 if (splatText[i].Contains("roll"))
                 {
                     string numbers;
-
-                    button.GetComponent<ButtonScript>().objectRoll.SetActive(true);
-                    Debug.Log("Antes do remove:"+splatText[i]);
+                    
                     numbers = splatText[i].Replace("roll","");
-                    Debug.Log("Isso deveria ser apenas um numero:"+numbers);
-                    button.GetComponent<ButtonScript>().rollNumber.text = (numbers + "%");
-                    button.GetComponent<ButtonScript>().clockRoll.fillAmount = int.Parse(numbers) / 100.0f;
+                    button.GetComponent<ButtonScript>().textoOpcao.text = ("[C:" + numbers + "%]");
+                   
                 }
 
                 //Procura paradoxo
                 else if (splatText[i].Contains("dox"))
-                {
-                    button.GetComponent<ButtonScript>().objectDox.SetActive(true);
+                {                    
                     splatText[i] = splatText[i].Replace("dox", "");
-                    Debug.Log(splatText[i]);
-                    button.GetComponent<ButtonScript>().doxNumber.text = (splatText[i] + "%");
-                    button.GetComponent<ButtonScript>().clockDox.fillAmount = int.Parse(splatText[i]) / 100.0f;
+                    button.GetComponent<ButtonScript>().textoOpcao.text = ("[P:" + splatText[i] + "%]");
                 }
 
                 //Procura mana
@@ -207,8 +205,9 @@ public class InkyDirector : MonoBehaviour {
                         button.GetComponent<ButtonScript>().objectMana.manaCost.text = splatText[i];
                     }
                 }
-
             }
+            //Escreve texto
+            button.GetComponent<ButtonScript>().textoOpcao.text += " " + splatText[splatText.Length - 1];
         }
     }
 
@@ -322,5 +321,90 @@ public class InkyDirector : MonoBehaviour {
         {
             return false;
         }
+    }
+
+    public void DisplayName()
+    {
+        displayInfo.displayName.text = _inkStory.variablesState["nomeCurto"].ToString();
+    }
+
+    public void DisplayPlayerRune()
+    {
+        if((int)_inkStory.variablesState["path"] >= 0)
+        {
+            string runeName;
+
+            switch ((int)_inkStory.variablesState["path"])
+            {
+                case 0:
+                    runeName = "runeAcanthus";
+                    break;
+
+                case 1:
+                    runeName = "runeMastigos";
+                    break;
+
+                case 2:
+                    runeName = "runeMoros";
+                    break;
+
+                case 3:
+                    runeName = "runeObrimos";
+                    break;
+
+                case 4:
+                    runeName = "runeThyrsus";
+                    break;
+
+                default:
+                    runeName = " ";
+                    break;
+            }
+
+            displayInfo.displayRune.sprite = FindByNameInList(allButtonSets[0].GetComponent<ButtonSupportScript>().buttonsList[0].GetComponent<ButtonScript>().runeImages, runeName).GetComponent<Image>().sprite;
+            displayInfo.displayRune.color = new Color(1, 1, 1, 0.37f);
+
+        }
+    }
+
+    public void DisplayLifeAndMana()
+    {      
+        for(int i = 0; i < displayInfo.manaBar.Count; i++)
+        {
+            if (i+1 <= (int)_inkStory.variablesState["mana"])
+            {
+                displayInfo.manaBar[i].color = displayInfo.manaOnColor;
+            }
+            else
+            {
+                displayInfo.manaBar[i].color = displayInfo.manaOffColor;
+            }
+        }
+
+        for (int i = 0; i<displayInfo.lifeBar.Count; i++)
+        {
+            if(i+1 <= (int)_inkStory.variablesState["danoDox"] + (int)_inkStory.variablesState["dano"])
+            {
+                displayInfo.lifeBar[i].bolinha.color = displayInfo.lifeOffColor;
+            }
+            else
+            {
+                displayInfo.lifeBar[i].bolinha.color = displayInfo.lifeOnColor;
+            }
+
+            if(i + 1 <= (int)_inkStory.variablesState["danoDox"])
+            {
+                displayInfo.lifeBar[i].doxOverlay.enabled = true;
+                displayInfo.lifeBar[i].doxOverlay.sprite = displayInfo.doxSprite;
+            }
+
+            else
+            {
+                displayInfo.lifeBar[i].doxOverlay.enabled = false;
+            }
+
+
+        }
+
     }
 }

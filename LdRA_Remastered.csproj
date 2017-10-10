@@ -96,6 +96,8 @@
     <Compile Include="Assets\Assets\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Assets\Scripts\ButtonSupportScript.cs" />
     <Compile Include="Assets\Assets\Scripts\InkyDirector.cs" />
+    <Compile Include="Assets\BolinhaDeVidaScript.cs" />
+    <Compile Include="Assets\CharInfoScript.cs" />
     <Compile Include="Assets\ManaObjectScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\Benchmark01_UGUI.cs" />
