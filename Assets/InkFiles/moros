@@ -213,10 +213,10 @@ As mãos da esquerda coletam bens materiais, recolhem jóias, carros e casas int
 
 Você repara na lápide, o objeto que tão fortemente te atraiu até aqui. Ela é sua, porém está sem nome.
 
-*[Assinar com o resíduo das almas (Morte+)]
+*[death_Assinar com o resíduo das almas (Morte+)]
     --~DEATH++
     --Você pega a longa pena preta apoiada na lateral do cálice, mergulha a ponta na tinta viscosa turva.
-*[Assinar com a tinta dourada (Matéria+)]
+*[matter_Assinar com a tinta dourada (Matéria+)]
     --~MATTER++
     --Apoiada no cálice da esquerda você encontra uma elegante caneta tinteiro, completamente preta e com uma gema vermelha como sangue fresco decorando a ponta. Usando a pequena alavanca na lateral você enche a caneta de tinta dourada.
     

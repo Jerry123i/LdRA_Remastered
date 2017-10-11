@@ -53,21 +53,21 @@ A rainha adiciona, austera.
 
 Qual artefato você leva para enfrentar a besta?
 
-*(obrimos_materia)[O metal (Matéria)]
+*(obrimos_materia)[matter_O metal (Matéria)]
     --~MATTER++
-*(obrimos_mente)[O espelho (Mente)]
+*(obrimos_mente)[mind_O espelho (Mente)]
     --~MIND++
-*(obrimos_vida)[O cajado de pastor (Vida)]
+*(obrimos_vida)[life_O cajado de pastor (Vida)]
     --~LIFE++
-*(obrimos_espirito)[A cruz (Espírito)]
+*(obrimos_espirito)[spirit_A cruz (Espírito)]
     --~SPIRIT++
-*(obrimos_tempo)[A ampulheta (Tempo)]
+*(obrimos_tempo)[time_A ampulheta (Tempo)]
     --~TIME++
-*(obrimos_espaco)[A bússola (Espaço)]
+*(obrimos_espaco)[space_A bússola (Espaço)]
     --~SPACE++
-*(obrimos_fate)[A moeda (Destino)]
+*(obrimos_fate)[fate_A moeda (Destino)]
     --~FATE++
-*(obrimos_morte)[A caveira (Morte)]
+*(obrimos_morte)[death_A caveira (Morte)]
     --~DEATH++
     
 -Assim que você retira o artefato da caixa ela se fecha. {DEATH>0:Os monarcas se entreolham preocupados, sua escolha talvez tenha os surpreendido.}

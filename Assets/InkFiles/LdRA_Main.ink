@@ -1040,11 +1040,9 @@ Antes que você possa responder de qualquer forma, você sente uma dor aguda per
     }
 }
 
-- FIIIIIIIIIM
 -->END
 
 =analisa_o_olho_yoonir
-~PRIME=1
 {amigo==YOONIR:Yoonir tira o cristal do bolso do casaco e começa a examina-lo sobre a mesa.}
 
 *"Mas... ele faz alguma coisa?"
