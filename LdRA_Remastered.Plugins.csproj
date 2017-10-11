@@ -117,6 +117,8 @@
     <Compile Include="Assets\Plugins\Ink\InkRuntime\Void.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\JerryFiles\font\OFL.txt" />
+    <None Include="Assets\JerryFiles\font\Read Me - License.txt" />
     <None Include="Assets\JerryFiles\font\readme.txt" />
     <None Include="Assets\Plugins\Ink\Resources\InkDefaultTemplate.txt" />
     <None Include="Assets\TextMesh Pro\Fonts\Anton OFL.txt" />

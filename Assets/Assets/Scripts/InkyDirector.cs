@@ -14,6 +14,7 @@ public class InkyDirector : MonoBehaviour {
 
     public List<Sprite> runeList;
     public List<GameObject> allButtonSets;
+    GameObject currentButtonsSet;
 
     public Scrollbar textScroll;
     public ContentSizeFitter sizeFit;
@@ -35,7 +36,10 @@ public class InkyDirector : MonoBehaviour {
     	
     public void ChoseANumber(int number)
     {
-        _inkStory.ChooseChoiceIndex(number);        
+        _inkStory.ChooseChoiceIndex(number);
+        SpendMana(currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[number].GetComponent<ButtonScript>().manaCost);
+        
+
 
         //Limpa o texto
         sizeFit.enabled = false;
@@ -77,8 +81,7 @@ public class InkyDirector : MonoBehaviour {
     }
 
     public void UpdateButtons()
-    {
-        GameObject currentButtonsSet;
+    {        
         currentButtonsSet = allButtonSets[0];
 
         allButtonSets.ForEach(DeactivateThing);
@@ -407,4 +410,10 @@ public class InkyDirector : MonoBehaviour {
         }
 
     }
+
+    void SpendMana(int n)
+    {
+        _inkStory.variablesState["mana"] = (int)_inkStory.variablesState["mana"] - n;
+    }
+
 }
