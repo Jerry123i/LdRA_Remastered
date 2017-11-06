@@ -12,6 +12,8 @@ public class InkyDirector : MonoBehaviour {
     public TextMeshProUGUI screenText;
     public GameObject inputField;
 
+    public MenuScript menuScript;
+
     public List<Sprite> runeList;
     public List<GameObject> allButtonSets;
     GameObject currentButtonsSet;
@@ -24,6 +26,7 @@ public class InkyDirector : MonoBehaviour {
     void Awake()
     {
         _inkStory = new Story(inkAsset.text);
+        menuScript = GameObject.Find("MenuScript").GetComponent<MenuScript>();
 
         while (_inkStory.canContinue)
         {
@@ -32,15 +35,36 @@ public class InkyDirector : MonoBehaviour {
 
         UpdateButtons();
 
+        if(PlayerPrefs.GetInt("loadIndicator", -1) != -1)
+        {
+            menuScript.LoadGame(_inkStory, PlayerPrefs.GetInt("loadIndicator"));
+            UpdateText();
+            PlayerPrefs.SetInt("loadIndicator", -1);
+        }
+
     }
-    	
+
+    private void Update()
+    {       
+        if (Input.GetKeyDown("9"))
+        {
+            menuScript.LoadGame(_inkStory, 0);
+            UpdateText();            
+        }
+    }
+
     public void ChoseANumber(int number)
     {
         _inkStory.ChooseChoiceIndex(number);
         SpendMana(currentButtonsSet.GetComponent<ButtonSupportScript>().buttonsList[number].GetComponent<ButtonScript>().manaCost);
-        
 
+        menuScript.AutoSaveGame(_inkStory);
+        UpdateText();
 
+    }
+
+    public void UpdateText()
+    {
         //Limpa o texto
         sizeFit.enabled = false;
         screenText.text = "";
@@ -52,12 +76,12 @@ public class InkyDirector : MonoBehaviour {
             if (CheckFirstTag("roll"))
             {
                 int r;
-                r = Random.Range(1, 101);
+                r = UnityEngine.Random.Range(1, 101);
                 _inkStory.variablesState["rollResult"] = r;
             }
-            
+
             screenText.text += _inkStory.Continue() + System.Environment.NewLine;
-                        
+
         }
 
         sizeFit.enabled = true;
@@ -89,6 +113,7 @@ public class InkyDirector : MonoBehaviour {
 
         DisplayLifeAndMana();
         DisplayPlayerRune();
+        DisplayName();
 
         //Define qual conjunto de botões usar baseado no numero de opções        
         if (_inkStory.currentChoices.Count == 1)

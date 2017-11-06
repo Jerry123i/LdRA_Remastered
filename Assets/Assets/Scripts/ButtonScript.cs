@@ -16,19 +16,19 @@ public class ButtonScript : MonoBehaviour {
 
     public int manaCost;
 
-    [HideInInspector]
+    /*[HideInInspector]
     public Image clockRoll, clockDox;
     [HideInInspector]
-    public TextMeshProUGUI rollNumber, doxNumber;    
+    public TextMeshProUGUI rollNumber, doxNumber;    */
 
     // Use this for initialization
     void Awake () {
 
-        clockRoll = objectRoll.GetComponent<Image>();
+        /*clockRoll = objectRoll.GetComponent<Image>();
         rollNumber = objectRoll.GetComponentInChildren<TextMeshProUGUI>();
 
         clockDox = objectDox.GetComponent<Image>();
-        doxNumber = objectDox.GetComponentInChildren<TextMeshProUGUI>();
+        doxNumber = objectDox.GetComponentInChildren<TextMeshProUGUI>();*/
 
 	}
 	
