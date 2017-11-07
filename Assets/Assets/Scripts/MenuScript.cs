@@ -11,6 +11,7 @@ public class MenuScript : MonoBehaviour {
 
     public GameObject loadMenu;
     public GameObject menuMenu;
+    public GameObject instrucoes;
     public GameObject canvas;
     
     private void Awake()
@@ -24,6 +25,11 @@ public class MenuScript : MonoBehaviour {
         menuMenu.SetActive(false);
         loadMenu.SetActive(true);
         loadMenu.GetComponent<LoadGameMenuScript>().UpdateButtons();
+    }
+
+    public void OpenInstrucoes()
+    {
+        instrucoes.SetActive(true);
     }
 
     public void OpenMenuMenu()
