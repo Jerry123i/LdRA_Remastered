@@ -184,6 +184,14 @@ O céu se torna alaranjado conforme o sol se põe, alguns dos convidados começa
 
 --{conv_gen=="f":Ela|Ele} diz, quebrando o silêncio. "Mas eu gostaria de saber seu nome, eu não quero esquecer hoje. Eu não quero esquecer você."
 
+- ->continue->
+
+-{conv_gen=="f":Ela|Ele} puxa uma pena da máscara, e lhe entrega, a ponta suja de tinta.
+
+Então estende a mão. "Aqui, mesmo que a tinta não dure eu prometo não esquecer, basta escrever seu nome."
+
+- ->continue->
+
 -{conv_gen=="f":Ela|Ele} puxa uma pena da máscara, e lhe entrega, a ponta suja de tinta.
 
 Então estende a mão. "Aqui, mesmo que a tinta não dure eu prometo não esquecer, basta escrever seu nome."
@@ -192,6 +200,7 @@ Então estende a mão. "Aqui, mesmo que a tinta não dure eu prometo não esquec
 #nomeCompleto
 
 ->continue->
+
         
 Passando os dedos ao longo da sua caligrafia {conv_gen=="f":ela|ele} dá um pequeno sorriso de canto de boca, sutil, satisfeito. Então derrepente te abraça, sussurando "Obrigad{conv_gen=="f":a|o}" no seu ouvido, e colocando o rosto em frente ao seu, um dos braços ao redor do seu corpo, a outra mão acariciando o limite entre sua máscara e sua pele.
 

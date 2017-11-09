@@ -208,7 +208,7 @@ Você logo alcança Yoonir entre as árvores, ele pede que você continue a corr
         }
         ->sem_cura
     *[Recusar]
-        "Você é quem sabe, mas não tenha medo de pedir seprecisar."
+        "Você é quem sabe, mas não tenha medo de pedir se precisar."
         ->sem_cura
     *{LIFE>0}[life_{(path==THYRSUS):mana1_|mana2_}Recusar e curar a si mesm{oa()}]
         Você olha para dentro do seu próprio corpo, escaneando cada célula danificada e orientando seu corpo para imediatamente repara-los.

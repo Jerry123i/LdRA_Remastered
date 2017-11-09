@@ -162,6 +162,10 @@ Você sai da estreita caverna sobre a cabeça do lobo, mais de perto você pode 
     --~LIFE++
     --Você se apoia nas laterais do focinho e procura galhos onde consiga ficar de pé. Os dentes também de madeira estão gastos e marcados, cheios de lascas soltas e ranhuras, porém a maioria ainda parece bantate afiado. Você se aproxima com cautela e estende a mão coberta de sangue para escrever seu nome.
 
+- ->continue->
+
+-{LIFE>1:Você se apoia nas laterais do focinho e procura galhos onde consiga ficar de pé. Os dentes também de madeira estão gastos e marcados, cheios de lascas soltas e ranhuras, porém a maioria ainda parece bantate afiado. Você se aproxima com cautela e estende a mão coberta de sangue para escrever seu nome.|Você caminha pelo seu focinho até alcançar os olhos. O lobo não parece ligar, feito de madeira, outros já marcaram seus nomes ali antes de você. Com o sangue que mancha suas mãos você escreve seu nome.}
+
 - #input
 - #nomeCompleto
 

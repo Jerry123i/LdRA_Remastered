@@ -85,7 +85,7 @@ VAR amigo = 0
 ->intro_Genero
 
 ==== intro_Genero ====
-Qual gênero você prefere que seja usado para se referir ao seu personagem?
+Quais artigos você prefere que sejam usados para se referir ao seu personagem?
 
 * [Masculino]
     ~gen=0
@@ -1040,6 +1040,11 @@ Antes que você possa responder de qualquer forma, você sente uma dor aguda per
     }
 }
 
+*[...]
+#END
+
+
+//Fim do jogo
 -->END
 
 =analisa_o_olho_yoonir
@@ -1158,6 +1163,10 @@ Ele abre a garrafa de água e toma um gole.
 
 "Você precisa de um nome das sombras. Magos tem um segundo nome para usar entre nós, Yoonir não está na minha certidão de nascimento sabe? Tem algo em mente?"
 
+->continue->
+
+"Você precisa de um nome das sombras. Magos tem um segundo nome para usar entre nós, Yoonir não está na minha certidão de nascimento sabe? Tem algo em mente?"
+
 #input
 #nomeDasSombras
 ->continue->
@@ -1184,9 +1193,16 @@ Ele abre a garrafa de água e toma um gole.
 }
 -(nomeDasSombrasInJ)
 "{nomeCompleto}! Você precisa de um nome de mag{oa()}. Seu nome de verdade tem poder, principalmente poder para os outros te espionarem. Você precisa escolher um nome das sombras, um nome de mago. Tem algo em mente?"
+
+->continue->
+
+"{nomeCompleto}! Você precisa de um nome de mag{oa()}. Seu nome de verdade tem poder, principalmente poder para os outros te espionarem. Você precisa escolher um nome das sombras, um nome de mago. Tem algo em mente?"
+
 #input
 #nomeDasSombras
 ->continue->
+
+
 
 {nomeDasSombras==nomeCurto:
     Seu nome das sombras deve ser diferente do seu nome real

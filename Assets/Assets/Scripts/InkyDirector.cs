@@ -10,7 +10,9 @@ public class InkyDirector : MonoBehaviour {
     Story _inkStory;
     public TextAsset inkAsset;
     public TextMeshProUGUI screenText;
-    public GameObject inputField;
+
+    public List<GameObject> inputFields;
+    public GameObject myInputField;
 
     public MenuScript menuScript;
 
@@ -22,6 +24,9 @@ public class InkyDirector : MonoBehaviour {
     public ContentSizeFitter sizeFit;
 
     public CharInfoScript displayInfo;
+
+    public GameObject endGameButton;
+    public GameObject endGameImage;
     
     void Awake()
     {
@@ -91,9 +96,21 @@ public class InkyDirector : MonoBehaviour {
         //Verifica se vai ter input de nome        
         if (CheckFirstTag("input"))
         {
+            if(myInputField == null)
+            {
+                FindCorrectInputField();
+            }
             allButtonSets.ForEach(DeactivateThing);
-            inputField.SetActive(true);
+            myInputField.GetComponentInChildren<TMP_InputField>().text = "";
+            myInputField.SetActive(true);
         }
+
+        else if (CheckFirstTag("END"))
+        {
+            allButtonSets.ForEach(DeactivateThing);
+            EndGame();
+        }
+
         else
         {
             UpdateButtons();
@@ -104,13 +121,55 @@ public class InkyDirector : MonoBehaviour {
 
     }
 
+    void FindCorrectInputField()
+    {
+        switch ((int)_inkStory.variablesState["path"])
+        {
+            case 0:
+                myInputField = FindByNameInList(inputFields, "InputAcanthus");
+                break;
+
+            case 1:
+                myInputField = FindByNameInList(inputFields, "InputMastigos");
+                break;
+
+            case 2:                
+                if(((int)_inkStory.variablesState["MATTER"]) > 1)
+                {
+                    myInputField = FindByNameInList(inputFields, "InputMorosMatter");
+                }
+                else
+                {
+                    myInputField = FindByNameInList(inputFields, "InputMorosDeath");
+                }
+                break;
+
+            case 3:
+                myInputField = FindByNameInList(inputFields, "InputObrimos");
+                break;
+
+            case 4:
+                myInputField = FindByNameInList(inputFields, "InputThyrsus");
+                break;
+
+            default:
+                Debug.Log("inputfieldnameerror");
+                break;
+        }
+
+
+    }
+
     public void UpdateButtons()
     {        
         currentButtonsSet = allButtonSets[0];
 
         allButtonSets.ForEach(DeactivateThing);
-        inputField.SetActive(false);
-
+        if (myInputField != null)
+        {
+            myInputField.SetActive(false);
+        }
+        
         DisplayLifeAndMana();
         DisplayPlayerRune();
         DisplayName();
@@ -163,7 +222,7 @@ public class InkyDirector : MonoBehaviour {
 
         else if(_inkStory.currentTags[0] == "input")
         {
-            _inkStory.variablesState[_inkStory.currentTags[1]] = inputField.GetComponent<TMP_InputField>().text;
+            _inkStory.variablesState[_inkStory.currentTags[1]] = myInputField.GetComponentInChildren<TMP_InputField>().text;
 
             if(_inkStory.currentTags[1] == "nomeCompleto")
             {
@@ -434,6 +493,12 @@ public class InkyDirector : MonoBehaviour {
 
         }
 
+    }
+
+    void EndGame()
+    {
+        endGameButton.SetActive(true);
+        endGameImage.SetActive(true);
     }
 
     void SpendMana(int n)

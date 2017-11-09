@@ -123,9 +123,15 @@ Qual artefato você leva para enfrentar a besta?
 =acordo_com_dragao
 
 *[Aceitar e assinar seu nome]
-    --"Finalmente alguém com uma abençoada cabeça sobre os ombros!Sejemos práticos, não vou lhe enganar, trair ou devorar-tequando virar de costas. Você quer seu renome e eu quero paz."
+    --"Finalmente alguém com uma abençoada cabeça sobre os ombros! Sejemos práticos, não vou lhe enganar, trair ou devorar-te quando virar de costas. Você quer seu renome e eu quero paz."
 
+    --Ela puxa um estande para servir de mesa e um vidro de tinta virado, porém ainda meio cheio. Você pega uma pena e encara as últimas páginas vazias de 'Heróis E Campeões do Reinado', basta adicionar seu nome entre eles
+    -- ->continue->
+    
+    --"Finalmente alguém com uma abençoada cabeça sobre os ombros! Sejemos práticos, não vou lhe enganar, trair ou devorar-te quando virar de costas. Você quer seu renome e eu quero paz."
+    
     --Ela puxa um estande para servir de mesa e um vidro de tinta virado, porém ainda meio cheio. Você pega uma pena e encara as últimas páginas vazias de 'Heróis E Campeões do Reinado', basta adicionar seu nome entre eles #input#nomeCompleto
+    
     -- ->continue->
     
     -- ->prologo_obrimos
@@ -152,11 +158,13 @@ Ela abre as asas, derrubando as poucas peças de mobília que ainda restavam de 
 {obrimos_vida:->dragao_vida->}
 {obrimos_espaco:->dragao_espaco->}
 {obrimos_fate:->dragao_fate->}
-{obrimos_tempo:->dragao_time->}
+{obrimos_morte:->dragao_death->}
 {obrimos_materia:->dragao_matter->}
 
 - ->continue->
 
+-Você vai até o livro, caído ao lado de um dos estandes quebrados, ele não foi muito danificado durante o combate. Você pega uma pena e um vidro de tinta ainda meio cheio que estava no chão e encara as últimas páginas vazias de 'Heróis E Campeões do Reinado', resta adicionar seu nome entre eles:
+- ->continue->
 -Você vai até o livro, caído ao lado de um dos estandes quebrados, ele não foi muito danificado durante o combate. Você pega uma pena e um vidro de tinta ainda meio cheio que estava no chão e encara as últimas páginas vazias de 'Heróis E Campeões do Reinado', resta adicionar seu nome entre eles: #input#nomeCompleto
 - ->continue->
 -->prologo_obrimos

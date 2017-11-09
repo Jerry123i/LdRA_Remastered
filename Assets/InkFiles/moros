@@ -220,7 +220,13 @@ Você repara na lápide, o objeto que tão fortemente te atraiu até aqui. Ela �
     --~MATTER++
     --Apoiada no cálice da esquerda você encontra uma elegante caneta tinteiro, completamente preta e com uma gema vermelha como sangue fresco decorando a ponta. Usando a pequena alavanca na lateral você enche a caneta de tinta dourada.
     
--E se inclina para escrever seu nome 
+-E se inclina para escrever seu nome.
+
+->continue->
+
+{DEATH>1: Você pega a longa pena preta apoiada na lateral do cálice, mergulha a ponta na tinta viscosa turva.|Apoiada no cálice da esquerda você encontra uma elegante caneta tinteiro, completamente preta e com uma gema vermelha como sangue fresco decorando a ponta. Usando a pequena alavanca na lateral você enche a caneta de tinta dourada.}
+
+-E se inclina para escrever seu nome.
 
 -#input
 -#nomeCompleto

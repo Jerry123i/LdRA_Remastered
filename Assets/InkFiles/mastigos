@@ -161,6 +161,14 @@ Ele coloca o documento na sua frente, uma caneta bic preta surge sobre a mesa "A
 
 -"Pronto, apenas assine seu nome aqui, do lado do x"
 
+- ->continue->
+
+{SPACE>1:"Ahn... o primeiro... eu acho"|"As concessões de... outrem?"}
+
+-Ele faz mais alguns ajustes no documento e coloca de novo na sua frente.
+
+-"Pronto, apenas assine seu nome aqui, do lado do x"
+
 #input
 #nomeCompleto
 
